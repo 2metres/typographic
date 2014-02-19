@@ -1,7 +1,7 @@
-modular-scale(numbawang = 1, ratio = pr)
-  if (ratio == sr)
-    return (numbawang * sr)px
+modular-scale(numbawang = 1, ratio = typo_mobile)
+  if (ratio == desktop)
+    return (numbawang * typo_desktop)px
   else
-    return (numbawang * pr)px
+    return (numbawang * typo_mobile)px
 
 ms = modular-scale
