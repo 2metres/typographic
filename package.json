@@ -2,7 +2,7 @@
   "name": "typographic",
   "author": "Cory Simmons / MojoTech",
   "main": "typographic.js",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Stylus typography with modular scale, font stacks, and more",
   "keywords": [
     "stylus",
