@@ -47,4 +47,4 @@ t-headers(helvetica)
 ```
 - `stylus -u typographic -w css/style.styl`
 
-Expand/contract the **[demo](demo/index.html)** to see this in action.
+Expand/contract the **[demo](http://corysimmons.github.io/typographic/)** to see this in action.
