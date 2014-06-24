@@ -15,10 +15,20 @@ Place `@import 'typographic'` at the top of your `style.styl` file
 ### Headers
 It's common for header and body font stacks to differ. With the `t-headers()` mixin, you can change all headers to have the same [font stack](typographic/_font-stacks.styl).
 
-### Presets and Ratios
-The [presets](typographic/_presets.styl) file is a typography reset that applies some `font-size`, `line-height`, and `margin-bottom` to common selectors. There is a `preset()` mixin that accepts a ratio. A ratio can be any floated number and in the [ratios](typographic/_ratios.styl) file you will see a variable list of common [modular scale](http://modularscale.com) ratios.
+### Presets
+The [presets](typographic/_presets.styl) file is a typography reset that applies some `font-size`, `line-height`, and `margin-bottom` to common selectors. There is a `preset()` mixin with some reasonable defaults that accepts named parameters:
 
-**To enable typographic, use the `presets()` mixin after `@import`ing Typographic.** Pass the `presets()` mixin random numbers to see how it works.
+- `ratio` can be any floated number and in the [ratios](typographic/_ratios.styl) file you will see a variable list of common [modular scale](http://modularscale.com) ratios (default: golden)
+- `steps` is used to divide the given ratio into smaller increments, e.g. if using the golden ratio (1:1.618) with 2 steps the output would be 1rem -> 1.272rem -> 1.618rem -> ... (2 steps to the ratio) instead of 1rem -> 1.618rem -> 2.628rem -> ... (1 step to the ratio) (default: 2)
+- `header-line-height` is used to set the line height for headers (default: 1.1)
+- `body-line-height` is used to set the line height for the base text elements (default: 1.4)
+- `margin-bottom-ratio` is used to set the bottom margin of elements based on their relative size (default: inverse of the ratio in use)
+
+The order of the parameters does not matter if you pass them with names. Example:
+
+`presets(body-line-height: 1.5, header-line-height: 1, ratio: perfect-fourth, steps: 1)`
+
+**To enable typographic, use the `presets()` mixin after `@import`ing Typographic.** Pass the `presets()` different parameters to see how it works.
 
 ### Easy Responsive Typography
 Just set your `html` selector's base `font-size`, then adjust the `font-size` with media queries.
@@ -31,7 +41,7 @@ Just set your `html` selector's base `font-size`, then adjust the `font-size` wi
 ```stylus
 @import 'typographic'
 
-presets(major-sixth)
+presets(ratio: major-sixth)
 
 html
   font-family: garamond
