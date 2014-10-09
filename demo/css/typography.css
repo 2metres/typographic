@@ -1,0 +1,72 @@
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin-top: 0;
+  margin-bottom: 0.809rem;
+}
+h1 {
+  font-size: 3.236rem;
+  line-height: 3.236rem;
+}
+h2 {
+  font-size: 2.8315rem;
+  line-height: 2.8315rem;
+}
+h3 {
+  font-size: 2.427rem;
+  line-height: 2.427rem;
+}
+h4 {
+  font-size: 2.0225rem;
+  line-height: 2.0225rem;
+}
+h5 {
+  font-size: 1.618rem;
+  line-height: 1.618rem;
+}
+h6 {
+  font-size: 1.2135rem;
+  line-height: 1.2135rem;
+}
+p,
+ul,
+ol {
+  font-size: 1.618rem;
+  line-height: 2.427rem;
+  margin-top: 0;
+  margin-bottom: 1.618rem;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+html {
+  font-family: Garamond, Baskerville, "Baskerville Old Face", "Hoefler Text", "Times New Roman", serif;
+  font-size: 9px;
+  background: #f99;
+}
+@media (min-width: 600px) {
+  html {
+    font-size: 10px;
+    background: #f66;
+  }
+}
+@media (min-width: 800px) {
+  html {
+    font-size: 11px;
+    background: #f33;
+  }
+}
+@media (min-width: 1000px) {
+  html {
+    font-size: 12px;
+    background: #f00;
+  }
+}
