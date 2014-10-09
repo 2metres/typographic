@@ -1,11 +1,8 @@
-presets(ratio = golden)
-
-  // Reset
-  h1, h2, h3, h4, h5, h6, p, ul, ol
-    margin: 0
+t-presets(ratio = golden)
 
   // Headers
   h1, h2, h3, h4, h5, h6
+    margin-top:    0
     margin-bottom: t-scale(.5, ratio)
   h1
     font-size:     t-scale(2, ratio)
@@ -26,8 +23,9 @@ presets(ratio = golden)
     font-size:     t-scale(.75, ratio)
     line-height:   t-scale(.75, ratio)
 
-  // Misc
+  // Base
   p, ul, ol
     font-size:     t-scale(1, ratio)
-    line-height:   t-scale(1.25, ratio)
+    line-height:   t-scale(1.5, ratio)
+    margin-top:    0
     margin-bottom: t-scale(1, ratio)
