@@ -1,6 +1,6 @@
 # Typographic
 
-Responsive typography for the rest of us. Written in Stylus. SCSS port on the roadmap.
+Quick and dirty responsive typography for the rest of us. Written in Stylus.
 
 ### Installation
 `npm install typographic`
@@ -16,9 +16,9 @@ Place `@import 'typographic'` at the top of your `style.styl` file
 It's common for header and body font stacks to differ. With the `t-headers()` mixin, you can change all headers to have the same [font stack](typographic/_font-stacks.styl).
 
 ### Presets and Ratios
-The [presets](typographic/_presets.styl) file is a typography reset that applies some `font-size`, `line-height`, and `margin-bottom` to common selectors. There is a `preset()` mixin that accepts a ratio. A ratio can be any floated number and in the [ratios](typographic/_ratios.styl) file you will see a variable list of common [modular scale](http://modularscale.com) ratios.
+The [presets](typographic/_presets.styl) file is a typography reset that applies some `font-size`, `line-height`, and `margin-bottom` to common selectors. There is a `t-presets()` mixin that accepts a ratio. A ratio can be any floated number and in the [ratios](typographic/_ratios.styl) file you will see a variable list of common [modular scale](http://modularscale.com) ratios.
 
-**To enable typographic, use the `presets()` mixin after `@import`ing Typographic.** Pass the `presets()` mixin random numbers to see how it works.
+**To enable typographic, use the `t-presets()` mixin after `@import`ing Typographic.** Pass the `t-presets()` mixin random numbers to see how it works.
 
 ### Easy Responsive Typography
 Just set your `html` selector's base `font-size`, then adjust the `font-size` with media queries.
