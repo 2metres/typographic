@@ -1,0 +1,28 @@
+{
+  "name": "typographic",
+  "version": "1.0.0",
+  "homepage": "https://github.com/corysimmons/typographic",
+  "authors": [
+    "Cory Simmons <csimmonswork@gmail.com>"
+  ],
+  "description": "Quick and dirty responsive typography for the rest of us.",
+  "main": "typographic.js",
+  "moduleType": [
+    "node"
+  ],
+  "keywords": [
+    "stylus",
+    "css",
+    "typography",
+    "responsive"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests",
+    "demo"
+  ]
+}
