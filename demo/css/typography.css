@@ -80,24 +80,24 @@ h6 {
 }
 html {
   font-family: Garamond, Baskerville, "Baskerville Old Face", "Hoefler Text", "Times New Roman", serif;
-  font-size: 8px;
+  font-size: 10px;
   background: #f99;
 }
 @media (min-width: 600px) {
   html {
-    font-size: 10px;
+    font-size: 12px;
     background: #f66;
   }
 }
 @media (min-width: 800px) {
   html {
-    font-size: 12px;
+    font-size: 14px;
     background: #f33;
   }
 }
 @media (min-width: 1000px) {
   html {
-    font-size: 14px;
+    font-size: 16px;
     background: #f00;
   }
 }
