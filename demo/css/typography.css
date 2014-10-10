@@ -49,7 +49,7 @@ h6 {
 }
 html {
   font-family: Garamond, Baskerville, "Baskerville Old Face", "Hoefler Text", "Times New Roman", serif;
-  font-size: 9px;
+  font-size: 8px;
   background: #f99;
 }
 @media (min-width: 600px) {
@@ -60,13 +60,13 @@ html {
 }
 @media (min-width: 800px) {
   html {
-    font-size: 11px;
+    font-size: 12px;
     background: #f33;
   }
 }
 @media (min-width: 1000px) {
   html {
-    font-size: 12px;
+    font-size: 14px;
     background: #f00;
   }
 }
