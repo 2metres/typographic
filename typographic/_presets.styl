@@ -24,8 +24,25 @@ t-presets(ratio = golden)
     line-height:   t-scale(.75, ratio)
 
   // Base
-  p, ul, ol
+  p, ul, ol, label, input, textarea, fieldset, dl, blockquote
     font-size:     t-scale(1, ratio)
     line-height:   t-scale(1.5, ratio)
     margin-top:    0
     margin-bottom: t-scale(1, ratio)
+  label
+    margin-bottom: 0
+  ul
+    padding-left: t-scale(1.2, ratio)
+  ol
+    padding-left: t-scale(1.3, ratio)
+  li, dd
+    margin-bottom: t-scale(.25, ratio)
+  dt
+    font-weight: bold
+  dd
+    margin-left: 0
+  blockquote
+    margin-left: 0
+    cite
+      display: block
+

@@ -33,11 +33,42 @@ h6 {
 }
 p,
 ul,
-ol {
+ol,
+label,
+input,
+textarea,
+fieldset,
+dl,
+blockquote {
   font-size: 1.618rem;
   line-height: 2.427rem;
   margin-top: 0;
   margin-bottom: 1.618rem;
+}
+label {
+  margin-bottom: 0;
+}
+ul {
+  padding-left: 1.9416rem;
+}
+ol {
+  padding-left: 2.1034rem;
+}
+li,
+dd {
+  margin-bottom: 0.4045rem;
+}
+dt {
+  font-weight: bold;
+}
+dd {
+  margin-left: 0;
+}
+blockquote {
+  margin-left: 0;
+}
+blockquote cite {
+  display: block;
 }
 h1,
 h2,
@@ -69,4 +100,10 @@ html {
     font-size: 14px;
     background: #f00;
   }
+}
+label span {
+  display: block;
+}
+fieldset {
+  border: 1px solid #000;
 }
