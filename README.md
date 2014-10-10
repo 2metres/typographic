@@ -31,7 +31,8 @@ Just set your `html` selector's base `font-size`, then adjust the `font-size` wi
 ```stylus
 @import 'typographic'
 
-presets(major-sixth)
+t-presets(major-sixth)
+t-headers(helvetica)
 
 html
   font-family: garamond
@@ -42,8 +43,6 @@ html
     font-size: 16px
   @media (min-width: 1000px)
     font-size: 18px
-
-t-headers(helvetica)
 ```
 - `stylus -u typographic -w css/style.styl`
 
