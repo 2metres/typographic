@@ -4,7 +4,7 @@
     "name": "Cory Simmons"
   },
   "main": "typographic.js",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Stylus typography with modular scale, font stacks, and more.",
   "keywords": [
     "stylus",

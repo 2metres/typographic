@@ -1,3 +1,6 @@
+### 1.1.0
+- add coverage to presets
+
 ### 1.0.0
 - namespace everything
 - v1 release
