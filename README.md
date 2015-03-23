@@ -13,7 +13,7 @@ Typographic is responsive typography made easy. Pick a few font stacks, set a fe
 
 ## Installation
 - `bower install typographic`
-- `@import 'typographic'` somewhere in your Stylus stylesheet
+- `@import 'typographic'` somewhere in your stylesheet
 
 
 ## Usage
