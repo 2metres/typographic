@@ -23,6 +23,7 @@ It's as easy as setting a few variables in [typographic.styl](typographic.styl) 
 ## Settings
 ```stylus
 $ratio              = $golden
+$line-height-ratio  = $golden
 $body-font          = $helvetica
 $body-font-weight   = 300
 $body-color         = #666
@@ -105,6 +106,7 @@ $palatino      = Palatino, 'Palatino Linotype', 'Palatino LT STD', "Book Antiqua
   - [respond.js](https://github.com/scottjehl/Respond)
   - [calc-polyfill](https://github.com/closingtag/calc-polyfill)
   - [vminpoly](https://github.com/saabi/vminpoly)
+
 
 ### Credit
 [Mike Riethmuller](http://twitter.com/MikeRiethmuller) came up with the idea of using `calc` with `vw` to create scaling typography [here](http://madebymike.com.au/writing/precise-control-responsive-typography/).

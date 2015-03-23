@@ -1,9 +1,10 @@
-// Typographic v2.0.2 - https://github.com/corysimmons/typographic
+// Typographic v2.0.3 - https://github.com/corysimmons/typographic
 
 
 // Settings
 
 $ratio              = $golden
+$line-height-ratio  = $golden
 $body-font          = $helvetica
 $body-font-weight   = 300
 $body-color         = #666
@@ -78,7 +79,7 @@ html
   $min-font = $min-font + $ratio
   $max-font = $max-font + $ratio
 
-  line-height: ($golden)em
+  line-height: ($line-height-ratio)em
 
   font-family: $body-font
   font-weight: $body-font-weight
@@ -112,13 +113,13 @@ a, code,
 dl, ol, ul,
 form,
 table
-  margin-bottom: ($golden)em
+  margin-bottom: ($line-height-ratio)em
 
 h1, h2, h3, h4, h5, h6
   font-family: $header-font
   font-weight: $header-font-weight
-  line-height: ($golden / 1.5)em
-  margin-bottom: ($golden * .25)em
+  line-height: ($line-height-ratio / 1.5)em
+  margin-bottom: ($line-height-ratio * .25)em
   color: $header-color
 
 h1
@@ -195,14 +196,14 @@ h6
 
 blockquote
   font-style: italic
-  padding-left: ($golden)em
+  padding-left: ($line-height-ratio)em
   border-left: 5px solid darken(white, 7%)
   cite
     display: block
     font-style: normal
 
 pre
-  padding: ($golden * .25)em
+  padding: ($line-height-ratio * .25)em
   background: darken(white, 2%)
   border: 1px solid darken(white, 7%)
   code
@@ -212,7 +213,7 @@ pre
 
 code
   font-family: $courier
-  padding: ($golden * .05)em ($golden * .15)em
+  padding: ($line-height-ratio * .05)em ($line-height-ratio * .15)em
   background: darken(white, 2%)
   border: 1px solid darken(white, 7%)
 
@@ -228,20 +229,20 @@ dt
   font-weight: bold
 
 dd
-  margin-bottom: ($golden * .25)em
+  margin-bottom: ($line-height-ratio * .25)em
 
 ul
   padding-left: 1.1em
   li
-    margin-bottom: ($golden * .25)em
+    margin-bottom: ($line-height-ratio * .25)em
 
 ol
   padding-left: 1.4em
   li
-    margin-bottom: ($golden * .25)em
+    margin-bottom: ($line-height-ratio * .25)em
 
 fieldset
-  padding: ($golden * .5)em
+  padding: ($line-height-ratio * .5)em
   border: 1px solid darken(white, 7%)
 
 legend
@@ -250,10 +251,10 @@ legend
 
 label
   display: block
-  margin-bottom: ($golden * .5)em
+  margin-bottom: ($line-height-ratio * .5)em
 
 input[type="text"], textarea
-  padding: ($golden * .5)em
+  padding: ($line-height-ratio * .5)em
   border: 1px solid darken(white, 7%)
 
 table
@@ -262,7 +263,7 @@ table
   border-collapse: collapse
 
 th
-  padding: ($golden * .5)em
+  padding: ($line-height-ratio * .5)em
   text-align: left
   color: $header-color
   border: 1px solid darken(white, 7%)
@@ -273,5 +274,5 @@ tr
       background: darken(white, 3%)
 
 td
-  padding: ($golden * .5)em
+  padding: ($line-height-ratio * .5)em
   border: 1px solid darken(white, 7%)
