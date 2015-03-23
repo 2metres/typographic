@@ -1,27 +1,8 @@
-<p align="center">
-  <img src="http://corysimmons.github.io/typographic/typographic-logo.svg">
-</p>
-
-<p align="center">
-  <img src="https://img.shields.io/npm/v/typographic.svg">
-  <img src="https://img.shields.io/bower/v/typographic.svg">
-  <img src="http://img.shields.io/npm/dm/typographic.svg">
-</p>
-
-Typographic is responsive typography made easy. Pick a few font stacks, set a few settings, and you've got **beautiful** responsive typography - it's that easy.
+// Typographic v2.0.0 - https://github.com/corysimmons/typographic
 
 
-## Installation
-- `bower install typographic`
-- `@import 'typographic'` somewhere in your Stylus stylesheet
+// Settings
 
-
-## Usage
-It's as easy as setting a few variables in [typographic.styl](typographic.styl] (or letting the defaults do their thing).
-
-
-## Settings
-```stylus
 $ratio              = $golden
 $body-font          = $helvetica
 $body-font-weight   = 300
@@ -33,13 +14,10 @@ $min-font           = 10px
 $max-font           = 16px
 $min-width          = 600px
 $max-width          = 1000px
-```
 
 
-## Ratios
-The ratios are based off of the ratios used on [modular scale](http://www.modularscale.com/).
+// Ratios
 
-```stylus
 $minor-second   = 1.067
 $major-second   = 1.125
 $minor-third    = 1.2
@@ -57,13 +35,8 @@ $major-tenth    = 2.5
 $major-eleventh = 2.667
 $major-twelfth  = 3
 $double-octave  = 4
-```
 
 
-## Font Stacks
-Stacks are picked from A Way Back's [Revised Font Stack](http://www.awayback.com/revised-font-stack/).
-
-```stylus
 // Sans-serif
 
 $calibri       = Calibri, Candara, Segoe, "Segoe UI", Optima, Arial, sans-serif
@@ -96,15 +69,137 @@ $goudy         = 'Goudy Old Style', Garamond, 'Big Caslon', 'Times New Roman', s
 $hoefler       = 'Hoefler Text', 'Baskerville Old Face', Garamond, 'Times New Roman', serif
 $lucida-bright = 'Lucida Bright', Georgia, serif
 $palatino      = Palatino, 'Palatino Linotype', 'Palatino LT STD', "Book Antiqua", Georgia, serif
-```
 
 
-## Browser Support
-- Full support for IE9+
-- IE8 doesn't support [calc](http://caniuse.com/#feat=calc) or [viewport units](http://caniuse.com/#feat=viewport-units) or media queries by default so you shouldn't support it (you will get `$min-font` for all viewport sizes), but if you have a stingy client, you can include these polyfills to at least have it swap between the `$max-font` and `$min-font` at your specified breakpoint.
-  - [respond.js](https://github.com/scottjehl/Respond)
-  - [calc-polyfill](https://github.com/closingtag/calc-polyfill)
-  - [vminpoly](https://github.com/saabi/vminpoly)
+// Functionality
 
-### Credit
-[Mike Riethmuller](http://twitter.com/MikeRiethmuller) came up with the idea of using `calc` with `vw` to create scaling typography [here](http://madebymike.com.au/writing/precise-control-responsive-typography/).
+html
+
+  $min-font = $min-font + $ratio
+  $max-font = $max-font + $ratio
+
+  line-height: ($golden)em
+
+  font-family: $body-font
+  font-weight: $body-font-weight
+  color: $body-color
+
+  font-size: $min-font
+
+  @media (min-width: $min-width)
+    font-size: s('calc( %s + (%s - %s) * ((100vw - %s) / (%s - %s)) )', $min-font, remove-unit($max-font), remove-unit($min-font), $min-width, remove-unit($max-width), remove-unit($min-width))
+
+  @media (min-width: $max-width)
+    font-size: $max-font
+
+
+// Reset
+
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td
+  margin: 0
+  padding: 0
+
+p, blockquote, pre,
+address,
+a, code,
+dl, ol, ul,
+form,
+table
+  margin-bottom: ($golden)em
+
+h1, h2, h3, h4, h5, h6
+  font-family: $header-font
+  font-weight: $header-font-weight
+  line-height: ($golden / 1.5)em
+  margin-bottom: ($golden * .25)em
+  color: $header-color
+
+blockquote
+  font-style: italic
+  padding-left: ($golden)em
+  border-left: 5px solid darken(white, 7%)
+  cite
+    display: block
+    font-style: normal
+
+pre
+  padding: ($golden * .25)em
+  background: darken(white, 2%)
+  border: 1px solid darken(white, 7%)
+  code
+    background: none
+    padding: 0
+    border: 0
+
+code
+  font-family: $courier
+  padding: ($golden * .05)em ($golden * .15)em
+  background: darken(white, 2%)
+  border: 1px solid darken(white, 7%)
+
+abbr, acronym
+  border-bottom: 1px dotted #333
+  cursor: help
+
+address
+  font-style: normal
+
+dt
+  color: $header-color
+  font-weight: bold
+
+dd
+  margin-bottom: ($golden * .25)em
+
+ul
+  padding-left: 1.1em
+  li
+    margin-bottom: ($golden * .25)em
+
+ol
+  padding-left: 1.4em
+  li
+    margin-bottom: ($golden * .25)em
+
+fieldset
+  padding: ($golden * .5)em
+  border: 1px solid darken(white, 7%)
+
+legend
+  color: $header-color
+  font-weight: bold
+
+label
+  display: block
+  margin-bottom: ($golden * .5)em
+
+input[type="text"], textarea
+  padding: ($golden * .5)em
+  border: 1px solid darken(white, 7%)
+
+table
+  width: 100%
+  border-spacing: 0
+  border-collapse: collapse
+
+th
+  padding: ($golden * .5)em
+  text-align: left
+  color: $header-color
+  border: 1px solid darken(white, 7%)
+
+tr
+  &:nth-child(odd)
+    td
+      background: darken(white, 3%)
+
+td
+  padding: ($golden * .5)em
+  border: 1px solid darken(white, 7%)

@@ -1,11 +1,11 @@
 {
   "name": "typographic",
-  "version": "1.1.0",
+  "version": "2.0.0",
   "homepage": "https://github.com/corysimmons/typographic",
   "authors": [
-    "Cory Simmons <csimmonswork@gmail.com>"
+    "Cory Simmons <cory@launchboxhq.com>"
   ],
-  "description": "Quick and dirty responsive typography for the rest of us.",
+  "description": "Responsive typography with modular scale, font stacks, and more.",
   "main": "typographic.js",
   "moduleType": [
     "node"
