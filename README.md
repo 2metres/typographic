@@ -17,7 +17,7 @@ Typographic is responsive typography made easy. Pick a few font stacks, set a fe
 
 
 ## Usage
-It's as easy as setting a few variables in [typographic.styl](typographic.styl] (or letting the defaults do their thing).
+It's as easy as setting a few variables in [typographic.styl](typographic.styl) (or letting the defaults do their thing).
 
 
 ## Settings
