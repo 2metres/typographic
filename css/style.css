@@ -97,6 +97,84 @@ h6 {
   margin-bottom: 0.4045em;
   color: #111;
 }
+h1 {
+  font-size: 29.416px;
+}
+@media (min-width: 600px) {
+  h1 {
+    font-size: calc( 29.416px + (35.416 - 29.416) * ((100vw - 600px) / (1000 - 600)) );
+  }
+}
+@media (min-width: 1000px) {
+  h1 {
+    font-size: 35.416px;
+  }
+}
+h2 {
+  font-size: 26.18px;
+}
+@media (min-width: 600px) {
+  h2 {
+    font-size: calc( 26.18px + (32.18 - 26.18) * ((100vw - 600px) / (1000 - 600)) );
+  }
+}
+@media (min-width: 1000px) {
+  h2 {
+    font-size: 32.18px;
+  }
+}
+h3 {
+  font-size: 22.944000000000003px;
+}
+@media (min-width: 600px) {
+  h3 {
+    font-size: calc( 22.944000000000003px + (28.944000000000003 - 22.944000000000003) * ((100vw - 600px) / (1000 - 600)) );
+  }
+}
+@media (min-width: 1000px) {
+  h3 {
+    font-size: 28.944000000000003px;
+  }
+}
+h4 {
+  font-size: 19.708px;
+}
+@media (min-width: 600px) {
+  h4 {
+    font-size: calc( 19.708px + (25.708 - 19.708) * ((100vw - 600px) / (1000 - 600)) );
+  }
+}
+@media (min-width: 1000px) {
+  h4 {
+    font-size: 25.708px;
+  }
+}
+h5 {
+  font-size: 16.472px;
+}
+@media (min-width: 600px) {
+  h5 {
+    font-size: calc( 16.472px + (22.472 - 16.472) * ((100vw - 600px) / (1000 - 600)) );
+  }
+}
+@media (min-width: 1000px) {
+  h5 {
+    font-size: 22.472px;
+  }
+}
+h6 {
+  font-size: 13.236px;
+}
+@media (min-width: 600px) {
+  h6 {
+    font-size: calc( 13.236px + (19.236 - 13.236) * ((100vw - 600px) / (1000 - 600)) );
+  }
+}
+@media (min-width: 1000px) {
+  h6 {
+    font-size: 19.236px;
+  }
+}
 blockquote {
   font-style: italic;
   padding-left: 1.618em;

@@ -1,4 +1,4 @@
-// Typographic v2.0.1 - https://github.com/corysimmons/typographic
+// Typographic v2.0.2 - https://github.com/corysimmons/typographic
 
 
 // Settings
@@ -120,6 +120,78 @@ h1, h2, h3, h4, h5, h6
   line-height: ($golden / 1.5)em
   margin-bottom: ($golden * .25)em
   color: $header-color
+
+h1
+  $min-font = $min-font + $ratio * 12
+  $max-font = $max-font + $ratio * 12
+
+  font-size: $min-font
+
+  @media (min-width: $min-width)
+    font-size: s('calc( %s + (%s - %s) * ((100vw - %s) / (%s - %s)) )', $min-font, remove-unit($max-font), remove-unit($min-font), $min-width, remove-unit($max-width), remove-unit($min-width))
+
+  @media (min-width: $max-width)
+    font-size: $max-font
+
+h2
+  $min-font = $min-font + $ratio * 10
+  $max-font = $max-font + $ratio * 10
+
+  font-size: $min-font
+
+  @media (min-width: $min-width)
+    font-size: s('calc( %s + (%s - %s) * ((100vw - %s) / (%s - %s)) )', $min-font, remove-unit($max-font), remove-unit($min-font), $min-width, remove-unit($max-width), remove-unit($min-width))
+
+  @media (min-width: $max-width)
+    font-size: $max-font
+
+h3
+  $min-font = $min-font + $ratio * 8
+  $max-font = $max-font + $ratio * 8
+
+  font-size: $min-font
+
+  @media (min-width: $min-width)
+    font-size: s('calc( %s + (%s - %s) * ((100vw - %s) / (%s - %s)) )', $min-font, remove-unit($max-font), remove-unit($min-font), $min-width, remove-unit($max-width), remove-unit($min-width))
+
+  @media (min-width: $max-width)
+    font-size: $max-font
+
+h4
+  $min-font = $min-font + $ratio * 6
+  $max-font = $max-font + $ratio * 6
+
+  font-size: $min-font
+
+  @media (min-width: $min-width)
+    font-size: s('calc( %s + (%s - %s) * ((100vw - %s) / (%s - %s)) )', $min-font, remove-unit($max-font), remove-unit($min-font), $min-width, remove-unit($max-width), remove-unit($min-width))
+
+  @media (min-width: $max-width)
+    font-size: $max-font
+
+h5
+  $min-font = $min-font + $ratio * 4
+  $max-font = $max-font + $ratio * 4
+
+  font-size: $min-font
+
+  @media (min-width: $min-width)
+    font-size: s('calc( %s + (%s - %s) * ((100vw - %s) / (%s - %s)) )', $min-font, remove-unit($max-font), remove-unit($min-font), $min-width, remove-unit($max-width), remove-unit($min-width))
+
+  @media (min-width: $max-width)
+    font-size: $max-font
+
+h6
+  $min-font = $min-font + $ratio * 2
+  $max-font = $max-font + $ratio * 2
+
+  font-size: $min-font
+
+  @media (min-width: $min-width)
+    font-size: s('calc( %s + (%s - %s) * ((100vw - %s) / (%s - %s)) )', $min-font, remove-unit($max-font), remove-unit($min-font), $min-width, remove-unit($max-width), remove-unit($min-width))
+
+  @media (min-width: $max-width)
+    font-size: $max-font
 
 blockquote
   font-style: italic
