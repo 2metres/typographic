@@ -1,3 +1,20 @@
+html {
+  line-height: 1.618em;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-weight: 300;
+  color: #666;
+  font-size: 11.618px;
+}
+@media (min-width: 600px) {
+  html {
+    font-size: calc( 11.618px + (17.618 - 11.618) * ((100vw - 600px) / (1000 - 600)) );
+  }
+}
+@media (min-width: 1000px) {
+  html {
+    font-size: 17.618px;
+  }
+}
 h1,
 h2,
 h3,
@@ -5,67 +22,68 @@ h4,
 h5,
 h6,
 p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
 ul,
-ol {
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td {
   margin: 0;
-}
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  margin-bottom: 0.8335rem;
-}
-h1 {
-  font-size: 3.334rem;
-  line-height: 3.334rem;
-}
-h2 {
-  font-size: 2.91725rem;
-  line-height: 2.91725rem;
-}
-h3 {
-  font-size: 2.5005rem;
-  line-height: 2.5005rem;
-}
-h4 {
-  font-size: 2.08375rem;
-  line-height: 2.08375rem;
-}
-h5 {
-  font-size: 1.667rem;
-  line-height: 1.667rem;
-}
-h6 {
-  font-size: 1.25025rem;
-  line-height: 1.25025rem;
+  padding: 0;
 }
 p,
+blockquote,
+pre,
+address,
+a,
+code,
+dl,
+ol,
 ul,
-ol {
-  font-size: 1.667rem;
-  line-height: 2.08375rem;
-  margin-bottom: 1.667rem;
-}
-html {
-  font-family: Garamond, Baskerville, "Baskerville Old Face", "Hoefler Text", "Times New Roman", serif;
-  font-size: 12px;
-}
-@media (min-width: 600px) {
-  html {
-    font-size: 14px;
-  }
-}
-@media (min-width: 800px) {
-  html {
-    font-size: 16px;
-  }
-}
-@media (min-width: 1000px) {
-  html {
-    font-size: 18px;
-  }
+form,
+table {
+  margin-bottom: 1.618em;
 }
 h1,
 h2,
@@ -73,25 +91,99 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-weight: 500;
+  line-height: 1.078666666666667em;
+  margin-bottom: 0.4045em;
+  color: #111;
+}
+blockquote {
+  font-style: italic;
+  padding-left: 1.618em;
+  border-left: 5px solid #ededed;
+}
+blockquote cite {
+  display: block;
+  font-style: normal;
+}
+pre {
+  padding: 0.4045em;
+  background: #fafafa;
+  border: 1px solid #ededed;
+}
+pre code {
+  background: none;
+  padding: 0;
+  border: 0;
+}
+code {
+  font-family: 'Courier New', Courier, 'Lucida Sans Typewriter', 'Lucida Typewriter', monospace;
+  padding: 0.0809em 0.2427em;
+  background: #fafafa;
+  border: 1px solid #ededed;
+}
+abbr,
+acronym {
+  border-bottom: 1px dotted #333;
+  cursor: help;
+}
+address {
+  font-style: normal;
+}
+dt {
+  color: #111;
+  font-weight: bold;
+}
+dd {
+  margin-bottom: 0.4045em;
+}
+ul {
+  padding-left: 1.1em;
+}
+ul li {
+  margin-bottom: 0.4045em;
+}
+ol {
+  padding-left: 1.4em;
+}
+ol li {
+  margin-bottom: 0.4045em;
+}
+fieldset {
+  padding: 0.809em;
+  border: 1px solid #ededed;
+}
+legend {
+  color: #111;
+  font-weight: bold;
+}
+label {
+  display: block;
+  margin-bottom: 0.809em;
+}
+input[type="text"],
+textarea {
+  padding: 0.809em;
+  border: 1px solid #ededed;
+}
+table {
+  width: 100%;
+  border-spacing: 0;
+  border-collapse: collapse;
+}
+th {
+  padding: 0.809em;
+  text-align: left;
+  color: #111;
+  border: 1px solid #ededed;
+}
+tr:nth-child(odd) td {
+  background: #f7f7f7;
+}
+td {
+  padding: 0.809em;
+  border: 1px solid #ededed;
 }
 html {
-  background: #e74c3c;
-}
-body {
-  margin: 0;
-}
-header {
-  text-align: center;
-  margin: 40px auto;
-}
-header h1 {
-  color: #9b2013;
-}
-article {
-  background: #fff;
-  padding: 40px 20px;
-}
-p:last-child {
-  margin-bottom: 0;
+  padding: 3rem;
 }
