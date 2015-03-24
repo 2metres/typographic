@@ -228,7 +228,7 @@ ol li {
   margin-bottom: 0.4045em;
 }
 fieldset {
-  padding: 0.809em;
+  padding: 0.809em 1.618em 1.618em;
   border: 1px solid #ededed;
 }
 legend {

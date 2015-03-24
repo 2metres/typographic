@@ -1,4 +1,4 @@
-// Typographic v2.0.3 - https://github.com/corysimmons/typographic
+// Typographic v2.1.1 - https://github.com/corysimmons/typographic
 
 
 // Ratios
@@ -104,6 +104,7 @@ html {
 
 }
 
+
 // Reset
 
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
@@ -136,8 +137,8 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 h1 {
-  $min-font: $min-font + $ratio * 12;
-  $max-font: $max-font + $ratio * 12;
+  $min-font: $min-font + ($ratio * 9);
+  $max-font: $max-font + ($ratio * 9);
 
   font-size: $min-font;
 
@@ -151,8 +152,8 @@ h1 {
 }
 
 h2 {
-  $min-font: $min-font + $ratio * 10;
-  $max-font: $max-font + $ratio * 10;
+  $min-font: $min-font + ($ratio * 7.2);
+  $max-font: $max-font + ($ratio * 7.2);
 
   font-size: $min-font;
 
@@ -166,8 +167,8 @@ h2 {
 }
 
 h3 {
-  $min-font: $min-font + $ratio * 8;
-  $max-font: $max-font + $ratio * 8;
+  $min-font: $min-font + ($ratio * 5.4);
+  $max-font: $max-font + ($ratio * 5.4);
 
   font-size: $min-font;
 
@@ -181,8 +182,8 @@ h3 {
 }
 
 h4 {
-  $min-font: $min-font + $ratio * 6;
-  $max-font: $max-font + $ratio * 6;
+  $min-font: $min-font + ($ratio * 3.6);
+  $max-font: $max-font + ($ratio * 3.6);
 
   font-size: $min-font;
 
@@ -196,8 +197,8 @@ h4 {
 }
 
 h5 {
-  $min-font: $min-font + $ratio * 4;
-  $max-font: $max-font + $ratio * 4;
+  $min-font: $min-font + ($ratio * 1.8);
+  $max-font: $max-font + ($ratio * 1.8);
 
   font-size: $min-font;
 
@@ -211,9 +212,6 @@ h5 {
 }
 
 h6 {
-  $min-font: $min-font + $ratio * 2;
-  $max-font: $max-font + $ratio * 2;
-
   font-size: $min-font;
 
   @media (min-width: $min-width) {
@@ -286,7 +284,7 @@ ol {
 }
 
 fieldset {
-  padding: ($line-height-ratio * .5) + em;
+  padding: ($line-height-ratio * .5) + em ($line-height-ratio) + em ($line-height-ratio) + em;
   border: 1px solid darken(white, 7%);
 }
 
