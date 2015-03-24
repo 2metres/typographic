@@ -13,11 +13,11 @@ Typographic is responsive typography made easy. Pick a few font stacks, set a fe
 
 ## Installation
 - `bower install typographic`
-- `@import 'typographic'` somewhere in your stylesheet
+- `@import` Typographic somewhere in your stylesheet
 
 
 ## Usage
-It's as easy as setting a few variables in [typographic.styl](typographic.styl) (or letting the defaults do their thing).
+It's as easy as setting a few variables (or letting the defaults do their thing).
 
 
 ## Settings
