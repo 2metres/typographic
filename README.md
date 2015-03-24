@@ -100,6 +100,28 @@ $palatino      = Palatino, 'Palatino Linotype', 'Palatino LT STD', "Book Antiqua
 ```
 
 
+## Usage with Node
+```javascript
+var fs = require('fs'),
+    stylus = require('stylus'),
+    typographic = require('typographic');
+
+stylus(fs.readFileSync('./foo.styl', 'utf8'))
+  .use(typographic())
+  .render(function(err, css){
+    if (err) return console.error(err);
+    console.log(css);
+  });
+```
+
+```stylus
+@import 'typographic'
+
+html
+  padding: 3rem
+```
+
+
 ## Browser Support
 - Full support for IE9+
 - IE8 doesn't support [calc](http://caniuse.com/#feat=calc) or [viewport units](http://caniuse.com/#feat=viewport-units) or media queries by default so you shouldn't support it (you will get `$min-font` for all viewport sizes), but if you have a stingy client, you can include these polyfills to at least have it swap between the `$max-font` and `$min-font` at your specified breakpoint.
