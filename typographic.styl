@@ -1,10 +1,10 @@
-// Typographic v2.0.4 - https://github.com/corysimmons/typographic
+// Typographic v2.1.0 - https://github.com/corysimmons/typographic
 
 
 // Settings
 
-$ratio              = $perfect-fifth
-$line-height-ratio  = $perfect-fifth
+$ratio              = $golden
+$line-height-ratio  = $golden
 $body-font          = $helvetica
 $body-font-weight   = 300
 $body-color         = #666
@@ -74,43 +74,18 @@ $palatino      = Palatino, 'Palatino Linotype', 'Palatino LT STD', "Book Antiqua
 
 // Functionality
 
-px(amount, ignore-base = false)
-  if unit(amount) == "%"
-    amount = percent(base-font-size, ignore-base) / percent(base-font-size, true) * (amount / 100) * 16
-  else if unit(amount) == "em" or unit(amount) == "rem"
-    amount = em(base-font-size, ignore-base) / em(base-font-size, true) * amount * 16
-  else if unit(amount) == "pt"
-    amount = pt(base-font-size, ignore-base) / pt(base-font-size, true) * (amount / 14) * 16
-  else if unit(amount) == "px" or unit(amount) == ""
-    if (unit(base-font-size) != "px") && !ignore-base
-      amount = px(base-font-size, true) / 16 * amount
-    else if !ignore-base
-      amount = base-font-size / 16 * amount
-  unit(amount, "px")
-
-em(amount, ignore-base = false)
-  if unit(amount) == "%"
-    amount = percent(base-font-size, ignore-base) / percent(base-font-size, true) * (amount / 100)
-  else if unit(amount) == "px"
-    amount = px(base-font-size, ignore-base) / px(base-font-size, true) * (amount / 16)
-  else if unit(amount) == "pt"
-    amount = pt(base-font-size, ignore-base) / pt(base-font-size, true) * (amount / 14)
-  else if unit(amount) == "em" or unit(amount) == "rem" or unit(amount) == ""
-    if (unit(base-font-size) != "em") && !ignore-base
-      amount = em(base-font-size, true) * amount
-    else if !ignore-base
-      amount = base-font-size * amount
-  unit(amount, "em")
-
-
 html
+
+  $min-font = $min-font + $ratio
+  $max-font = $max-font + $ratio
+
+  line-height: ($line-height-ratio)em
 
   font-family: $body-font
   font-weight: $body-font-weight
   color: $body-color
 
   font-size: $min-font
-  line-height: $line-height-ratio
 
   @media (min-width: $min-width)
     font-size: s('calc( %s + (%s - %s) * ((100vw - %s) / (%s - %s)) )', $min-font, remove-unit($max-font), remove-unit($min-font), $min-width, remove-unit($max-width), remove-unit($min-width))
@@ -143,10 +118,13 @@ table
 h1, h2, h3, h4, h5, h6
   font-family: $header-font
   font-weight: $header-font-weight
+  line-height: ($line-height-ratio / 1.5)em
+  margin-bottom: ($line-height-ratio * .25)em
   color: $header-color
 
 h1
-  $max-font = $max-font + $ratio * 12
+  $min-font = $min-font * ($ratio ** 1.25)
+  $max-font = $max-font * ($ratio ** 1.25)
 
   font-size: $min-font
 
@@ -155,12 +133,10 @@ h1
 
   @media (min-width: $max-width)
     font-size: $max-font
-    line-height: ((remove-unit(px(($line-height-ratio)em)) / remove-unit($max-font)) * 1.5)em
-    margin-bottom: ((remove-unit(px(($line-height-ratio)em)) / remove-unit($max-font)) * .5)em
 
 h2
-  $min-font = $min-font + $ratio * 10
-  $max-font = $max-font + $ratio * 10
+  $min-font = $min-font * $ratio
+  $max-font = $max-font * $ratio
 
   font-size: $min-font
 
@@ -169,12 +145,10 @@ h2
 
   @media (min-width: $max-width)
     font-size: $max-font
-    line-height: ((remove-unit(px(($line-height-ratio)em)) / remove-unit($max-font)) * 1.5)em
-    margin-bottom: ((remove-unit(px(($line-height-ratio)em)) / remove-unit($max-font)) * .5)em
 
 h3
-  $min-font = $min-font + $ratio * 8
-  $max-font = $max-font + $ratio * 8
+  $min-font = $min-font * ($ratio ** .75)
+  $max-font = $max-font * ($ratio ** .75)
 
   font-size: $min-font
 
@@ -183,12 +157,10 @@ h3
 
   @media (min-width: $max-width)
     font-size: $max-font
-    line-height: ((remove-unit(px(($line-height-ratio)em)) / remove-unit($max-font)) * 1.5)em
-    margin-bottom: ((remove-unit(px(($line-height-ratio)em)) / remove-unit($max-font)) * .5)em
 
 h4
-  $min-font = $min-font + $ratio * 6
-  $max-font = $max-font + $ratio * 6
+  $min-font = $min-font * ($ratio ** .5)
+  $max-font = $max-font * ($ratio ** .5)
 
   font-size: $min-font
 
@@ -197,12 +169,10 @@ h4
 
   @media (min-width: $max-width)
     font-size: $max-font
-    line-height: ((remove-unit(px(($line-height-ratio)em)) / remove-unit($max-font)) * 1.5)em
-    margin-bottom: ((remove-unit(px(($line-height-ratio)em)) / remove-unit($max-font)) * .5)em
 
 h5
-  $min-font = $min-font + $ratio * 4
-  $max-font = $max-font + $ratio * 4
+  $min-font = $min-font * ($ratio ** .25)
+  $max-font = $max-font * ($ratio ** .25)
 
   font-size: $min-font
 
@@ -211,12 +181,10 @@ h5
 
   @media (min-width: $max-width)
     font-size: $max-font
-    line-height: ((remove-unit(px(($line-height-ratio)em)) / remove-unit($max-font)) * 1.5)em
-    margin-bottom: ((remove-unit(px(($line-height-ratio)em)) / remove-unit($max-font)) * .5)em
 
 h6
-  $min-font = $min-font + $ratio * 2
-  $max-font = $max-font + $ratio * 2
+  $min-font = $min-font
+  $max-font = $max-font
 
   font-size: $min-font
 
@@ -225,8 +193,6 @@ h6
 
   @media (min-width: $max-width)
     font-size: $max-font
-    line-height: ((remove-unit(px(($line-height-ratio)em)) / remove-unit($max-font)) * 1.5)em
-    margin-bottom: ((remove-unit(px(($line-height-ratio)em)) / remove-unit($max-font)) * .5)em
 
 blockquote
   font-style: italic
@@ -237,9 +203,9 @@ blockquote
     font-style: normal
 
 pre
-  padding: ($line-height-ratio * .5)em
+  padding: ($line-height-ratio * .25)em
   background: darken(white, 2%)
-  line-height: ((remove-unit(px(($line-height-ratio)em)) / remove-unit($max-font)) * 1)em
+  border: 1px solid darken(white, 7%)
   code
     background: none
     padding: 0
@@ -249,10 +215,7 @@ code
   font-family: $courier
   padding: ($line-height-ratio * .05)em ($line-height-ratio * .15)em
   background: darken(white, 2%)
-  line-height: 0
-
-big, sup, sub
-  line-height: 0
+  border: 1px solid darken(white, 7%)
 
 abbr, acronym
   border-bottom: 1px dotted #333
@@ -265,19 +228,22 @@ dt
   color: $header-color
   font-weight: bold
 
+dd
+  margin-bottom: ($line-height-ratio * .25)em
+
 ul
   padding-left: 1.1em
+  li
+    margin-bottom: ($line-height-ratio * .25)em
 
 ol
   padding-left: 1.4em
+  li
+    margin-bottom: ($line-height-ratio * .25)em
 
 fieldset
-  padding: ((remove-unit(px(($line-height-ratio)em)) / remove-unit($max-font)) * 1)em
+  padding: ($line-height-ratio * .5)em
   border: 1px solid darken(white, 7%)
-  margin-bottom: ((remove-unit(px(($line-height-ratio)em)) / remove-unit($max-font)) * 1.395)em
-  input[type="text"], textarea
-    &:last-child
-      margin-bottom: 0
 
 legend
   color: $header-color
@@ -285,37 +251,28 @@ legend
 
 label
   display: block
+  margin-bottom: ($line-height-ratio * .5)em
 
 input[type="text"], textarea
-  padding: 0 ($line-height-ratio * .5)em
-  line-height: ($line-height-ratio * 1.5)em
+  padding: ($line-height-ratio * .5)em
   border: 1px solid darken(white, 7%)
-  margin-bottom: ((remove-unit(px(($line-height-ratio)em)) / remove-unit($max-font)) * .45)em
-
-input[type="text"]
-  font-size: $max-font
-
-textarea
-  display: block
 
 table
   width: 100%
   border-spacing: 0
   border-collapse: collapse
-  margin-top: ((remove-unit(px(($line-height-ratio)em)) / remove-unit($max-font)) * 1.75)em
-  position: relative
-  top: -1px
-  margin-bottom: ((remove-unit(px(($line-height-ratio)em)) / remove-unit($max-font)) * 1.75 - .063)em
 
 th
-  color: $header-color
-
-th, td
-  padding: ((remove-unit(px(($line-height-ratio)em)) / remove-unit($max-font)) * .25)em ((remove-unit(px(($line-height-ratio)em)) / remove-unit($max-font)) * .25)em ((remove-unit(px(($line-height-ratio)em)) / remove-unit($max-font)) * .225)em
+  padding: ($line-height-ratio * .5)em
   text-align: left
+  color: $header-color
   border: 1px solid darken(white, 7%)
 
 tr
   &:nth-child(odd)
     td
       background: darken(white, 3%)
+
+td
+  padding: ($line-height-ratio * .5)em
+  border: 1px solid darken(white, 7%)
