@@ -1,18 +1,18 @@
 html {
-  line-height: 1.618em;
   font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-weight: 300;
   color: #666;
-  font-size: 11.618px;
+  font-size: 10px;
+  line-height: 1.5;
 }
 @media (min-width: 600px) {
   html {
-    font-size: calc( 11.618px + (17.618 - 11.618) * ((100vw - 600px) / (1000 - 600)) );
+    font-size: calc( 10px + (16 - 10) * ((100vw - 600px) / (1000 - 600)) );
   }
 }
 @media (min-width: 1000px) {
   html {
-    font-size: 17.618px;
+    font-size: 16px;
   }
 }
 h1,
@@ -83,7 +83,7 @@ ol,
 ul,
 form,
 table {
-  margin-bottom: 1.618em;
+  margin-bottom: 1.5em;
 }
 h1,
 h2,
@@ -93,91 +93,101 @@ h5,
 h6 {
   font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-weight: 500;
-  line-height: 1.078666666666667em;
-  margin-bottom: 0.4045em;
   color: #111;
 }
 h1 {
-  font-size: 29.416px;
+  font-size: 10px;
 }
 @media (min-width: 600px) {
   h1 {
-    font-size: calc( 29.416px + (35.416 - 29.416) * ((100vw - 600px) / (1000 - 600)) );
+    font-size: calc( 10px + (34 - 10) * ((100vw - 600px) / (1000 - 600)) );
   }
 }
 @media (min-width: 1000px) {
   h1 {
-    font-size: 35.416px;
+    font-size: 34px;
+    line-height: 1.058823529411765em;
+    margin-bottom: 0.352941176470588em;
   }
 }
 h2 {
-  font-size: 26.18px;
+  font-size: 25px;
 }
 @media (min-width: 600px) {
   h2 {
-    font-size: calc( 26.18px + (32.18 - 26.18) * ((100vw - 600px) / (1000 - 600)) );
+    font-size: calc( 25px + (31 - 25) * ((100vw - 600px) / (1000 - 600)) );
   }
 }
 @media (min-width: 1000px) {
   h2 {
-    font-size: 32.18px;
+    font-size: 31px;
+    line-height: 1.161290322580645em;
+    margin-bottom: 0.387096774193548em;
   }
 }
 h3 {
-  font-size: 22.944000000000003px;
+  font-size: 22px;
 }
 @media (min-width: 600px) {
   h3 {
-    font-size: calc( 22.944000000000003px + (28.944000000000003 - 22.944000000000003) * ((100vw - 600px) / (1000 - 600)) );
+    font-size: calc( 22px + (28 - 22) * ((100vw - 600px) / (1000 - 600)) );
   }
 }
 @media (min-width: 1000px) {
   h3 {
-    font-size: 28.944000000000003px;
+    font-size: 28px;
+    line-height: 1.285714285714286em;
+    margin-bottom: 0.428571428571428em;
   }
 }
 h4 {
-  font-size: 19.708px;
+  font-size: 19px;
 }
 @media (min-width: 600px) {
   h4 {
-    font-size: calc( 19.708px + (25.708 - 19.708) * ((100vw - 600px) / (1000 - 600)) );
+    font-size: calc( 19px + (25 - 19) * ((100vw - 600px) / (1000 - 600)) );
   }
 }
 @media (min-width: 1000px) {
   h4 {
-    font-size: 25.708px;
+    font-size: 25px;
+    line-height: 1.44em;
+    margin-bottom: 0.48em;
   }
 }
 h5 {
-  font-size: 16.472px;
+  font-size: 16px;
 }
 @media (min-width: 600px) {
   h5 {
-    font-size: calc( 16.472px + (22.472 - 16.472) * ((100vw - 600px) / (1000 - 600)) );
+    font-size: calc( 16px + (22 - 16) * ((100vw - 600px) / (1000 - 600)) );
   }
 }
 @media (min-width: 1000px) {
   h5 {
-    font-size: 22.472px;
+    font-size: 22px;
+    line-height: 1.636363636363637em;
+    margin-bottom: 0.545454545454546em;
   }
 }
 h6 {
-  font-size: 13.236px;
+  font-size: 13px;
 }
 @media (min-width: 600px) {
   h6 {
-    font-size: calc( 13.236px + (19.236 - 13.236) * ((100vw - 600px) / (1000 - 600)) );
+    font-size: calc( 13px + (19 - 13) * ((100vw - 600px) / (1000 - 600)) );
   }
 }
 @media (min-width: 1000px) {
   h6 {
-    font-size: 19.236px;
+    font-size: 19px;
+    line-height: 1.894736842105263em;
+    margin-bottom: 0.631578947368421em;
   }
 }
 blockquote {
   font-style: italic;
-  padding-left: 1.618em;
+  padding-left: 1.5em;
   border-left: 5px solid #ededed;
 }
 blockquote cite {
@@ -185,9 +195,9 @@ blockquote cite {
   font-style: normal;
 }
 pre {
-  padding: 0.4045em;
+  padding: 0.75em;
   background: #fafafa;
-  border: 1px solid #ededed;
+  line-height: 1.5em;
 }
 pre code {
   background: none;
@@ -196,9 +206,14 @@ pre code {
 }
 code {
   font-family: 'Courier New', Courier, 'Lucida Sans Typewriter', 'Lucida Typewriter', monospace;
-  padding: 0.0809em 0.2427em;
+  padding: 0.075em 0.225em;
   background: #fafafa;
-  border: 1px solid #ededed;
+  line-height: 0;
+}
+big,
+sup,
+sub {
+  line-height: 0;
 }
 abbr,
 acronym {
@@ -212,24 +227,20 @@ dt {
   color: #111;
   font-weight: bold;
 }
-dd {
-  margin-bottom: 0.4045em;
-}
 ul {
   padding-left: 1.1em;
-}
-ul li {
-  margin-bottom: 0.4045em;
 }
 ol {
   padding-left: 1.4em;
 }
-ol li {
-  margin-bottom: 0.4045em;
-}
 fieldset {
-  padding: 0.809em;
+  padding: 1.5em;
   border: 1px solid #ededed;
+  margin-bottom: 2.0925em;
+}
+fieldset input[type="text"]:last-child,
+fieldset textarea:last-child {
+  margin-bottom: 0;
 }
 legend {
   color: #111;
@@ -237,33 +248,45 @@ legend {
 }
 label {
   display: block;
-  margin-bottom: 0.809em;
 }
 input[type="text"],
 textarea {
-  padding: 0.809em;
+  padding: 0 0.75em;
+  line-height: 2.25em;
   border: 1px solid #ededed;
+  margin-bottom: 0.675em;
+}
+input[type="text"] {
+  font-size: 16px;
+}
+textarea {
+  display: block;
 }
 table {
   width: 100%;
   border-spacing: 0;
   border-collapse: collapse;
+  margin-top: 2.625em;
+  position: relative;
+  top: -1px;
+  margin-bottom: 2.562em;
 }
 th {
-  padding: 0.809em;
-  text-align: left;
   color: #111;
+}
+th,
+td {
+  padding: 0.375em 0.375em 0.3375em;
+  text-align: left;
   border: 1px solid #ededed;
 }
 tr:nth-child(odd) td {
   background: #f7f7f7;
 }
-td {
-  padding: 0.809em;
-  border: 1px solid #ededed;
+* {
+  box-sizing: border-box;
 }
 html {
-  padding: 3rem;
   text-align: center;
 }
 @media (max-width: 800px) {
@@ -273,10 +296,17 @@ html {
 }
 .logo {
   margin-bottom: 3rem;
-  display: block;
+  display: inline-block;
+  display: none;
 }
 .wrap {
   max-width: 980px;
   margin: auto;
   text-align: left;
+}
+body {
+  background: linear-gradient(to top, rgba(0,0,0,0.1) 5%, #fff 5%);
+  background-size: 100% 1.5em;
+  background-position: 0 -0.375em;
+  margin: 0;
 }

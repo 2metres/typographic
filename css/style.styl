@@ -1,16 +1,26 @@
 @import '../typographic'
 
+*
+  box-sizing: border-box
+
 html
-  padding: 3rem
+  // padding: 3rem
   text-align: center
   @media (max-width: 800px)
     text-align: left
 
 .logo
   margin-bottom: 3rem
-  display: block
+  display: inline-block
+  display: none
 
 .wrap
   max-width: 980px
   margin: auto
   text-align: left
+
+body
+  background: linear-gradient(to top, rgba(black, 10%) 5%, white 5%)
+  background-size: 100% ($line-height-ratio)em
+  background-position: 0 ($line-height-ratio * -.25)em
+  margin: 0
