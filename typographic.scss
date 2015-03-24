@@ -148,8 +148,8 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 h1 {
-  $min-font: $min-font + _pow($ratio, 12);
-  $max-font: $max-font + _pow($ratio, 12);
+  $min-font: $min-font * _pow($ratio, 12);
+  $max-font: $max-font * _pow($ratio, 12);
 
   font-size: $min-font;
 
@@ -163,8 +163,8 @@ h1 {
 }
 
 h2 {
-  $min-font: $min-font + _pow($ratio, 10);
-  $max-font: $max-font + _pow($ratio, 10);
+  $min-font: $min-font * _pow($ratio, 10);
+  $max-font: $max-font * _pow($ratio, 10);
 
   font-size: $min-font;
 
@@ -178,8 +178,8 @@ h2 {
 }
 
 h3 {
-  $min-font: $min-font + _pow($ratio, 8);
-  $max-font: $max-font + _pow($ratio, 8);
+  $min-font: $min-font * _pow($ratio, 8);
+  $max-font: $max-font * _pow($ratio, 8);
 
   font-size: $min-font;
 
@@ -193,8 +193,8 @@ h3 {
 }
 
 h4 {
-  $min-font: $min-font + _pow($ratio, 6);
-  $max-font: $max-font + _pow($ratio, 6);
+  $min-font: $min-font * _pow($ratio, 6);
+  $max-font: $max-font * _pow($ratio, 6);
 
   font-size: $min-font;
 
@@ -208,8 +208,8 @@ h4 {
 }
 
 h5 {
-  $min-font: $min-font + _pow($ratio, 4);
-  $max-font: $max-font + _pow($ratio, 4);
+  $min-font: $min-font * _pow($ratio, 4);
+  $max-font: $max-font * _pow($ratio, 4);
 
   font-size: $min-font;
 
@@ -223,8 +223,8 @@ h5 {
 }
 
 h6 {
-  $min-font: $min-font + _pow($ratio, 2);
-  $max-font: $max-font + _pow($ratio, 2);
+  $min-font: $min-font * _pow($ratio, 2);
+  $max-font: $max-font * _pow($ratio, 2);
 
   font-size: $min-font;
 
