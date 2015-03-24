@@ -1,4 +1,4 @@
-// Typographic v2.0.3 - https://github.com/corysimmons/typographic
+// Typographic v2.1.0 - https://github.com/corysimmons/typographic
 
 
 // Settings
@@ -123,8 +123,8 @@ h1, h2, h3, h4, h5, h6
   color: $header-color
 
 h1
-  $min-font = $min-font * ($ratio ** 12)
-  $max-font = $max-font * ($ratio ** 12)
+  $min-font = $min-font * ($ratio ** 1.25)
+  $max-font = $max-font * ($ratio ** 1.25)
 
   font-size: $min-font
 
@@ -135,8 +135,8 @@ h1
     font-size: $max-font
 
 h2
-  $min-font = $min-font * ($ratio ** 10)
-  $max-font = $max-font * ($ratio ** 10)
+  $min-font = $min-font * $ratio
+  $max-font = $max-font * $ratio
 
   font-size: $min-font
 
@@ -147,8 +147,8 @@ h2
     font-size: $max-font
 
 h3
-  $min-font = $min-font * ($ratio ** 8)
-  $max-font = $max-font * ($ratio ** 8)
+  $min-font = $min-font * ($ratio ** .75)
+  $max-font = $max-font * ($ratio ** .75)
 
   font-size: $min-font
 
@@ -159,8 +159,8 @@ h3
     font-size: $max-font
 
 h4
-  $min-font = $min-font * ($ratio ** 6)
-  $max-font = $max-font * ($ratio ** 6)
+  $min-font = $min-font * ($ratio ** .5)
+  $max-font = $max-font * ($ratio ** .5)
 
   font-size: $min-font
 
@@ -171,8 +171,8 @@ h4
     font-size: $max-font
 
 h5
-  $min-font = $min-font * ($ratio ** 4)
-  $max-font = $max-font * ($ratio ** 4)
+  $min-font = $min-font * ($ratio ** .25)
+  $max-font = $max-font * ($ratio ** .25)
 
   font-size: $min-font
 
@@ -183,9 +183,6 @@ h5
     font-size: $max-font
 
 h6
-  $min-font = $min-font * ($ratio ** 2)
-  $max-font = $max-font * ($ratio ** 2)
-
   font-size: $min-font
 
   @media (min-width: $min-width)
