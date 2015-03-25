@@ -106,7 +106,7 @@ var fs = require('fs'),
     stylus = require('stylus'),
     typographic = require('typographic');
 
-stylus(fs.readFileSync('./foo.styl', 'utf8'))
+stylus(fs.readFileSync('./css/style.styl', 'utf8'))
   .use(typographic())
   .render(function(err, css){
     if (err) return console.error(err);
