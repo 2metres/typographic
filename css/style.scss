@@ -31,10 +31,9 @@ html {
 
 body {
   margin: 0;
-  background: linear-gradient(to top, rgba(black, .1) 5%, white 5%);
-  background-size: 100% ($line-height-ratio) + em;
-  background-position: 0 0;
 }
+
+@include grid-overlay(blue);
 
 img {
   display: block;
@@ -46,6 +45,6 @@ img {
   border-radius: 999em;
   &.vr-block {
     height: vr-block(6);
-    margin-bottom: vr-block(.5);
+    margin-bottom: vr-block();
   }
 }

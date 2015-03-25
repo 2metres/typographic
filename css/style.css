@@ -299,7 +299,9 @@ html {
 }
 body {
   margin: 0;
-  background: linear-gradient(to top, rgba(0,0,0,0.1) 5%, #fff 5%);
+}
+body {
+  background: linear-gradient(to top, rgba(0,0,255,0.1) 5%, #fff 5%);
   background-size: 100% 1.75em;
 }
 img {
@@ -312,5 +314,5 @@ img {
 }
 .img-left.vr-block {
   height: 10.5em;
-  margin-bottom: 0.875em;
+  margin-bottom: 1.75em;
 }

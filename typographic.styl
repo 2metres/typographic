@@ -74,12 +74,18 @@ $palatino      = Palatino, 'Palatino Linotype', 'Palatino LT STD', "Book Antiqua
 
 // Helpers
 
-vr-block(n = 1, px-offset = false)
-  if px-offset
-    return ( (($line-height-ratio * $max-font) / ($max-font / 2)) * (n / 2) * (1 + (px-offset / $max-font)) )em
-  else
-    return ( (($line-height-ratio * $max-font) / ($max-font / 2)) * (n / 2) )em
+grid-overlay($color = black, $px-offset = false)
+  body
+    background: linear-gradient(to top, rgba($color, 10%) 5%, white 5%)
+    background-size: 100% ($line-height-ratio)em
+    if $px-offset
+      background-position: 0 unit($px-offset, 'px')
 
+vr-block($n = 1, $px-offset = false)
+  if $px-offset
+    return ( (($line-height-ratio * $max-font) / ($max-font / 2)) * ($n / 2) * (1 + ($px-offset / $max-font)) )em
+  else
+    return ( (($line-height-ratio * $max-font) / ($max-font / 2)) * ($n / 2) )em
 
 
 // Typography Reset

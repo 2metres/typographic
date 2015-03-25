@@ -72,9 +72,6 @@ $min-width          : 600px;
 $max-width          : 1000px;
 
 
-
-// Typography Reset
-
 // Helpers
 
 @function _strip-units($number) {
@@ -89,7 +86,19 @@ $max-width          : 1000px;
   }
 }
 
-// Decimal exponents - https://gist.github.com/davidkpiano/ad6e6771df050ff3727f
+@mixin grid-overlay($color: black, $px-offset: false) {
+  body {
+    background: linear-gradient(to top, rgba($color, .1) 5%, white 5%);
+    background-size: 100% ($line-height-ratio) + em;
+    @if($px-offset) {
+      background-position: 0 $px-offset + px;
+    }
+  }
+}
+
+
+// Private Decimal Exponent Function
+
 @function math-pow($number, $exp) {
     @if (round($exp) != $exp) {
       @return math-exp($exp * math-ln($number));
