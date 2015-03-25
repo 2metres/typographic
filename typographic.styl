@@ -1,4 +1,4 @@
-// Typographic v2.2.0 - https://github.com/corysimmons/typographic
+// Typographic v2.3.2 - https://github.com/corysimmons/typographic
 
 
 // Settings
@@ -74,213 +74,221 @@ $palatino      = Palatino, 'Palatino Linotype', 'Palatino LT STD', "Book Antiqua
 
 // Helpers
 
-vr-block(n = 1)
-  return ( (($line-height-ratio * $min-font) / ($min-font / 2)) * (n / 2) )em
+vr-block(n = 1, px-offset = false)
+  if px-offset
+    return ( (($line-height-ratio * $max-font) / ($max-font / 2)) * (n / 2) * (1 + (px-offset / $max-font)) )em
+  else
+    return ( (($line-height-ratio * $max-font) / ($max-font / 2)) * (n / 2) )em
+
+
 
 // Typography Reset
 
-html
+typographic()
 
-  font-family: $body-font
-  font-weight: $body-font-weight
-  color: $body-color
+  html
 
-  font-size: $min-font
-  line-height: ($line-height-ratio)em
+    font-family: $body-font
+    font-weight: $body-font-weight
+    color: $body-color
 
-  @media (min-width: $min-width)
-    font-size: s('calc( %s + (%s - %s) * ((100vw - %s) / (%s - %s)) )', $min-font, remove-unit($max-font), remove-unit($min-font), $min-width, remove-unit($max-width), remove-unit($min-width))
+    font-size: $min-font
+    line-height: ($line-height-ratio)em
 
-  @media (min-width: $max-width)
-    font-size: $max-font
+    @media (min-width: $min-width)
+      font-size: s('calc( %s + (%s - %s) * ((100vw - %s) / (%s - %s)) )', $min-font, remove-unit($max-font), remove-unit($min-font), $min-width, remove-unit($max-width), remove-unit($min-width))
 
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td
-  margin: 0
-  padding: 0
+    @media (min-width: $max-width)
+      font-size: $max-font
 
-p, blockquote, pre,
-address,
-a, code,
-dl, ol, ul,
-form,
-table
-  margin-bottom: ($line-height-ratio)em
+  h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+  a, abbr, acronym, address, big, cite, code,
+  del, dfn, em, img, ins, kbd, q, s, samp,
+  small, strike, strong, sub, sup, tt, var,
+  b, u, i, center,
+  dl, dt, dd, ol, ul, li,
+  fieldset, form, label, legend,
+  table, caption, tbody, tfoot, thead, tr, th, td
+    margin: 0
+    padding: 0
 
-h1, h2, h3, h4, h5, h6
-  font-family: $header-font
-  font-weight: $header-font-weight
-  color: $header-color
-  margin-bottom: 0
-  clear: both
+  p, blockquote, pre,
+  address,
+  a, code,
+  dl, ol, ul,
+  form,
+  table
+    margin-bottom: ($line-height-ratio)em
 
-h1
-  $local-min-font = $min-font * ($header-ratio ** 1.75)
-  $local-max-font = $max-font * ($header-ratio ** 1.75)
+  h1, h2, h3, h4, h5, h6
+    font-family: $header-font
+    font-weight: $header-font-weight
+    color: $header-color
+    margin-bottom: 0
+    clear: both
 
-  font-size: $local-min-font
-  line-height: (($line-height-ratio * $min-font) / ($local-min-font / 2))em
+  h1
+    $local-min-font = $min-font * ($header-ratio ** 1.75)
+    $local-max-font = $max-font * ($header-ratio ** 1.75)
 
-  @media (min-width: $min-width)
-    font-size: s('calc( %s + (%s - %s) * ((100vw - %s) / (%s - %s)) )', $local-min-font, remove-unit($local-max-font), remove-unit($local-min-font), $min-width, remove-unit($max-width), remove-unit($min-width))
+    font-size: $local-min-font
+    line-height: (($line-height-ratio * $min-font) / ($local-min-font / 2))em
 
-  @media (min-width: $max-width)
-    font-size: $local-max-font
-    line-height: (($line-height-ratio * $max-font) / ($local-max-font / 2))em
+    @media (min-width: $min-width)
+      font-size: s('calc( %s + (%s - %s) * ((100vw - %s) / (%s - %s)) )', $local-min-font, remove-unit($local-max-font), remove-unit($local-min-font), $min-width, remove-unit($max-width), remove-unit($min-width))
 
-h2
-  $local-min-font = $min-font * ($header-ratio ** 1.4)
-  $local-max-font = $max-font * ($header-ratio ** 1.4)
+    @media (min-width: $max-width)
+      font-size: $local-max-font
+      line-height: (($line-height-ratio * $max-font) / ($local-max-font / 2))em
 
-  font-size: $local-min-font
-  line-height: (($line-height-ratio * $min-font) / ($local-min-font / 2))em
+  h2
+    $local-min-font = $min-font * ($header-ratio ** 1.4)
+    $local-max-font = $max-font * ($header-ratio ** 1.4)
 
-  @media (min-width: $min-width)
-    font-size: s('calc( %s + (%s - %s) * ((100vw - %s) / (%s - %s)) )', $local-min-font, remove-unit($local-max-font), remove-unit($local-min-font), $min-width, remove-unit($max-width), remove-unit($min-width))
+    font-size: $local-min-font
+    line-height: (($line-height-ratio * $min-font) / ($local-min-font / 2))em
 
-  @media (min-width: $max-width)
-    font-size: $local-max-font
-    line-height: (($line-height-ratio * $max-font) / ($local-max-font / 2))em
+    @media (min-width: $min-width)
+      font-size: s('calc( %s + (%s - %s) * ((100vw - %s) / (%s - %s)) )', $local-min-font, remove-unit($local-max-font), remove-unit($local-min-font), $min-width, remove-unit($max-width), remove-unit($min-width))
 
-h3
-  $local-min-font = $min-font * ($header-ratio ** 1.05)
-  $local-max-font = $max-font * ($header-ratio ** 1.05)
+    @media (min-width: $max-width)
+      font-size: $local-max-font
+      line-height: (($line-height-ratio * $max-font) / ($local-max-font / 2))em
 
-  font-size: $local-min-font
-  line-height: (($line-height-ratio * $min-font) / ($local-min-font / 2))em
+  h3
+    $local-min-font = $min-font * ($header-ratio ** 1.05)
+    $local-max-font = $max-font * ($header-ratio ** 1.05)
 
-  @media (min-width: $min-width)
-    font-size: s('calc( %s + (%s - %s) * ((100vw - %s) / (%s - %s)) )', $local-min-font, remove-unit($local-max-font), remove-unit($local-min-font), $min-width, remove-unit($max-width), remove-unit($min-width))
+    font-size: $local-min-font
+    line-height: (($line-height-ratio * $min-font) / ($local-min-font / 2))em
 
-  @media (min-width: $max-width)
-    font-size: $local-max-font
-    line-height: (($line-height-ratio * $max-font) / ($local-max-font / 2))em
+    @media (min-width: $min-width)
+      font-size: s('calc( %s + (%s - %s) * ((100vw - %s) / (%s - %s)) )', $local-min-font, remove-unit($local-max-font), remove-unit($local-min-font), $min-width, remove-unit($max-width), remove-unit($min-width))
 
-h4
-  $local-min-font = $min-font * ($header-ratio ** .7)
-  $local-max-font = $max-font * ($header-ratio ** .7)
+    @media (min-width: $max-width)
+      font-size: $local-max-font
+      line-height: (($line-height-ratio * $max-font) / ($local-max-font / 2))em
 
-  font-size: $local-min-font
-  line-height: (($line-height-ratio * $min-font) / ($local-min-font / 2))em
+  h4
+    $local-min-font = $min-font * ($header-ratio ** .7)
+    $local-max-font = $max-font * ($header-ratio ** .7)
 
-  @media (min-width: $min-width)
-    font-size: s('calc( %s + (%s - %s) * ((100vw - %s) / (%s - %s)) )', $local-min-font, remove-unit($local-max-font), remove-unit($local-min-font), $min-width, remove-unit($max-width), remove-unit($min-width))
+    font-size: $local-min-font
+    line-height: (($line-height-ratio * $min-font) / ($local-min-font / 2))em
 
-  @media (min-width: $max-width)
-    font-size: $local-max-font
-    line-height: (($line-height-ratio * $max-font) / ($local-max-font / 2))em
+    @media (min-width: $min-width)
+      font-size: s('calc( %s + (%s - %s) * ((100vw - %s) / (%s - %s)) )', $local-min-font, remove-unit($local-max-font), remove-unit($local-min-font), $min-width, remove-unit($max-width), remove-unit($min-width))
 
-h5
-  $local-min-font = $min-font * ($header-ratio ** .35)
-  $local-max-font = $max-font * ($header-ratio ** .35)
+    @media (min-width: $max-width)
+      font-size: $local-max-font
+      line-height: (($line-height-ratio * $max-font) / ($local-max-font / 2))em
 
-  font-size: $local-min-font
-  line-height: (($line-height-ratio * $min-font) / ($local-min-font / 2))em
+  h5
+    $local-min-font = $min-font * ($header-ratio ** .35)
+    $local-max-font = $max-font * ($header-ratio ** .35)
 
-  @media (min-width: $min-width)
-    font-size: s('calc( %s + (%s - %s) * ((100vw - %s) / (%s - %s)) )', $local-min-font, remove-unit($local-max-font), remove-unit($local-min-font), $min-width, remove-unit($max-width), remove-unit($min-width))
+    font-size: $local-min-font
+    line-height: (($line-height-ratio * $min-font) / ($local-min-font / 2))em
 
-  @media (min-width: $max-width)
-    font-size: $local-max-font
-    line-height: (($line-height-ratio * $max-font) / ($local-max-font / 2))em
+    @media (min-width: $min-width)
+      font-size: s('calc( %s + (%s - %s) * ((100vw - %s) / (%s - %s)) )', $local-min-font, remove-unit($local-max-font), remove-unit($local-min-font), $min-width, remove-unit($max-width), remove-unit($min-width))
 
-h6
-  $local-min-font = $min-font
-  $local-max-font = $max-font
+    @media (min-width: $max-width)
+      font-size: $local-max-font
+      line-height: (($line-height-ratio * $max-font) / ($local-max-font / 2))em
 
-  font-size: $local-min-font
-  line-height: (($line-height-ratio * $min-font) / ($local-min-font / 2))em
+  h6
+    $local-min-font = $min-font
+    $local-max-font = $max-font
 
-  @media (min-width: $min-width)
-    font-size: s('calc( %s + (%s - %s) * ((100vw - %s) / (%s - %s)) )', $local-min-font, remove-unit($local-max-font), remove-unit($local-min-font), $min-width, remove-unit($max-width), remove-unit($min-width))
+    font-size: $local-min-font
+    line-height: (($line-height-ratio * $min-font) / ($local-min-font / 2))em
 
-  @media (min-width: $max-width)
-    font-size: $local-max-font
-    line-height: (($line-height-ratio * $max-font) / ($local-max-font / 2))em
+    @media (min-width: $min-width)
+      font-size: s('calc( %s + (%s - %s) * ((100vw - %s) / (%s - %s)) )', $local-min-font, remove-unit($local-max-font), remove-unit($local-min-font), $min-width, remove-unit($max-width), remove-unit($min-width))
 
-blockquote
-  font-style: italic
-  padding-left: ($line-height-ratio)em
-  border-left: 5px solid darken(white, 7%)
-  cite
-    display: block
+    @media (min-width: $max-width)
+      font-size: $local-max-font
+      line-height: (($line-height-ratio * $max-font) / ($local-max-font / 2))em
+
+  blockquote
+    font-style: italic
+    padding-left: ($line-height-ratio)em
+    border-left: 5px solid darken(white, 7%)
+    cite
+      display: block
+      font-style: normal
+
+  pre
+    padding: vr-block(.5)
+    background: darken(white, 2%)
+    margin-bottom: vr-block(1, -1)
+    code
+      background: none
+      padding: 0
+      border: 0
+
+  code
+    font-family: $courier
+    padding: ($line-height-ratio * .05)em ($line-height-ratio * .15)em
+    background: darken(white, 2%)
+    line-height: 0
+
+  big, sub, sup
+    line-height: 0
+
+  abbr, acronym
+    border-bottom: 1px dotted #333
+    cursor: help
+
+  address
     font-style: normal
 
-pre
-  padding: ($line-height-ratio * .5)em
-  background: darken(white, 2%)
-  border: 1px solid darken(white, 7%)
-  margin-bottom: (($line-height-ratio * $max-font) / ($max-font / 2) * (.475 * (15 / $max-font)))em
-  code
-    background: none
-    padding: 0
-    border: 0
+  dt
+    color: $header-color
+    font-weight: bold
 
-code
-  font-family: $courier
-  padding: ($line-height-ratio * .05)em ($line-height-ratio * .15)em
-  background: darken(white, 2%)
-  line-height: 0
-  border: 1px solid darken(white, 7%)
+  ul
+    padding-left: 1.1em
 
-big, sub, sup
-  line-height: 0
+  ol
+    padding-left: 1.4em
 
-abbr, acronym
-  border-bottom: 1px dotted #333
-  cursor: help
+  fieldset
+    padding: ($line-height-ratio * .5)em ($line-height-ratio)em ($line-height-ratio)em
+    border: 1px solid darken(white, 7%)
 
-address
-  font-style: normal
+  legend
+    color: $header-color
+    font-weight: bold
 
-dt
-  color: $header-color
-  font-weight: bold
+  label
+    display: block
+    margin-bottom: ($line-height-ratio * .5)em
 
-ul
-  padding-left: 1.1em
+  input[type="text"], textarea
+    padding: ($line-height-ratio * .5)em
+    border: 1px solid darken(white, 7%)
 
-ol
-  padding-left: 1.4em
+  table
+    width: 100%
+    border-spacing: 0
+    border-collapse: collapse
 
-fieldset
-  padding: ($line-height-ratio * .5)em ($line-height-ratio)em ($line-height-ratio)em
-  border: 1px solid darken(white, 7%)
+  th
+    padding: ($line-height-ratio * .5)em
+    text-align: left
+    color: $header-color
+    border: 1px solid darken(white, 7%)
 
-legend
-  color: $header-color
-  font-weight: bold
+  tr
+    &:nth-child(odd)
+      td
+        background: darken(white, 3%)
 
-label
-  display: block
-  margin-bottom: ($line-height-ratio * .5)em
+  td
+    padding: ($line-height-ratio * .5)em
+    border: 1px solid darken(white, 7%)
 
-input[type="text"], textarea
-  padding: ($line-height-ratio * .5)em
-  border: 1px solid darken(white, 7%)
 
-table
-  width: 100%
-  border-spacing: 0
-  border-collapse: collapse
-
-th
-  padding: ($line-height-ratio * .5)em
-  text-align: left
-  color: $header-color
-  border: 1px solid darken(white, 7%)
-
-tr
-  &:nth-child(odd)
-    td
-      background: darken(white, 3%)
-
-td
-  padding: ($line-height-ratio * .5)em
-  border: 1px solid darken(white, 7%)
+typographic()

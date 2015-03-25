@@ -46,6 +46,6 @@ img {
   border-radius: 999em;
   &.vr-block {
     height: vr-block(6);
-    margin-bottom: vr-block();
+    margin-bottom: vr-block(.5);
   }
 }

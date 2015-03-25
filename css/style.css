@@ -199,8 +199,7 @@ blockquote cite {
 pre {
   padding: 0.875em;
   background: #fafafa;
-  border: 1px solid #ededed;
-  margin-bottom: 1.246875em;
+  margin-bottom: 1.6625em;
 }
 pre code {
   background: none;
@@ -212,7 +211,6 @@ code {
   padding: 0.0875em 0.2625em;
   background: #fafafa;
   line-height: 0;
-  border: 1px solid #ededed;
 }
 big,
 sub,
@@ -314,5 +312,5 @@ img {
 }
 .img-left.vr-block {
   height: 10.5em;
-  margin-bottom: 1.75em;
+  margin-bottom: 0.875em;
 }

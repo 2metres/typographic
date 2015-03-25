@@ -1,4 +1,4 @@
-// Typographic v2.2.0 - https://github.com/corysimmons/typographic
+// Typographic v2.3.2 - https://github.com/corysimmons/typographic
 
 
 // Ratios
@@ -72,17 +72,21 @@ $min-width          : 600px;
 $max-width          : 1000px;
 
 
-// Helpers
-
-@function vr-block($n: 1) {
-  @return ( (($line-height-ratio * $min-font) / ($min-font / 2)) * ($n / 2) ) + em;
-}
-
 
 // Typography Reset
 
+// Helpers
+
 @function _strip-units($number) {
   @return $number / ($number * 0 + 1);
+}
+
+@function vr-block($n: 1, $px-offset: false) {
+  @if($px-offset) {
+    @return ( (($line-height-ratio * _strip-units($max-font)) / (_strip-units($max-font) / 2)) * ($n / 2) * (1 + ($px-offset / _strip-units($max-font))) ) + em;
+  } @else {
+    @return ( (($line-height-ratio * _strip-units($max-font)) / (_strip-units($max-font) / 2)) * ($n / 2) ) + em;
+  }
 }
 
 // Decimal exponents - https://gist.github.com/davidkpiano/ad6e6771df050ff3727f
@@ -160,259 +164,265 @@ $max-width          : 1000px;
 }
 
 
-// Functionality
+// Typography Reset
 
-html {
+@mixin typographic() {
 
-  font-family: $body-font;
-  font-weight: $body-font-weight;
-  color: $body-color;
+  html {
 
-  font-size: $min-font;
-  line-height: #{$line-height-ratio}em;
+    font-family: $body-font;
+    font-weight: $body-font-weight;
+    color: $body-color;
 
-  @media (min-width: $min-width) {
-    font-size: calc( #{$min-font} + (#{_strip-units($max-font)} - #{_strip-units($min-font)}) * ((100vw - #{$min-width}) / (#{_strip-units($max-width)} - #{_strip-units($min-width)})) );
+    font-size: $min-font;
+    line-height: #{$line-height-ratio}em;
+
+    @media (min-width: $min-width) {
+      font-size: calc( #{$min-font} + (#{_strip-units($max-font)} - #{_strip-units($min-font)}) * ((100vw - #{$min-width}) / (#{_strip-units($max-width)} - #{_strip-units($min-width)})) );
+    }
+
+    @media (min-width: $max-width) {
+      font-size: $max-font;
+    }
+
   }
 
-  @media (min-width: $max-width) {
-    font-size: $max-font;
-  }
 
-}
+  // Reset
 
-
-// Reset
-
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td {
-  margin: 0;
-  padding: 0;
-}
-
-p, blockquote, pre,
-address,
-a, code,
-dl, ol, ul,
-form,
-table {
-  margin-bottom: #{$line-height-ratio}em;
-}
-
-h1, h2, h3, h4, h5, h6 {
-  font-family: $header-font;
-  font-weight: $header-font-weight;
-  color: $header-color;
-  margin-bottom: 0;
-  clear: both;
-}
-
-h1 {
-  $local-min-font: $min-font * (math-pow($header-ratio, 1.75));
-  $local-max-font: $max-font * (math-pow($header-ratio, 1.75));
-
-  font-size: $local-min-font;
-  line-height: (($line-height-ratio * $min-font) / ($local-min-font / 2)) + em;
-
-  @media (min-width: $min-width) {
-    font-size: calc( #{$local-min-font} + (#{_strip-units($local-max-font)} - #{_strip-units($local-min-font)}) * ((100vw - #{$min-width}) / (#{_strip-units($max-width)} - #{_strip-units($min-width)})) );
-  }
-
-  @media (min-width: $max-width) {
-    font-size: $local-max-font;
-    line-height: (($line-height-ratio * $max-font) / ($local-max-font / 2)) + em;
-  }
-}
-
-h2 {
-  $local-min-font: $min-font * (math-pow($header-ratio, 1.4));
-  $local-max-font: $max-font * (math-pow($header-ratio, 1.4));
-
-  font-size: $local-min-font;
-  line-height: (($line-height-ratio * $min-font) / ($local-min-font / 2)) + em;
-
-  @media (min-width: $min-width) {
-    font-size: calc( #{$local-min-font} + (#{_strip-units($local-max-font)} - #{_strip-units($local-min-font)}) * ((100vw - #{$min-width}) / (#{_strip-units($max-width)} - #{_strip-units($min-width)})) );
-  }
-
-  @media (min-width: $max-width) {
-    font-size: $local-max-font;
-    line-height: (($line-height-ratio * $max-font) / ($local-max-font / 2)) + em;
-  }
-}
-
-h3 {
-  $local-min-font: $min-font * (math-pow($header-ratio, 1.05));
-  $local-max-font: $max-font * (math-pow($header-ratio, 1.05));
-
-  font-size: $local-min-font;
-  line-height: (($line-height-ratio * $min-font) / ($local-min-font / 2)) + em;
-
-  @media (min-width: $min-width) {
-    font-size: calc( #{$local-min-font} + (#{_strip-units($local-max-font)} - #{_strip-units($local-min-font)}) * ((100vw - #{$min-width}) / (#{_strip-units($max-width)} - #{_strip-units($min-width)})) );
-  }
-
-  @media (min-width: $max-width) {
-    font-size: $local-max-font;
-    line-height: (($line-height-ratio * $max-font) / ($local-max-font / 2)) + em;
-  }
-}
-
-h4 {
-  $local-min-font: $min-font * (math-pow($header-ratio, .7));
-  $local-max-font: $max-font * (math-pow($header-ratio, .7));
-
-  font-size: $local-min-font;
-  line-height: (($line-height-ratio * $min-font) / ($local-min-font / 2)) + em;
-
-  @media (min-width: $min-width) {
-    font-size: calc( #{$local-min-font} + (#{_strip-units($local-max-font)} - #{_strip-units($local-min-font)}) * ((100vw - #{$min-width}) / (#{_strip-units($max-width)} - #{_strip-units($min-width)})) );
-  }
-
-  @media (min-width: $max-width) {
-    font-size: $local-max-font;
-    line-height: (($line-height-ratio * $max-font) / ($local-max-font / 2)) + em;
-  }
-}
-
-h5 {
-  $local-min-font: $min-font * (math-pow($header-ratio, .35));
-  $local-max-font: $max-font * (math-pow($header-ratio, .35));
-
-  font-size: $local-min-font;
-  line-height: (($line-height-ratio * $min-font) / ($local-min-font / 2)) + em;
-
-  @media (min-width: $min-width) {
-    font-size: calc( #{$local-min-font} + (#{_strip-units($local-max-font)} - #{_strip-units($local-min-font)}) * ((100vw - #{$min-width}) / (#{_strip-units($max-width)} - #{_strip-units($min-width)})) );
-  }
-
-  @media (min-width: $max-width) {
-    font-size: $local-max-font;
-    line-height: (($line-height-ratio * $max-font) / ($local-max-font / 2)) + em;
-  }
-}
-
-h6 {
-  $local-min-font: $min-font;
-  $local-max-font: $max-font;
-
-  font-size: $local-min-font;
-  line-height: (($line-height-ratio * $min-font) / ($local-min-font / 2)) + em;
-
-  @media (min-width: $min-width) {
-    font-size: calc( #{$local-min-font} + (#{_strip-units($local-max-font)} - #{_strip-units($local-min-font)}) * ((100vw - #{$min-width}) / (#{_strip-units($max-width)} - #{_strip-units($min-width)})) );
-  }
-
-  @media (min-width: $max-width) {
-    font-size: $local-max-font;
-    line-height: (($line-height-ratio * $max-font) / ($local-max-font / 2)) + em;
-  }
-}
-
-blockquote {
-  font-style: italic;
-  padding-left: #{$line-height-ratio}em;
-  border-left: 5px solid darken(white, 7%);
-  cite {
-    display: block;
-    font-style: normal;
-  }
-}
-
-pre {
-  padding: ($line-height-ratio * .5) + em;
-  background: darken(white, 2%);
-  border: 1px solid darken(white, 7%);
-  margin-bottom: (($line-height-ratio * _strip-units($max-font)) / (_strip-units($max-font) / 2) * (.475 * (15 / _strip-units($max-font)))) + em;
-  code {
-    background: none;
+  h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+  a, abbr, acronym, address, big, cite, code,
+  del, dfn, em, img, ins, kbd, q, s, samp,
+  small, strike, strong, sub, sup, tt, var,
+  b, u, i, center,
+  dl, dt, dd, ol, ul, li,
+  fieldset, form, label, legend,
+  table, caption, tbody, tfoot, thead, tr, th, td {
+    margin: 0;
     padding: 0;
-    border: 0;
   }
-}
 
-code {
-  font-family: $courier;
-  padding: ($line-height-ratio * .05) + em ($line-height-ratio * .15) + em;
-  background: darken(white, 2%);
-  line-height: 0;
-  border: 1px solid darken(white, 7%);
-}
+  p, blockquote, pre,
+  address,
+  a, code,
+  dl, ol, ul,
+  form,
+  table {
+    margin-bottom: #{$line-height-ratio}em;
+  }
 
-big, sub, sup {
-  line-height: 0;
-}
+  h1, h2, h3, h4, h5, h6 {
+    font-family: $header-font;
+    font-weight: $header-font-weight;
+    color: $header-color;
+    margin-bottom: 0;
+    clear: both;
+  }
 
-abbr, acronym {
-  border-bottom: 1px dotted #333;
-  cursor: help;
-}
+  h1 {
+    $local-min-font: $min-font * (math-pow($header-ratio, 1.75));
+    $local-max-font: $max-font * (math-pow($header-ratio, 1.75));
 
-address {
-  font-style: normal;
-}
+    font-size: $local-min-font;
+    line-height: (($line-height-ratio * $min-font) / ($local-min-font / 2)) + em;
 
-dt {
-  color: $header-color;
-  font-weight: bold;
-}
+    @media (min-width: $min-width) {
+      font-size: calc( #{$local-min-font} + (#{_strip-units($local-max-font)} - #{_strip-units($local-min-font)}) * ((100vw - #{$min-width}) / (#{_strip-units($max-width)} - #{_strip-units($min-width)})) );
+    }
 
-ul {
-  padding-left: 1.1em;
-}
-
-ol {
-  padding-left: 1.4em;
-}
-
-fieldset {
-  padding: ($line-height-ratio * .5) + em ($line-height-ratio) + em ($line-height-ratio) + em;
-  border: 1px solid darken(white, 7%);
-}
-
-legend {
-  color: $header-color;
-  font-weight: bold;
-}
-
-label {
-  display: block;
-  margin-bottom: ($line-height-ratio * .5) + em;
-}
-
-input[type="text"], textarea {
-  padding: ($line-height-ratio * .5) + em;
-  border: 1px solid darken(white, 7%);
-}
-
-table {
-  width: 100%;
-  border-spacing: 0;
-  border-collapse: collapse;
-}
-
-th {
-  padding: ($line-height-ratio * .5) + em;
-  text-align: left;
-  color: $header-color;
-  border: 1px solid darken(white, 7%);
-}
-
-tr {
-  &:nth-child(odd) {
-    td {
-      background: darken(white, 3%);
+    @media (min-width: $max-width) {
+      font-size: $local-max-font;
+      line-height: (($line-height-ratio * $max-font) / ($local-max-font / 2)) + em;
     }
   }
+
+  h2 {
+    $local-min-font: $min-font * (math-pow($header-ratio, 1.4));
+    $local-max-font: $max-font * (math-pow($header-ratio, 1.4));
+
+    font-size: $local-min-font;
+    line-height: (($line-height-ratio * $min-font) / ($local-min-font / 2)) + em;
+
+    @media (min-width: $min-width) {
+      font-size: calc( #{$local-min-font} + (#{_strip-units($local-max-font)} - #{_strip-units($local-min-font)}) * ((100vw - #{$min-width}) / (#{_strip-units($max-width)} - #{_strip-units($min-width)})) );
+    }
+
+    @media (min-width: $max-width) {
+      font-size: $local-max-font;
+      line-height: (($line-height-ratio * $max-font) / ($local-max-font / 2)) + em;
+    }
+  }
+
+  h3 {
+    $local-min-font: $min-font * (math-pow($header-ratio, 1.05));
+    $local-max-font: $max-font * (math-pow($header-ratio, 1.05));
+
+    font-size: $local-min-font;
+    line-height: (($line-height-ratio * $min-font) / ($local-min-font / 2)) + em;
+
+    @media (min-width: $min-width) {
+      font-size: calc( #{$local-min-font} + (#{_strip-units($local-max-font)} - #{_strip-units($local-min-font)}) * ((100vw - #{$min-width}) / (#{_strip-units($max-width)} - #{_strip-units($min-width)})) );
+    }
+
+    @media (min-width: $max-width) {
+      font-size: $local-max-font;
+      line-height: (($line-height-ratio * $max-font) / ($local-max-font / 2)) + em;
+    }
+  }
+
+  h4 {
+    $local-min-font: $min-font * (math-pow($header-ratio, .7));
+    $local-max-font: $max-font * (math-pow($header-ratio, .7));
+
+    font-size: $local-min-font;
+    line-height: (($line-height-ratio * $min-font) / ($local-min-font / 2)) + em;
+
+    @media (min-width: $min-width) {
+      font-size: calc( #{$local-min-font} + (#{_strip-units($local-max-font)} - #{_strip-units($local-min-font)}) * ((100vw - #{$min-width}) / (#{_strip-units($max-width)} - #{_strip-units($min-width)})) );
+    }
+
+    @media (min-width: $max-width) {
+      font-size: $local-max-font;
+      line-height: (($line-height-ratio * $max-font) / ($local-max-font / 2)) + em;
+    }
+  }
+
+  h5 {
+    $local-min-font: $min-font * (math-pow($header-ratio, .35));
+    $local-max-font: $max-font * (math-pow($header-ratio, .35));
+
+    font-size: $local-min-font;
+    line-height: (($line-height-ratio * $min-font) / ($local-min-font / 2)) + em;
+
+    @media (min-width: $min-width) {
+      font-size: calc( #{$local-min-font} + (#{_strip-units($local-max-font)} - #{_strip-units($local-min-font)}) * ((100vw - #{$min-width}) / (#{_strip-units($max-width)} - #{_strip-units($min-width)})) );
+    }
+
+    @media (min-width: $max-width) {
+      font-size: $local-max-font;
+      line-height: (($line-height-ratio * $max-font) / ($local-max-font / 2)) + em;
+    }
+  }
+
+  h6 {
+    $local-min-font: $min-font;
+    $local-max-font: $max-font;
+
+    font-size: $local-min-font;
+    line-height: (($line-height-ratio * $min-font) / ($local-min-font / 2)) + em;
+
+    @media (min-width: $min-width) {
+      font-size: calc( #{$local-min-font} + (#{_strip-units($local-max-font)} - #{_strip-units($local-min-font)}) * ((100vw - #{$min-width}) / (#{_strip-units($max-width)} - #{_strip-units($min-width)})) );
+    }
+
+    @media (min-width: $max-width) {
+      font-size: $local-max-font;
+      line-height: (($line-height-ratio * $max-font) / ($local-max-font / 2)) + em;
+    }
+  }
+
+  blockquote {
+    font-style: italic;
+    padding-left: #{$line-height-ratio}em;
+    border-left: 5px solid darken(white, 7%);
+    cite {
+      display: block;
+      font-style: normal;
+    }
+  }
+
+  pre {
+    padding: ($line-height-ratio * .5) + em;
+    background: darken(white, 2%);
+    border: 1px solid darken(white, 7%);
+    margin-bottom: vr-block(1, -1);
+    code {
+      background: none;
+      padding: 0;
+      border: 0;
+    }
+  }
+
+  code {
+    font-family: $courier;
+    padding: ($line-height-ratio * .05) + em ($line-height-ratio * .15) + em;
+    background: darken(white, 2%);
+    line-height: 0;
+    border: 1px solid darken(white, 7%);
+  }
+
+  big, sub, sup {
+    line-height: 0;
+  }
+
+  abbr, acronym {
+    border-bottom: 1px dotted #333;
+    cursor: help;
+  }
+
+  address {
+    font-style: normal;
+  }
+
+  dt {
+    color: $header-color;
+    font-weight: bold;
+  }
+
+  ul {
+    padding-left: 1.1em;
+  }
+
+  ol {
+    padding-left: 1.4em;
+  }
+
+  fieldset {
+    padding: ($line-height-ratio * .5) + em ($line-height-ratio) + em ($line-height-ratio) + em;
+    border: 1px solid darken(white, 7%);
+  }
+
+  legend {
+    color: $header-color;
+    font-weight: bold;
+  }
+
+  label {
+    display: block;
+    margin-bottom: ($line-height-ratio * .5) + em;
+  }
+
+  input[type="text"], textarea {
+    padding: ($line-height-ratio * .5) + em;
+    border: 1px solid darken(white, 7%);
+  }
+
+  table {
+    width: 100%;
+    border-spacing: 0;
+    border-collapse: collapse;
+  }
+
+  th {
+    padding: ($line-height-ratio * .5) + em;
+    text-align: left;
+    color: $header-color;
+    border: 1px solid darken(white, 7%);
+  }
+
+  tr {
+    &:nth-child(odd) {
+      td {
+        background: darken(white, 3%);
+      }
+    }
+  }
+
+  td {
+    padding: ($line-height-ratio * .5) + em;
+    border: 1px solid darken(white, 7%);
+  }
+
 }
 
-td {
-  padding: ($line-height-ratio * .5) + em;
-  border: 1px solid darken(white, 7%);
-}
+@include typographic;
