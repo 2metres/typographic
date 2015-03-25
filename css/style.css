@@ -301,7 +301,6 @@ html {
 }
 body {
   margin: 0;
-  background: -webkit-linear-gradient(bottom, rgba(0,0,0,0.1) 5%, #fff 5%);
   background: linear-gradient(to top, rgba(0,0,0,0.1) 5%, #fff 5%);
   background-size: 100% 1.75em;
 }
