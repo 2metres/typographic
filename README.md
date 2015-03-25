@@ -109,6 +109,8 @@ The preview grid mixin is easy. It accepts a color and a positive or negative pi
 grid-overlay(blue, 2)
 ```
 
+> **Note** `grid-overlay()` behaves somewhat funny in smaller viewports when `$min-font` is set to an odd number. This is due to a floating issue. Just something to keep in mind if your vertical rhythm looks haywire on smaller devices. Fear not, it's fine.
+
 The other helper is the `vr-block()` function, which returns sizes of your vertical rhythm. For instance, if you want to include an image that takes up 6 vertical units `height` and has a `margin-bottom` of 1 vertical unit (as in [our demo](http://corysimmons.github.io/typographic/)), you could create it like this:
 
 ```stylus
