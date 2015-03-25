@@ -304,6 +304,12 @@ body {
   background: linear-gradient(to top, rgba(0,0,255,0.1) 5%, #fff 5%);
   background-size: 100% 1.75em;
 }
+@media (max-width: 1000px) {
+  body {
+    background: linear-gradient(to top, rgba(255,255,255,0.1) 5%, #fff 5%);
+    background-size: 100% 1.75em;
+  }
+}
 img {
   display: block;
 }
