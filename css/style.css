@@ -2,12 +2,12 @@ html {
   font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-weight: 300;
   color: #666;
-  font-size: 10px;
+  font-size: 13px;
   line-height: 1.75em;
 }
 @media (min-width: 600px) {
   html {
-    font-size: calc( 10px + (16 - 10) * ((100vw - 600px) / (1000 - 600)) );
+    font-size: calc( 13px + (16 - 13) * ((100vw - 600px) / (1000 - 600)) );
   }
 }
 @media (min-width: 1000px) {
@@ -173,12 +173,12 @@ h5 {
   }
 }
 h6 {
-  font-size: 10px;
+  font-size: 13px;
   line-height: 3.5em;
 }
 @media (min-width: 600px) {
   h6 {
-    font-size: calc( 10px + (16 - 10) * ((100vw - 600px) / (1000 - 600)) );
+    font-size: calc( 13px + (16 - 13) * ((100vw - 600px) / (1000 - 600)) );
   }
 }
 @media (min-width: 1000px) {
