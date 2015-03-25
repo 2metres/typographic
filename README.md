@@ -138,3 +138,10 @@ html
 - [Mike Riethmuller](http://twitter.com/MikeRiethmuller) came up with the idea of using `calc` with `vw` to create scaling typography [here](http://madebymike.com.au/writing/precise-control-responsive-typography/).
 - [Scott Kellum](https://twitter.com/scottkellum) and [Tim Brown](https://twitter.com/timbrown) for [Modular Scale](http://www.modularscale.com/).
 - [David Khourshid](https://twitter.com/davidkpiano) for calculating [decimal exponents](https://gist.github.com/davidkpiano/ad6e6771df050ff3727f) in Sass.
+
+
+### Other Projects
+If you like this project then I encourage you to check out a few of my other projects that go well with Typographic.
+
+- [Lost Grid](https://github.com/corysimmons/lost) - Quite simply the best grid out there in every comparison available. Simple yet incredibly powerful.
+- [Boy](https://github.com/corysimmons/boy) - A super lightweight, old-browser-friendly, HTML5 boilerplate with tons of features that make it a great start to any project.
