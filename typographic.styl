@@ -1,10 +1,10 @@
-// Typographic v2.1.1 - https://github.com/corysimmons/typographic
+// Typographic v2.2.0 - https://github.com/corysimmons/typographic
 
 
 // Settings
 
-$ratio              = $golden
-$line-height-ratio  = $golden
+$line-height-ratio  = 1.75
+$header-ratio       = $golden
 $body-font          = $helvetica
 $body-font-weight   = 300
 $body-color         = #666
@@ -72,29 +72,22 @@ $lucida-bright = 'Lucida Bright', Georgia, serif
 $palatino      = Palatino, 'Palatino Linotype', 'Palatino LT STD', "Book Antiqua", Georgia, serif
 
 
-// Functionality
+// Typography Reset
 
 html
-
-  $min-font = $min-font + $ratio
-  $max-font = $max-font + $ratio
-
-  line-height: ($line-height-ratio)em
 
   font-family: $body-font
   font-weight: $body-font-weight
   color: $body-color
 
   font-size: $min-font
+  line-height: ($line-height-ratio)em
 
   @media (min-width: $min-width)
     font-size: s('calc( %s + (%s - %s) * ((100vw - %s) / (%s - %s)) )', $min-font, remove-unit($max-font), remove-unit($min-font), $min-width, remove-unit($max-width), remove-unit($min-width))
 
   @media (min-width: $max-width)
     font-size: $max-font
-
-
-// Reset
 
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -118,78 +111,98 @@ table
 h1, h2, h3, h4, h5, h6
   font-family: $header-font
   font-weight: $header-font-weight
-  line-height: ($line-height-ratio / 1.5)em
-  margin-bottom: ($line-height-ratio * .25)em
   color: $header-color
+  margin-bottom: 0
+  clear: both
 
 h1
-  $min-font = $min-font * ($ratio ** 1.25)
-  $max-font = $max-font * ($ratio ** 1.25)
+  $local-min-font = $min-font * ($header-ratio ** 1.75)
+  $local-max-font = $max-font * ($header-ratio ** 1.75)
 
-  font-size: $min-font
+  font-size: $local-min-font
+  line-height: (($line-height-ratio * $min-font) / ($local-min-font / 2))em
 
   @media (min-width: $min-width)
-    font-size: s('calc( %s + (%s - %s) * ((100vw - %s) / (%s - %s)) )', $min-font, remove-unit($max-font), remove-unit($min-font), $min-width, remove-unit($max-width), remove-unit($min-width))
+    font-size: s('calc( %s + (%s - %s) * ((100vw - %s) / (%s - %s)) )', $local-min-font, remove-unit($local-max-font), remove-unit($local-min-font), $min-width, remove-unit($max-width), remove-unit($min-width))
 
   @media (min-width: $max-width)
-    font-size: $max-font
+    font-size: $local-max-font
+    line-height: (($line-height-ratio * $max-font) / ($local-max-font / 2))em
 
 h2
-  $min-font = $min-font * $ratio
-  $max-font = $max-font * $ratio
+  $local-min-font = $min-font * ($header-ratio ** 1.4)
+  $local-max-font = $max-font * ($header-ratio ** 1.4)
 
-  font-size: $min-font
+  font-size: $local-min-font
+  line-height: (($line-height-ratio * $min-font) / ($local-min-font / 2))em
 
   @media (min-width: $min-width)
-    font-size: s('calc( %s + (%s - %s) * ((100vw - %s) / (%s - %s)) )', $min-font, remove-unit($max-font), remove-unit($min-font), $min-width, remove-unit($max-width), remove-unit($min-width))
+    font-size: s('calc( %s + (%s - %s) * ((100vw - %s) / (%s - %s)) )', $local-min-font, remove-unit($local-max-font), remove-unit($local-min-font), $min-width, remove-unit($max-width), remove-unit($min-width))
 
   @media (min-width: $max-width)
-    font-size: $max-font
+    font-size: $local-max-font
+    line-height: (($line-height-ratio * $max-font) / ($local-max-font / 2))em
 
 h3
-  $min-font = $min-font * ($ratio ** .75)
-  $max-font = $max-font * ($ratio ** .75)
+  $local-min-font = $min-font * ($header-ratio ** 1.05)
+  $local-max-font = $max-font * ($header-ratio ** 1.05)
 
-  font-size: $min-font
+  font-size: $local-min-font
+  line-height: (($line-height-ratio * $min-font) / ($local-min-font / 2))em
 
   @media (min-width: $min-width)
-    font-size: s('calc( %s + (%s - %s) * ((100vw - %s) / (%s - %s)) )', $min-font, remove-unit($max-font), remove-unit($min-font), $min-width, remove-unit($max-width), remove-unit($min-width))
+    font-size: s('calc( %s + (%s - %s) * ((100vw - %s) / (%s - %s)) )', $local-min-font, remove-unit($local-max-font), remove-unit($local-min-font), $min-width, remove-unit($max-width), remove-unit($min-width))
 
   @media (min-width: $max-width)
-    font-size: $max-font
+    font-size: $local-max-font
+    line-height: (($line-height-ratio * $max-font) / ($local-max-font / 2))em
 
 h4
-  $min-font = $min-font * ($ratio ** .5)
-  $max-font = $max-font * ($ratio ** .5)
+  $local-min-font = $min-font * ($header-ratio ** .7)
+  $local-max-font = $max-font * ($header-ratio ** .7)
 
-  font-size: $min-font
+  font-size: $local-min-font
+  line-height: (($line-height-ratio * $min-font) / ($local-min-font / 2))em
 
   @media (min-width: $min-width)
-    font-size: s('calc( %s + (%s - %s) * ((100vw - %s) / (%s - %s)) )', $min-font, remove-unit($max-font), remove-unit($min-font), $min-width, remove-unit($max-width), remove-unit($min-width))
+    font-size: s('calc( %s + (%s - %s) * ((100vw - %s) / (%s - %s)) )', $local-min-font, remove-unit($local-max-font), remove-unit($local-min-font), $min-width, remove-unit($max-width), remove-unit($min-width))
 
   @media (min-width: $max-width)
-    font-size: $max-font
+    font-size: $local-max-font
+    line-height: (($line-height-ratio * $max-font) / ($local-max-font / 2))em
 
 h5
-  $min-font = $min-font * ($ratio ** .25)
-  $max-font = $max-font * ($ratio ** .25)
+  $local-min-font = $min-font * ($header-ratio ** .35)
+  $local-max-font = $max-font * ($header-ratio ** .35)
 
-  font-size: $min-font
+  font-size: $local-min-font
+  line-height: (($line-height-ratio * $min-font) / ($local-min-font / 2))em
 
   @media (min-width: $min-width)
-    font-size: s('calc( %s + (%s - %s) * ((100vw - %s) / (%s - %s)) )', $min-font, remove-unit($max-font), remove-unit($min-font), $min-width, remove-unit($max-width), remove-unit($min-width))
+    font-size: s('calc( %s + (%s - %s) * ((100vw - %s) / (%s - %s)) )', $local-min-font, remove-unit($local-max-font), remove-unit($local-min-font), $min-width, remove-unit($max-width), remove-unit($min-width))
 
   @media (min-width: $max-width)
-    font-size: $max-font
+    font-size: $local-max-font
+    line-height: (($line-height-ratio * $max-font) / ($local-max-font / 2))em
 
 h6
-  font-size: $min-font
+  $local-min-font = $min-font
+  $local-max-font = $max-font
+
+  font-size: $local-min-font
+  line-height: (($line-height-ratio * $min-font) / ($local-min-font / 2))em
 
   @media (min-width: $min-width)
-    font-size: s('calc( %s + (%s - %s) * ((100vw - %s) / (%s - %s)) )', $min-font, remove-unit($max-font), remove-unit($min-font), $min-width, remove-unit($max-width), remove-unit($min-width))
+    font-size: s('calc( %s + (%s - %s) * ((100vw - %s) / (%s - %s)) )', $local-min-font, remove-unit($local-max-font), remove-unit($local-min-font), $min-width, remove-unit($max-width), remove-unit($min-width))
 
   @media (min-width: $max-width)
-    font-size: $max-font
+    font-size: $local-max-font
+    line-height: (($line-height-ratio * $max-font) / ($local-max-font / 2))em
+
+vr-block(n = 1)
+  return ( (($line-height-ratio * $min-font) / ($min-font / 2)) * (n / 2) )em
+  @media (min-width: $max-width)
+    return ( (($line-height-ratio * $max-font) / ($max-font / 2)) * (n / 2) )em
 
 blockquote
   font-style: italic
@@ -200,9 +213,10 @@ blockquote
     font-style: normal
 
 pre
-  padding: ($line-height-ratio * .25)em
+  padding: ($line-height-ratio * .5)em
   background: darken(white, 2%)
   border: 1px solid darken(white, 7%)
+  margin-bottom: (($line-height-ratio * $max-font) / ($max-font / 2) * (.475 * (15 / $max-font)))em
   code
     background: none
     padding: 0
@@ -212,7 +226,11 @@ code
   font-family: $courier
   padding: ($line-height-ratio * .05)em ($line-height-ratio * .15)em
   background: darken(white, 2%)
+  line-height: 0
   border: 1px solid darken(white, 7%)
+
+big, sub, sup
+  line-height: 0
 
 abbr, acronym
   border-bottom: 1px dotted #333
@@ -225,18 +243,11 @@ dt
   color: $header-color
   font-weight: bold
 
-dd
-  margin-bottom: ($line-height-ratio * .25)em
-
 ul
   padding-left: 1.1em
-  li
-    margin-bottom: ($line-height-ratio * .25)em
 
 ol
   padding-left: 1.4em
-  li
-    margin-bottom: ($line-height-ratio * .25)em
 
 fieldset
   padding: ($line-height-ratio * .5)em ($line-height-ratio)em ($line-height-ratio)em

@@ -1,18 +1,18 @@
 html {
-  line-height: 1.618em;
   font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-weight: 300;
   color: #666;
-  font-size: 11.618px;
+  font-size: 10px;
+  line-height: 1.75em;
 }
 @media (min-width: 600px) {
   html {
-    font-size: calc( 11.618px + (17.618 - 11.618) * ((100vw - 600px) / (1000 - 600)) );
+    font-size: calc( 10px + (16 - 10) * ((100vw - 600px) / (1000 - 600)) );
   }
 }
 @media (min-width: 1000px) {
   html {
-    font-size: 17.618px;
+    font-size: 16px;
   }
 }
 h1,
@@ -83,7 +83,7 @@ ol,
 ul,
 form,
 table {
-  margin-bottom: 1.618em;
+  margin-bottom: 1.75em;
 }
 h1,
 h2,
@@ -93,77 +93,88 @@ h5,
 h6 {
   font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-weight: 500;
-  line-height: 1.078666666666667em;
-  margin-bottom: 0.4045em;
   color: #111;
+  margin-bottom: 0;
+  clear: both;
 }
 h1 {
-  font-size: 18.24833086309571px;
+  font-size: 23.211991626950514px;
+  line-height: 1.507841315924089em;
 }
 @media (min-width: 600px) {
   h1 {
-    font-size: calc( 18.24833086309571px + (29.197329380953136 - 18.24833086309571) * ((100vw - 600px) / (1000 - 600)) );
+    font-size: calc( 23.211991626950514px + (37.13918660312082 - 23.211991626950514) * ((100vw - 600px) / (1000 - 600)) );
   }
 }
 @media (min-width: 1000px) {
   h1 {
-    font-size: 29.197329380953136px;
+    font-size: 37.13918660312082px;
+    line-height: 1.507841315924089em;
   }
 }
 h2 {
-  font-size: 16.18px;
+  font-size: 19.6141695071709px;
+  line-height: 1.784424264672745em;
 }
 @media (min-width: 600px) {
   h2 {
-    font-size: calc( 16.18px + (25.888 - 16.18) * ((100vw - 600px) / (1000 - 600)) );
+    font-size: calc( 19.6141695071709px + (31.38267121147344 - 19.6141695071709) * ((100vw - 600px) / (1000 - 600)) );
   }
 }
 @media (min-width: 1000px) {
   h2 {
-    font-size: 25.888px;
+    font-size: 31.38267121147344px;
+    line-height: 1.784424264672744em;
   }
 }
 h3 {
-  font-size: 14.346101129141232px;
+  font-size: 16.57400414574315px;
+  line-height: 2.111740753304286em;
 }
 @media (min-width: 600px) {
   h3 {
-    font-size: calc( 14.346101129141232px + (22.95376180662597 - 14.346101129141232) * ((100vw - 600px) / (1000 - 600)) );
+    font-size: calc( 16.57400414574315px + (26.51840663318904 - 16.57400414574315) * ((100vw - 600px) / (1000 - 600)) );
   }
 }
 @media (min-width: 1000px) {
   h3 {
-    font-size: 22.95376180662597px;
+    font-size: 26.51840663318904px;
+    line-height: 2.111740753304286em;
   }
 }
 h4 {
-  font-size: 12.720062892926281px;
+  font-size: 14.00505962399693px;
+  line-height: 2.499096822124866em;
 }
 @media (min-width: 600px) {
   h4 {
-    font-size: calc( 12.720062892926281px + (20.35210062868205 - 12.720062892926281) * ((100vw - 600px) / (1000 - 600)) );
+    font-size: calc( 14.00505962399693px + (22.408095398395087 - 14.00505962399693) * ((100vw - 600px) / (1000 - 600)) );
   }
 }
 @media (min-width: 1000px) {
   h4 {
-    font-size: 20.35210062868205px;
+    font-size: 22.408095398395087px;
+    line-height: 2.499096822124866em;
   }
 }
 h5 {
-  font-size: 11.278325626140731px;
+  font-size: 11.83429745443173px;
+  line-height: 2.957505516045072em;
 }
 @media (min-width: 600px) {
   h5 {
-    font-size: calc( 11.278325626140731px + (18.04532100182517 - 11.278325626140731) * ((100vw - 600px) / (1000 - 600)) );
+    font-size: calc( 11.83429745443173px + (18.93487592709077 - 11.83429745443173) * ((100vw - 600px) / (1000 - 600)) );
   }
 }
 @media (min-width: 1000px) {
   h5 {
-    font-size: 18.04532100182517px;
+    font-size: 18.93487592709077px;
+    line-height: 2.957505516045072em;
   }
 }
 h6 {
   font-size: 10px;
+  line-height: 3.5em;
 }
 @media (min-width: 600px) {
   h6 {
@@ -173,11 +184,12 @@ h6 {
 @media (min-width: 1000px) {
   h6 {
     font-size: 16px;
+    line-height: 3.5em;
   }
 }
 blockquote {
   font-style: italic;
-  padding-left: 1.618em;
+  padding-left: 1.75em;
   border-left: 5px solid #ededed;
 }
 blockquote cite {
@@ -185,9 +197,10 @@ blockquote cite {
   font-style: normal;
 }
 pre {
-  padding: 0.4045em;
+  padding: 0.875em;
   background: #fafafa;
   border: 1px solid #ededed;
+  margin-bottom: 1.55859375em;
 }
 pre code {
   background: none;
@@ -196,9 +209,15 @@ pre code {
 }
 code {
   font-family: 'Courier New', Courier, 'Lucida Sans Typewriter', 'Lucida Typewriter', monospace;
-  padding: 0.0809em 0.2427em;
+  padding: 0.0875em 0.2625em;
   background: #fafafa;
+  line-height: 0;
   border: 1px solid #ededed;
+}
+big,
+sub,
+sup {
+  line-height: 0;
 }
 abbr,
 acronym {
@@ -212,23 +231,14 @@ dt {
   color: #111;
   font-weight: bold;
 }
-dd {
-  margin-bottom: 0.4045em;
-}
 ul {
   padding-left: 1.1em;
-}
-ul li {
-  margin-bottom: 0.4045em;
 }
 ol {
   padding-left: 1.4em;
 }
-ol li {
-  margin-bottom: 0.4045em;
-}
 fieldset {
-  padding: 0.809em 1.618em 1.618em;
+  padding: 0.875em 1.75em 1.75em;
   border: 1px solid #ededed;
 }
 legend {
@@ -237,11 +247,11 @@ legend {
 }
 label {
   display: block;
-  margin-bottom: 0.809em;
+  margin-bottom: 0.875em;
 }
 input[type="text"],
 textarea {
-  padding: 0.809em;
+  padding: 0.875em;
   border: 1px solid #ededed;
 }
 table {
@@ -250,7 +260,7 @@ table {
   border-collapse: collapse;
 }
 th {
-  padding: 0.809em;
+  padding: 0.875em;
   text-align: left;
   color: #111;
   border: 1px solid #ededed;
@@ -259,14 +269,14 @@ tr:nth-child(odd) td {
   background: #f7f7f7;
 }
 td {
-  padding: 0.809em;
+  padding: 0.875em;
   border: 1px solid #ededed;
 }
 * {
   box-sizing: border-box;
 }
 html {
-  padding: 4.854em;
+  padding: 5.25em;
   text-align: center;
 }
 @media (max-width: 800px) {
@@ -275,8 +285,14 @@ html {
   }
 }
 .logo {
-  margin-bottom: 3rem;
+  height: 3.5em;
+  margin-bottom: 5.25em;
   display: inline-block;
+  box-shadow: 0 0 30px 20px #fff;
+  background: #fff;
+}
+.logo img {
+  height: 3.5em;
 }
 .wrap {
   max-width: 980px;
@@ -285,4 +301,18 @@ html {
 }
 body {
   margin: 0;
+  background: linear-gradient(to top, rgba(0,0,0,0.1) 5%, #fff 5%);
+  background-size: 100% 1.75em;
+}
+img {
+  display: block;
+}
+.img-left {
+  float: left;
+  margin-right: 1.75em;
+  border-radius: 999em;
+}
+.img-left.vr-block {
+  height: 10.5em;
+  margin-bottom: 1.75em;
 }
