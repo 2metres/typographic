@@ -2,12 +2,12 @@ html {
   font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-weight: 300;
   color: #666;
-  font-size: 13px;
+  font-size: 12px;
   line-height: 1.75em;
 }
 @media (min-width: 600px) {
   html {
-    font-size: calc( 13px + (20 - 13) * ((100vw - 600px) / (1000 - 600)) );
+    font-size: calc( 12px + (20 - 12) * ((100vw - 600px) / (1000 - 600)) );
   }
 }
 @media (min-width: 1000px) {
@@ -98,12 +98,12 @@ h6 {
   clear: both;
 }
 h1 {
-  font-size: 30.175589115035667px;
+  font-size: 27.854389952340615px;
   line-height: 1.507841315924089em;
 }
 @media (min-width: 600px) {
   h1 {
-    font-size: calc( 30.175589115035667px + (46.42398325390103 - 30.175589115035667) * ((100vw - 600px) / (1000 - 600)) );
+    font-size: calc( 27.854389952340615px + (46.42398325390103 - 27.854389952340615) * ((100vw - 600px) / (1000 - 600)) );
   }
 }
 @media (min-width: 1000px) {
@@ -113,12 +113,12 @@ h1 {
   }
 }
 h2 {
-  font-size: 25.49842035932217px;
+  font-size: 23.53700340860508px;
   line-height: 1.784424264672744em;
 }
 @media (min-width: 600px) {
   h2 {
-    font-size: calc( 25.49842035932217px + (39.2283390143418 - 25.49842035932217) * ((100vw - 600px) / (1000 - 600)) );
+    font-size: calc( 23.53700340860508px + (39.2283390143418 - 23.53700340860508) * ((100vw - 600px) / (1000 - 600)) );
   }
 }
 @media (min-width: 1000px) {
@@ -128,12 +128,12 @@ h2 {
   }
 }
 h3 {
-  font-size: 21.546205389466095px;
+  font-size: 19.88880497489178px;
   line-height: 2.111740753304286em;
 }
 @media (min-width: 600px) {
   h3 {
-    font-size: calc( 21.546205389466095px + (33.1480082914863 - 21.546205389466095) * ((100vw - 600px) / (1000 - 600)) );
+    font-size: calc( 19.88880497489178px + (33.1480082914863 - 19.88880497489178) * ((100vw - 600px) / (1000 - 600)) );
   }
 }
 @media (min-width: 1000px) {
@@ -143,12 +143,12 @@ h3 {
   }
 }
 h4 {
-  font-size: 18.20657751119601px;
+  font-size: 16.806071548796314px;
   line-height: 2.499096822124866em;
 }
 @media (min-width: 600px) {
   h4 {
-    font-size: calc( 18.20657751119601px + (28.01011924799386 - 18.20657751119601) * ((100vw - 600px) / (1000 - 600)) );
+    font-size: calc( 16.806071548796314px + (28.01011924799386 - 16.806071548796314) * ((100vw - 600px) / (1000 - 600)) );
   }
 }
 @media (min-width: 1000px) {
@@ -158,12 +158,12 @@ h4 {
   }
 }
 h5 {
-  font-size: 15.38458669076125px;
+  font-size: 14.201156945318075px;
   line-height: 2.957505516045072em;
 }
 @media (min-width: 600px) {
   h5 {
-    font-size: calc( 15.38458669076125px + (23.66859490886346 - 15.38458669076125) * ((100vw - 600px) / (1000 - 600)) );
+    font-size: calc( 14.201156945318075px + (23.66859490886346 - 14.201156945318075) * ((100vw - 600px) / (1000 - 600)) );
   }
 }
 @media (min-width: 1000px) {
@@ -173,12 +173,12 @@ h5 {
   }
 }
 h6 {
-  font-size: 13px;
+  font-size: 12px;
   line-height: 3.5em;
 }
 @media (min-width: 600px) {
   h6 {
-    font-size: calc( 13px + (20 - 13) * ((100vw - 600px) / (1000 - 600)) );
+    font-size: calc( 12px + (20 - 12) * ((100vw - 600px) / (1000 - 600)) );
   }
 }
 @media (min-width: 1000px) {
@@ -303,12 +303,6 @@ body {
 body {
   background: linear-gradient(to top, rgba(0,0,255,0.1) 5%, #fff 5%);
   background-size: 100% 1.75em;
-}
-@media (max-width: 1000px) {
-  body {
-    background: linear-gradient(to top, rgba(255,255,255,0.1) 5%, #fff 5%);
-    background-size: 100% 1.75em;
-  }
 }
 img {
   display: block;
