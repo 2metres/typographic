@@ -2,17 +2,17 @@ html {
   font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-weight: 300;
   color: #666;
-  font-size: 10px;
+  font-size: 13px;
   line-height: 1.75em;
 }
 @media (min-width: 600px) {
   html {
-    font-size: calc( 10px + (16 - 10) * ((100vw - 600px) / (1000 - 600)) );
+    font-size: calc( 13px + (20 - 13) * ((100vw - 600px) / (1000 - 600)) );
   }
 }
 @media (min-width: 1000px) {
   html {
-    font-size: 16px;
+    font-size: 20px;
   }
 }
 h1,
@@ -98,92 +98,92 @@ h6 {
   clear: both;
 }
 h1 {
-  font-size: 23.211991626950514px;
+  font-size: 30.175589115035667px;
   line-height: 1.507841315924089em;
 }
 @media (min-width: 600px) {
   h1 {
-    font-size: calc( 23.211991626950514px + (37.13918660312082 - 23.211991626950514) * ((100vw - 600px) / (1000 - 600)) );
+    font-size: calc( 30.175589115035667px + (46.42398325390103 - 30.175589115035667) * ((100vw - 600px) / (1000 - 600)) );
   }
 }
 @media (min-width: 1000px) {
   h1 {
-    font-size: 37.13918660312082px;
+    font-size: 46.42398325390103px;
     line-height: 1.507841315924089em;
   }
 }
 h2 {
-  font-size: 19.6141695071709px;
-  line-height: 1.784424264672745em;
+  font-size: 25.49842035932217px;
+  line-height: 1.784424264672744em;
 }
 @media (min-width: 600px) {
   h2 {
-    font-size: calc( 19.6141695071709px + (31.38267121147344 - 19.6141695071709) * ((100vw - 600px) / (1000 - 600)) );
+    font-size: calc( 25.49842035932217px + (39.2283390143418 - 25.49842035932217) * ((100vw - 600px) / (1000 - 600)) );
   }
 }
 @media (min-width: 1000px) {
   h2 {
-    font-size: 31.38267121147344px;
-    line-height: 1.784424264672744em;
+    font-size: 39.2283390143418px;
+    line-height: 1.784424264672745em;
   }
 }
 h3 {
-  font-size: 16.57400414574315px;
+  font-size: 21.546205389466095px;
   line-height: 2.111740753304286em;
 }
 @media (min-width: 600px) {
   h3 {
-    font-size: calc( 16.57400414574315px + (26.51840663318904 - 16.57400414574315) * ((100vw - 600px) / (1000 - 600)) );
+    font-size: calc( 21.546205389466095px + (33.1480082914863 - 21.546205389466095) * ((100vw - 600px) / (1000 - 600)) );
   }
 }
 @media (min-width: 1000px) {
   h3 {
-    font-size: 26.51840663318904px;
+    font-size: 33.1480082914863px;
     line-height: 2.111740753304286em;
   }
 }
 h4 {
-  font-size: 14.00505962399693px;
+  font-size: 18.20657751119601px;
   line-height: 2.499096822124866em;
 }
 @media (min-width: 600px) {
   h4 {
-    font-size: calc( 14.00505962399693px + (22.408095398395087 - 14.00505962399693) * ((100vw - 600px) / (1000 - 600)) );
+    font-size: calc( 18.20657751119601px + (28.01011924799386 - 18.20657751119601) * ((100vw - 600px) / (1000 - 600)) );
   }
 }
 @media (min-width: 1000px) {
   h4 {
-    font-size: 22.408095398395087px;
+    font-size: 28.01011924799386px;
     line-height: 2.499096822124866em;
   }
 }
 h5 {
-  font-size: 11.83429745443173px;
+  font-size: 15.38458669076125px;
   line-height: 2.957505516045072em;
 }
 @media (min-width: 600px) {
   h5 {
-    font-size: calc( 11.83429745443173px + (18.93487592709077 - 11.83429745443173) * ((100vw - 600px) / (1000 - 600)) );
+    font-size: calc( 15.38458669076125px + (23.66859490886346 - 15.38458669076125) * ((100vw - 600px) / (1000 - 600)) );
   }
 }
 @media (min-width: 1000px) {
   h5 {
-    font-size: 18.93487592709077px;
+    font-size: 23.66859490886346px;
     line-height: 2.957505516045072em;
   }
 }
 h6 {
-  font-size: 10px;
+  font-size: 13px;
   line-height: 3.5em;
 }
 @media (min-width: 600px) {
   h6 {
-    font-size: calc( 10px + (16 - 10) * ((100vw - 600px) / (1000 - 600)) );
+    font-size: calc( 13px + (20 - 13) * ((100vw - 600px) / (1000 - 600)) );
   }
 }
 @media (min-width: 1000px) {
   h6 {
-    font-size: 16px;
+    font-size: 20px;
     line-height: 3.5em;
   }
 }
@@ -200,7 +200,7 @@ pre {
   padding: 0.875em;
   background: #fafafa;
   border: 1px solid #ededed;
-  margin-bottom: 1.55859375em;
+  margin-bottom: 1.246875em;
 }
 pre code {
   background: none;
@@ -301,6 +301,7 @@ html {
 }
 body {
   margin: 0;
+  background: -webkit-linear-gradient(bottom, rgba(0,0,0,0.1) 5%, #fff 5%);
   background: linear-gradient(to top, rgba(0,0,0,0.1) 5%, #fff 5%);
   background-size: 100% 1.75em;
 }
