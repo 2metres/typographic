@@ -1,25 +1,25 @@
-// Typographic v2.4.1 - https://github.com/corysimmons/typographic
+// Typographic v2.4.2 - https://github.com/corysimmons/typographic
 
 
 // Ratios
 
-$minor-second   : 1.067 !default;
-$major-second   : 1.125 !default;
-$minor-third    : 1.2 !default;
-$major-third    : 1.25 !default;
-$perfect-fourth : 1.333 !default;
-$aug-fourth     : 1.414 !default;
-$perfect-fifth  : 1.5 !default;
-$minor-sixth    : 1.6 !default;
-$golden         : 1.618 !default;
-$major-sixth    : 1.667 !default;
-$minor-seventh  : 1.778 !default;
-$major-seventh  : 1.875 !default;
-$octave         : 2 !default;
-$major-tenth    : 2.5 !default;
-$major-eleventh : 2.667 !default;
-$major-twelfth  : 3 !default;
-$double-octave  : 4 !default;
+$minor-second   : 1.067;
+$major-second   : 1.125;
+$minor-third    : 1.2;
+$major-third    : 1.25;
+$perfect-fourth : 1.333;
+$aug-fourth     : 1.414;
+$perfect-fifth  : 1.5;
+$minor-sixth    : 1.6;
+$golden         : 1.618;
+$major-sixth    : 1.667;
+$minor-seventh  : 1.778;
+$major-seventh  : 1.875;
+$octave         : 2;
+$major-tenth    : 2.5;
+$major-eleventh : 2.667;
+$major-twelfth  : 3;
+$double-octave  : 4;
 
 
 // Sans-serif
@@ -58,18 +58,18 @@ $palatino      : 'Palatino', 'Palatino Linotype', 'Palatino LT STD', "Book Antiq
 
 // Settings
 
-$line-height-ratio  : 1.75;
-$header-ratio       : $golden;
-$body-font          : $helvetica;
-$body-font-weight   : 300;
-$body-color         : #666;
-$header-font        : $helvetica;
-$header-font-weight : 500;
-$header-color       : #111;
-$min-font           : 12px;
-$max-font           : 20px;
-$min-width          : 600px;
-$max-width          : 1000px;
+$line-height-ratio  : 1.75 !default;
+$header-ratio       : $golden !default;
+$body-font          : $helvetica !default;
+$body-font-weight   : 300 !default;
+$body-color         : #666 !default;
+$header-font        : $helvetica !default;
+$header-font-weight : 500 !default;
+$header-color       : #111 !default;
+$min-font           : 12px !default;
+$max-font           : 20px !default;
+$min-width          : 600px !default;
+$max-width          : 1000px !default;
 
 
 // Helpers
