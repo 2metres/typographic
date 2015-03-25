@@ -1,59 +1,59 @@
-// Typographic v2.4.0 - https://github.com/corysimmons/typographic
+// Typographic v2.4.1 - https://github.com/corysimmons/typographic
 
 
 // Ratios
 
-$minor-second   : 1.067;
-$major-second   : 1.125;
-$minor-third    : 1.2;
-$major-third    : 1.25;
-$perfect-fourth : 1.333;
-$aug-fourth     : 1.414;
-$perfect-fifth  : 1.5;
-$minor-sixth    : 1.6;
-$golden         : 1.618;
-$major-sixth    : 1.667;
-$minor-seventh  : 1.778;
-$major-seventh  : 1.875;
-$octave         : 2;
-$major-tenth    : 2.5;
-$major-eleventh : 2.667;
-$major-twelfth  : 3;
-$double-octave  : 4;
+$minor-second   : 1.067 !default;
+$major-second   : 1.125 !default;
+$minor-third    : 1.2 !default;
+$major-third    : 1.25 !default;
+$perfect-fourth : 1.333 !default;
+$aug-fourth     : 1.414 !default;
+$perfect-fifth  : 1.5 !default;
+$minor-sixth    : 1.6 !default;
+$golden         : 1.618 !default;
+$major-sixth    : 1.667 !default;
+$minor-seventh  : 1.778 !default;
+$major-seventh  : 1.875 !default;
+$octave         : 2 !default;
+$major-tenth    : 2.5 !default;
+$major-eleventh : 2.667 !default;
+$major-twelfth  : 3 !default;
+$double-octave  : 4 !default;
 
 
 // Sans-serif
 
-$calibri       : Calibri, Candara, Segoe, "Segoe UI", Optima, Arial, sans-serif;
-$candara       : Candara, Calibri, Segoe, "Segoe UI", Optima, Arial, sans-serif;
-$courier       : 'Courier New', Courier, 'Lucida Sans Typewriter', 'Lucida Typewriter', monospace;
-$franklin      : 'Franklin Gothic Medium', Arial, sans-serif;
-$futura        : Futura, 'Trebuchet MS', Arial, sans-serif;
-$geneva        : Geneva, Tahoma, Verdana, sans-serif;
-$gill-sans     : 'Gill Sans', 'Gill Sans MT', Calibri, sans-serif;
-$helvetica     : 'Helvetica Neue', Helvetica, Arial, sans-serif;
-$lucida-grande : 'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', Geneva, Verdana, sans-serif;
-$optima        : Optima, Segoe, 'Segoe UI', Candara, Calibri, Arial, sans-serif;
-$segoe         : Segoe, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
-$tahoma        : Tahoma, Geneva, Verdana, sans-serif;
-$trebuchet     : 'Trebuchet MS', 'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', Tahoma, sans-serif;
-$verdana       : Verdana, Geneva, sans-serif;
+$calibri       : 'Calibri', 'Candara', 'Segoe', 'Segoe UI', 'Optima', 'Arial', 'sans-serif';
+$candara       : 'Candara', 'Calibri', 'Segoe', 'Segoe UI', 'Optima', 'Arial', 'sans-serif';
+$courier       : 'Courier New', 'Courier', 'Lucida Sans Typewriter', 'Lucida Typewriter', 'monospace';
+$franklin      : 'Franklin Gothic Medium', 'Arial', 'sans-serif';
+$futura        : 'Futura', 'Trebuchet MS', 'Arial', 'sans-serif';
+$geneva        : 'Geneva', 'Tahoma', 'Verdana', 'sans-serif';
+$gill-sans     : 'Gill Sans', 'Gill Sans MT', 'Calibri', 'sans-serif';
+$helvetica     : 'Helvetica Neue', 'Helvetica', 'Arial', 'sans-serif';
+$lucida-grande : 'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', 'Geneva', 'Verdana', 'sans-serif';
+$optima        : 'Optima', 'Segoe', 'Segoe UI', 'Candara', 'Calibri', 'Arial', 'sans-serif';
+$segoe         : 'Segoe', 'Segoe UI', 'Helvetica Neue', 'Arial', 'sans-serif';
+$tahoma        : 'Tahoma', 'Geneva', 'Verdana', 'sans-serif';
+$trebuchet     : 'Trebuchet MS', 'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', 'Tahoma', 'sans-serif';
+$verdana       : 'Verdana', 'Geneva', 'sans-serif';
 
 
 // Serif
 
-$antiqua       : 'Book Antiqua', Palatino, 'Palatino Linotype', 'Palatino LT STD', Georgia, serif;
-$baskerville   : Baskerville, 'Baskerville old face', 'Hoefler Text', Garamond, 'Times New Roman', serif;
-$bodoni        : 'Bodoni MT', Didot, 'Didot LT STD', 'Hoefler Text', Garamond, 'Times New Roman', serif;
-$cambria       : Cambria, Georgia, serif;
-$caslon        : 'Big Caslon', 'Book Antiqua', 'Palatino Linotype', Georgia, serif;
-$constantia    : Constantia, Palatino, 'Palatino Linotype', 'Palatino LT STD', Georgia, serif;
-$didot         : Didot, 'Didot LT STD', 'Hoefler Text', Garamond, 'Times New Roman', serif;
-$garamond      : Garamond, Baskerville, 'Baskerville Old Face', 'Hoefler Text', 'Times New Roman', serif;
-$goudy         : 'Goudy Old Style', Garamond, 'Big Caslon', 'Times New Roman', serif;
-$hoefler       : 'Hoefler Text', 'Baskerville old face', Garamond, 'Times New Roman', serif;
-$lucida-bright : 'Lucida Bright', Georgia, serif;
-$palatino      : Palatino, 'Palatino Linotype', 'Palatino LT STD', "Book Antiqua", Georgia, serif;
+$antiqua       : 'Book Antiqua', 'Palatino', 'Palatino Linotype', 'Palatino LT STD', 'Georgia', 'serif';
+$baskerville   : 'Baskerville', 'Baskerville old face', 'Hoefler Text', 'Garamond', 'Times New Roman', 'serif';
+$bodoni        : 'Bodoni MT', 'Didot', 'Didot LT STD', 'Hoefler Text', 'Garamond', 'Times New Roman', 'serif';
+$cambria       : 'Cambria', 'Georgia', 'serif';
+$caslon        : 'Big Caslon', 'Book Antiqua', 'Palatino Linotype', 'Georgia', 'serif';
+$constantia    : 'Constantia', 'Palatino', 'Palatino Linotype', 'Palatino LT STD', 'Georgia', 'serif';
+$didot         : 'Didot', 'Didot LT STD', 'Hoefler Text', 'Garamond', 'Times New Roman', 'serif';
+$garamond      : 'Garamond', 'Baskerville', 'Baskerville Old Face', 'Hoefler Text', 'Times New Roman', 'serif';
+$goudy         : 'Goudy Old Style', 'Garamond', 'Big Caslon', 'Times New Roman', 'serif';
+$hoefler       : 'Hoefler Text', 'Baskerville old face', 'Garamond', 'Times New Roman', 'serif';
+$lucida-bright : 'Lucida Bright', 'Georgia', 'serif';
+$palatino      : 'Palatino', 'Palatino Linotype', 'Palatino LT STD', "Book Antiqua", 'Georgia', 'serif';
 
 
 // Settings
