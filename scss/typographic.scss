@@ -1,4 +1,4 @@
-// Typographic v2.3.1 - https://github.com/corysimmons/typographic
+// Typographic v2.3.2 - https://github.com/corysimmons/typographic
 
 
 // Ratios
@@ -74,18 +74,31 @@ $max-width          : 1000px;
 
 // Helpers
 
-@function vr-block($n: 1) {
-  @return ( (($line-height-ratio * $min-font) / ($min-font / 2)) * ($n / 2) ) + em;
-}
-
-
-// Typography Reset
-
 @function _strip-units($number) {
   @return $number / ($number * 0 + 1);
 }
 
-// Decimal exponents - https://gist.github.com/davidkpiano/ad6e6771df050ff3727f
+@function vr-block($n: 1, $px-offset: false) {
+  @if($px-offset) {
+    @return ( (($line-height-ratio * _strip-units($max-font)) / (_strip-units($max-font) / 2)) * ($n / 2) * (1 + ($px-offset / _strip-units($max-font))) ) + em;
+  } @else {
+    @return ( (($line-height-ratio * _strip-units($max-font)) / (_strip-units($max-font) / 2)) * ($n / 2) ) + em;
+  }
+}
+
+@mixin grid-overlay($color: black, $px-offset: false) {
+  body {
+    background: linear-gradient(to top, rgba($color, .1) 5%, white 5%);
+    background-size: 100% ($line-height-ratio) + em;
+    @if($px-offset) {
+      background-position: 0 $px-offset + px;
+    }
+  }
+}
+
+
+// Private Decimal Exponent Function
+
 @function math-pow($number, $exp) {
     @if (round($exp) != $exp) {
       @return math-exp($exp * math-ln($number));
@@ -331,7 +344,7 @@ $max-width          : 1000px;
     padding: ($line-height-ratio * .5) + em;
     background: darken(white, 2%);
     border: 1px solid darken(white, 7%);
-    margin-bottom: (($line-height-ratio * _strip-units($max-font)) / (_strip-units($max-font) / 2) * (.475 * (15 / _strip-units($max-font)))) + em;
+    margin-bottom: vr-block(1, -1);
     code {
       background: none;
       padding: 0;

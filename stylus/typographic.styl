@@ -1,4 +1,4 @@
-// Typographic v2.3.1 - https://github.com/corysimmons/typographic
+// Typographic v2.3.2 - https://github.com/corysimmons/typographic
 
 
 // Settings
@@ -74,8 +74,18 @@ $palatino      = Palatino, 'Palatino Linotype', 'Palatino LT STD', "Book Antiqua
 
 // Helpers
 
-vr-block(n = 1)
-  return ( (($line-height-ratio * $min-font) / ($min-font / 2)) * (n / 2) )em
+grid-overlay($color = black, $px-offset = false)
+  body
+    background: linear-gradient(to top, rgba($color, 10%) 5%, white 5%)
+    background-size: 100% ($line-height-ratio)em
+    if $px-offset
+      background-position: 0 unit($px-offset, 'px')
+
+vr-block($n = 1, $px-offset = false)
+  if $px-offset
+    return ( (($line-height-ratio * $max-font) / ($max-font / 2)) * ($n / 2) * (1 + ($px-offset / $max-font)) )em
+  else
+    return ( (($line-height-ratio * $max-font) / ($max-font / 2)) * ($n / 2) )em
 
 
 // Typography Reset
@@ -216,10 +226,9 @@ typographic()
       font-style: normal
 
   pre
-    padding: ($line-height-ratio * .5)em
+    padding: vr-block(.5)
     background: darken(white, 2%)
-    border: 1px solid darken(white, 7%)
-    margin-bottom: (($line-height-ratio * $max-font) / ($max-font / 2) * (.475 * (15 / $max-font)))em
+    margin-bottom: vr-block(1, -1)
     code
       background: none
       padding: 0
@@ -230,7 +239,6 @@ typographic()
     padding: ($line-height-ratio * .05)em ($line-height-ratio * .15)em
     background: darken(white, 2%)
     line-height: 0
-    border: 1px solid darken(white, 7%)
 
   big, sub, sup
     line-height: 0

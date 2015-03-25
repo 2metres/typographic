@@ -100,6 +100,26 @@ $palatino      = Palatino, 'Palatino Linotype', 'Palatino LT STD', "Book Antiqua
 ```
 
 
+## Helpers
+Typographic comes equipped with 2 extremely handy helpers. One for previewing your vertical rhythm grid, and another for sizing and spacing elements so they adhere to your vertical rhythm.
+
+The preview grid mixin is easy. It accepts a color and a positive or negative pixel offset parameter (for nudging your lines up to the bottom of text).
+
+```stylus
+grid-overlay(blue, 2)
+```
+
+The other helper is the `vr-block()` function, which returns sizes of your vertical rhythm. For instance, if you want to include an image that takes up 6 vertical units `height` and has a `margin-bottom` of 1 vertical unit (as in [our demo](http://corysimmons.github.io/typographic/)), you could create it like this:
+
+```stylus
+img
+  height: vr-block(6)
+  margin-bottom: vr-block()
+```
+
+`vr-block()` accepts a second parameter for pixel offsetting to help nudge your elements back onto the vertical rhythm in case they are off by a pixel or two.
+
+
 ## Usage with Node
 ```javascript
 var fs = require('fs'),
