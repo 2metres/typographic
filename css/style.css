@@ -7,12 +7,12 @@ html {
 }
 @media (min-width: 600px) {
   html {
-    font-size: calc( 13px + (16 - 13) * ((100vw - 600px) / (1000 - 600)) );
+    font-size: calc( 13px + (20 - 13) * ((100vw - 600px) / (1000 - 600)) );
   }
 }
 @media (min-width: 1000px) {
   html {
-    font-size: 16px;
+    font-size: 20px;
   }
 }
 h1,
