@@ -22,8 +22,8 @@ It's as easy as setting a few variables (or letting the defaults do their thing)
 
 ## Settings
 ```stylus
-$ratio              = $golden
-$line-height-ratio  = $golden
+$line-height-ratio  = 1.75
+$header-ratio       = $golden
 $body-font          = $helvetica
 $body-font-weight   = 300
 $body-color         = #666
@@ -130,5 +130,11 @@ html
   - [vminpoly](https://github.com/saabi/vminpoly)
 
 
-### Credit
-[Mike Riethmuller](http://twitter.com/MikeRiethmuller) came up with the idea of using `calc` with `vw` to create scaling typography [here](http://madebymike.com.au/writing/precise-control-responsive-typography/).
+### Caveats
+- Slow in Sass because Sass doesn't support calculating decimals in exponents by default. Luckily you only have to change a few variables to get your compiled typography stylesheet then you can un-import Typographic. If lack of solid math in native Sass bothers you, please chime in on this [issue](https://github.com/sass/sass/issues/684).
+
+
+### Credits
+- [Mike Riethmuller](http://twitter.com/MikeRiethmuller) came up with the idea of using `calc` with `vw` to create scaling typography [here](http://madebymike.com.au/writing/precise-control-responsive-typography/).
+- [Scott Kellum](https://twitter.com/scottkellum) and [Tim Brown](https://twitter.com/timbrown) for [Modular Scale](http://www.modularscale.com/).
+- [David Khourshid](https://twitter.com/davidkpiano) for calculating [decimal exponents](https://gist.github.com/davidkpiano/ad6e6771df050ff3727f) in Sass.
