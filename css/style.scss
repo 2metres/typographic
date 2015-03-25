@@ -1,7 +1,11 @@
 @import '../typographic';
 
+* {
+  box-sizing: border-box;
+}
+
 html {
-  padding: 3rem;
+  padding: ($line-height-ratio * 3) + em;
   text-align: center;
   @media (max-width: 800px) {
     text-align: left;
@@ -9,12 +13,39 @@ html {
 }
 
 .logo {
-  margin-bottom: 3rem;
-  display: block;
+  height: vr-block(2);
+  margin-bottom: ($line-height-ratio * 3) + em;
+  display: inline-block;
+  box-shadow: 0 0 30px 20px white;
+  background: white;
+  img {
+    height: vr-block(2);
+  }
 }
 
 .wrap {
   max-width: 980px;
   margin: auto;
   text-align: left;
+}
+
+body {
+  margin: 0;
+  background: linear-gradient(to top, rgba(black, .1) 5%, white 5%);
+  background-size: 100% ($line-height-ratio) + em;
+  background-position: 0 0;
+}
+
+img {
+  display: block;
+}
+
+.img-left {
+  float: left;
+  margin-right: vr-block();
+  border-radius: 999em;
+  &.vr-block {
+    height: vr-block(6);
+    margin-bottom: vr-block();
+  }
 }

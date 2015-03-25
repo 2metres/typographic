@@ -72,6 +72,11 @@ $lucida-bright = 'Lucida Bright', Georgia, serif
 $palatino      = Palatino, 'Palatino Linotype', 'Palatino LT STD', "Book Antiqua", Georgia, serif
 
 
+// Helpers
+
+vr-block(n = 1)
+  return ( (($line-height-ratio * $min-font) / ($min-font / 2)) * (n / 2) )em
+
 // Typography Reset
 
 html
@@ -198,11 +203,6 @@ h6
   @media (min-width: $max-width)
     font-size: $local-max-font
     line-height: (($line-height-ratio * $max-font) / ($local-max-font / 2))em
-
-vr-block(n = 1)
-  return ( (($line-height-ratio * $min-font) / ($min-font / 2)) * (n / 2) )em
-  @media (min-width: $max-width)
-    return ( (($line-height-ratio * $max-font) / ($max-font / 2)) * (n / 2) )em
 
 blockquote
   font-style: italic
