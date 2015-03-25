@@ -158,6 +158,7 @@ html
 - [Mike Riethmuller](http://twitter.com/MikeRiethmuller) came up with the idea of using `calc` with `vw` to create scaling typography [here](http://madebymike.com.au/writing/precise-control-responsive-typography/).
 - [Scott Kellum](https://twitter.com/scottkellum) and [Tim Brown](https://twitter.com/timbrown) for [Modular Scale](http://www.modularscale.com/).
 - [David Khourshid](https://twitter.com/davidkpiano) for calculating [decimal exponents](https://gist.github.com/davidkpiano/ad6e6771df050ff3727f) in Sass.
+- [Petri Pottonen](https://twitter.com/petripottonen) for the `grid-overlay()` helper.
 
 
 ### Other Projects
