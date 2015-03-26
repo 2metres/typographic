@@ -213,7 +213,7 @@ $max-width          : 1000px !default;
 
   p, blockquote, pre,
   address,
-  a, code,
+  code,
   dl, ol, ul,
   form,
   table {
@@ -233,7 +233,7 @@ $max-width          : 1000px !default;
     $local-max-font: $max-font * (math-pow($header-ratio, 1.75));
 
     font-size: $local-min-font;
-    line-height: (($line-height-ratio * $min-font) / ($local-min-font / 2)) + em;
+    line-height: (($line-height-ratio * $min-font) / ($local-min-font / 1.5)) + em;
 
     @media (min-width: $min-width) {
       font-size: calc( #{$local-min-font} + (#{_strip-units($local-max-font)} - #{_strip-units($local-min-font)}) * ((100vw - #{$min-width}) / (#{_strip-units($max-width)} - #{_strip-units($min-width)})) );
@@ -250,7 +250,7 @@ $max-width          : 1000px !default;
     $local-max-font: $max-font * (math-pow($header-ratio, 1.4));
 
     font-size: $local-min-font;
-    line-height: (($line-height-ratio * $min-font) / ($local-min-font / 2)) + em;
+    line-height: (($line-height-ratio * $min-font) / ($local-min-font / 1.5)) + em;
 
     @media (min-width: $min-width) {
       font-size: calc( #{$local-min-font} + (#{_strip-units($local-max-font)} - #{_strip-units($local-min-font)}) * ((100vw - #{$min-width}) / (#{_strip-units($max-width)} - #{_strip-units($min-width)})) );
@@ -267,7 +267,7 @@ $max-width          : 1000px !default;
     $local-max-font: $max-font * (math-pow($header-ratio, 1.05));
 
     font-size: $local-min-font;
-    line-height: (($line-height-ratio * $min-font) / ($local-min-font / 2)) + em;
+    line-height: (($line-height-ratio * $min-font) / ($local-min-font / 1.5)) + em;
 
     @media (min-width: $min-width) {
       font-size: calc( #{$local-min-font} + (#{_strip-units($local-max-font)} - #{_strip-units($local-min-font)}) * ((100vw - #{$min-width}) / (#{_strip-units($max-width)} - #{_strip-units($min-width)})) );
@@ -284,7 +284,7 @@ $max-width          : 1000px !default;
     $local-max-font: $max-font * (math-pow($header-ratio, .7));
 
     font-size: $local-min-font;
-    line-height: (($line-height-ratio * $min-font) / ($local-min-font / 2)) + em;
+    line-height: (($line-height-ratio * $min-font) / ($local-min-font / 1.5)) + em;
 
     @media (min-width: $min-width) {
       font-size: calc( #{$local-min-font} + (#{_strip-units($local-max-font)} - #{_strip-units($local-min-font)}) * ((100vw - #{$min-width}) / (#{_strip-units($max-width)} - #{_strip-units($min-width)})) );
@@ -301,7 +301,7 @@ $max-width          : 1000px !default;
     $local-max-font: $max-font * (math-pow($header-ratio, .35));
 
     font-size: $local-min-font;
-    line-height: (($line-height-ratio * $min-font) / ($local-min-font / 2)) + em;
+    line-height: (($line-height-ratio * $min-font) / ($local-min-font / 1.5)) + em;
 
     @media (min-width: $min-width) {
       font-size: calc( #{$local-min-font} + (#{_strip-units($local-max-font)} - #{_strip-units($local-min-font)}) * ((100vw - #{$min-width}) / (#{_strip-units($max-width)} - #{_strip-units($min-width)})) );
@@ -318,7 +318,7 @@ $max-width          : 1000px !default;
     $local-max-font: $max-font;
 
     font-size: $local-min-font;
-    line-height: (($line-height-ratio * $min-font) / ($local-min-font / 2)) + em;
+    line-height: (($line-height-ratio * $min-font) / ($local-min-font / 1.5)) + em;
 
     @media (min-width: $min-width) {
       font-size: calc( #{$local-min-font} + (#{_strip-units($local-max-font)} - #{_strip-units($local-min-font)}) * ((100vw - #{$min-width}) / (#{_strip-units($max-width)} - #{_strip-units($min-width)})) );

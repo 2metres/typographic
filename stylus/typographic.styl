@@ -119,8 +119,7 @@ typographic()
     padding: 0
 
   p, blockquote, pre,
-  address,
-  a, code,
+  address, code,
   dl, ol, ul,
   form,
   table
@@ -138,84 +137,84 @@ typographic()
     $local-max-font = $max-font * ($header-ratio ** 1.75)
 
     font-size: $local-min-font
-    line-height: (($line-height-ratio * $min-font) / ($local-min-font / 2))em
+    line-height: (($line-height-ratio * $min-font) / ($local-min-font / 1.5))em
 
     @media (min-width: $min-width)
       font-size: s('calc( %s + (%s - %s) * ((100vw - %s) / (%s - %s)) )', $local-min-font, remove-unit($local-max-font), remove-unit($local-min-font), $min-width, remove-unit($max-width), remove-unit($min-width))
 
     @media (min-width: $max-width)
       font-size: $local-max-font
-      line-height: (($line-height-ratio * $max-font) / ($local-max-font / 2))em
+      line-height: (($line-height-ratio * $max-font) / ($local-max-font / 1.5))em
 
   h2
     $local-min-font = $min-font * ($header-ratio ** 1.4)
     $local-max-font = $max-font * ($header-ratio ** 1.4)
 
     font-size: $local-min-font
-    line-height: (($line-height-ratio * $min-font) / ($local-min-font / 2))em
+    line-height: (($line-height-ratio * $min-font) / ($local-min-font / 1.5))em
 
     @media (min-width: $min-width)
       font-size: s('calc( %s + (%s - %s) * ((100vw - %s) / (%s - %s)) )', $local-min-font, remove-unit($local-max-font), remove-unit($local-min-font), $min-width, remove-unit($max-width), remove-unit($min-width))
 
     @media (min-width: $max-width)
       font-size: $local-max-font
-      line-height: (($line-height-ratio * $max-font) / ($local-max-font / 2))em
+      line-height: (($line-height-ratio * $max-font) / ($local-max-font / 1.5))em
 
   h3
     $local-min-font = $min-font * ($header-ratio ** 1.05)
     $local-max-font = $max-font * ($header-ratio ** 1.05)
 
     font-size: $local-min-font
-    line-height: (($line-height-ratio * $min-font) / ($local-min-font / 2))em
+    line-height: (($line-height-ratio * $min-font) / ($local-min-font / 1.5))em
 
     @media (min-width: $min-width)
       font-size: s('calc( %s + (%s - %s) * ((100vw - %s) / (%s - %s)) )', $local-min-font, remove-unit($local-max-font), remove-unit($local-min-font), $min-width, remove-unit($max-width), remove-unit($min-width))
 
     @media (min-width: $max-width)
       font-size: $local-max-font
-      line-height: (($line-height-ratio * $max-font) / ($local-max-font / 2))em
+      line-height: (($line-height-ratio * $max-font) / ($local-max-font / 1.5))em
 
   h4
     $local-min-font = $min-font * ($header-ratio ** .7)
     $local-max-font = $max-font * ($header-ratio ** .7)
 
     font-size: $local-min-font
-    line-height: (($line-height-ratio * $min-font) / ($local-min-font / 2))em
+    line-height: (($line-height-ratio * $min-font) / ($local-min-font / 1.5))em
 
     @media (min-width: $min-width)
       font-size: s('calc( %s + (%s - %s) * ((100vw - %s) / (%s - %s)) )', $local-min-font, remove-unit($local-max-font), remove-unit($local-min-font), $min-width, remove-unit($max-width), remove-unit($min-width))
 
     @media (min-width: $max-width)
       font-size: $local-max-font
-      line-height: (($line-height-ratio * $max-font) / ($local-max-font / 2))em
+      line-height: (($line-height-ratio * $max-font) / ($local-max-font / 1.5))em
 
   h5
     $local-min-font = $min-font * ($header-ratio ** .35)
     $local-max-font = $max-font * ($header-ratio ** .35)
 
     font-size: $local-min-font
-    line-height: (($line-height-ratio * $min-font) / ($local-min-font / 2))em
+    line-height: (($line-height-ratio * $min-font) / ($local-min-font / 1.5))em
 
     @media (min-width: $min-width)
       font-size: s('calc( %s + (%s - %s) * ((100vw - %s) / (%s - %s)) )', $local-min-font, remove-unit($local-max-font), remove-unit($local-min-font), $min-width, remove-unit($max-width), remove-unit($min-width))
 
     @media (min-width: $max-width)
       font-size: $local-max-font
-      line-height: (($line-height-ratio * $max-font) / ($local-max-font / 2))em
+      line-height: (($line-height-ratio * $max-font) / ($local-max-font / 1.5))em
 
   h6
     $local-min-font = $min-font
     $local-max-font = $max-font
 
     font-size: $local-min-font
-    line-height: (($line-height-ratio * $min-font) / ($local-min-font / 2))em
+    line-height: (($line-height-ratio * $min-font) / ($local-min-font / 1.5))em
 
     @media (min-width: $min-width)
       font-size: s('calc( %s + (%s - %s) * ((100vw - %s) / (%s - %s)) )', $local-min-font, remove-unit($local-max-font), remove-unit($local-min-font), $min-width, remove-unit($max-width), remove-unit($min-width))
 
     @media (min-width: $max-width)
       font-size: $local-max-font
-      line-height: (($line-height-ratio * $max-font) / ($local-max-font / 2))em
+      line-height: (($line-height-ratio * $max-font) / ($local-max-font / 1.5))em
 
   blockquote
     font-style: italic
