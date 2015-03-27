@@ -111,12 +111,12 @@ grid-overlay(blue, 2)
 
 > **Note** `grid-overlay()` behaves somewhat funny in smaller viewports when `$min-font` is set to an odd number. This is due to a floating issue. Just something to keep in mind if your vertical rhythm looks haywire on smaller devices. Fear not, it's fine.
 
-The other helper is the `vr-block()` function, which returns sizes of your vertical rhythm. For instance, if you want to include an image that takes up 6 vertical units `height` and has a `margin-bottom` of 1 vertical unit (as in [our demo](http://corysimmons.github.io/typographic/)), you could create it like this:
+The other helper is the `vr-block()` function, which returns sizes of your vertical rhythm. For instance, if you want to include an image that takes up `5.25` vertical units `height` and has a `margin-bottom` of `.25` vertical unit (as in [our demo](http://corysimmons.github.io/typographic/)), you could create it like this:
 
 ```stylus
 img
-  height: vr-block(6)
-  margin-bottom: vr-block()
+  height: vr-block(5.25)
+  margin-bottom: vr-block(.25)
 ```
 
 `vr-block()` accepts a second parameter for pixel offsetting to help nudge your elements back onto the vertical rhythm in case they are off by a pixel or two.
