@@ -1,4 +1,4 @@
-// Typographic v2.5.0 - https://github.com/corysimmons/typographic
+// Typographic v2.6.0 - https://github.com/corysimmons/typographic
 
 
 // Settings
@@ -74,6 +74,16 @@ $palatino      = 'Palatino', 'Palatino Linotype', 'Palatino LT STD', "Book Antiq
 
 // Helpers
 
+/**
+ * Creates a baseline grid based off your $line-height-ratio to help visualize your vertical rhythm grid. You can offset the grid by negative or positive pixels to line it up perfectly with the bottom of your text.
+ *
+ * @param {color} [$color=black] - A color to be lightened and used as the color for the grid.
+ * @param {number} [$px-offset=false] - A positive or negative number of pixels to offset the grid by. Useful for lining the bottom of the gridlines up with your text.
+ *
+ * @example
+ *   grid-overlay(blue, 2)
+ */
+
 grid-overlay($color = black, $px-offset = false)
   body
     background: linear-gradient(to top, rgba($color, 10%) 5%, white 5%)
@@ -81,14 +91,33 @@ grid-overlay($color = black, $px-offset = false)
     if $px-offset
       background-position: 0 unit($px-offset, 'px')
 
-vr-block($n = 1, $px-offset = false)
+
+/**
+ * Returns a "vertical unit". Useful for specifying the height and margins of non-text elements like images and such.
+ *
+ * @param {number} [$units=1] - Number of units. Accepts floated numbers as well.
+ * @param {number} [$px-offset=false] - A positive or negative number of pixels to offset the grid by. Useful for lining the bottom of the gridlines up with your text. Since this doesn't compute a literal pixel you may need to use a floated number (multiples of .25 work well) to keep your rhythm on track.
+ *
+ * @example
+ *   img
+ *     vr-block(5.25, .5)
+ */
+
+vr-block($units = 1, $px-offset = false)
   if $px-offset
-    return ( (($line-height-ratio * $max-font) / ($max-font / 2)) * ($n / 2) * (1 + ($px-offset / $max-font)) )em
+    return ( (($line-height-ratio * $max-font) / ($max-font / 2)) * ($units / 2) * (1 + ($px-offset / $max-font)) )em
   else
-    return ( (($line-height-ratio * $max-font) / ($max-font / 2)) * ($n / 2) )em
+    return ( (($line-height-ratio * $max-font) / ($max-font / 2)) * ($units / 2) )em
 
 
 // Typography Reset
+
+/**
+ * The Typographic Reset. This is where Typographic goes through every markup element and styles it to adhere to a vertical rhythm. After you set your variables in a settings file fire this mixin.
+ *
+ * @example
+ *   typographic()
+ */
 
 typographic()
 
@@ -120,7 +149,6 @@ typographic()
 
   p, blockquote, pre,
   address,
-  a, code,
   dl, ol, ul,
   form,
   table

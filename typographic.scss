@@ -1,4 +1,4 @@
-// Typographic v2.5.0 - https://github.com/corysimmons/typographic
+// Typographic v2.6.0 - https://github.com/corysimmons/typographic
 
 
 // Ratios
@@ -74,17 +74,27 @@ $max-width          : 1000px !default;
 
 // Helpers
 
-@function _strip-units($number) {
-  @return $number / ($number * 0 + 1);
+/// A function to remove the unit from a number.
+///
+/// @param {unit} $unit - A unit with a unit value.
+///
+/// @example
+///   _strip-units(1px)
+///
+/// @access private
+
+@function _strip-units($unit) {
+  @return $unit / ($unit * 0 + 1);
 }
 
-@function vr-block($n: 1, $px-offset: false) {
-  @if($px-offset) {
-    @return ( (($line-height-ratio * _strip-units($max-font)) / (_strip-units($max-font) / 2)) * ($n / 2) * (1 + ($px-offset / _strip-units($max-font))) ) + em;
-  } @else {
-    @return ( (($line-height-ratio * _strip-units($max-font)) / (_strip-units($max-font) / 2)) * ($n / 2) ) + em;
-  }
-}
+
+/// Creates a baseline grid based off your $line-height-ratio to help visualize your vertical rhythm grid. You can offset the grid by negative or positive pixels to line it up perfectly with the bottom of your text.
+///
+/// @param {color} $color [black] - A color to be lightened and used as the color for the grid.
+/// @param {number} $px-offset [false] - A positive or negative number of pixels to offset the grid by. Useful for lining the bottom of the gridlines up with your text.
+///
+/// @example
+///   @include grid-overlay(blue, 2);
 
 @mixin grid-overlay($color: black, $px-offset: false) {
   body {
@@ -97,7 +107,32 @@ $max-width          : 1000px !default;
 }
 
 
-// Private Decimal Exponent Function
+/// Returns a "vertical unit". Useful for specifying the height and margins of non-text elements like images and such.
+///
+/// @param {number} $units [1] - Number of units. Accepts floated numbers as well.
+/// @param {number} $px-offset [false] - A positive or negative number of pixels to offset the grid by. Useful for lining the bottom of the gridlines up with your text. Since this doesn't compute a literal pixel you may need to use a floated number (multiples of .25 work well) to keep your rhythm on track.
+///
+/// @example
+///   img {
+///     height: vr-block(5.25);
+///     margin-bottom: vr-block(.25);
+///   }
+
+@function vr-block($units: 1, $px-offset: false) {
+  @if($px-offset) {
+    @return ( (($line-height-ratio * _strip-units($max-font)) / (_strip-units($max-font) / 2)) * ($units / 2) * (1 + ($px-offset / _strip-units($max-font))) ) + em;
+  } @else {
+    @return ( (($line-height-ratio * _strip-units($max-font)) / (_strip-units($max-font) / 2)) * ($units / 2) ) + em;
+  }
+}
+
+
+/// Performs exponent math on floated numbers.
+///
+/// @example
+///   math-pow(3, 3)
+///
+/// @access private
 
 @function math-pow($number, $exp) {
     @if (round($exp) != $exp) {
@@ -120,6 +155,11 @@ $max-width          : 1000px !default;
     @return $value;
 }
 
+
+/// Helps with math-pow() function
+///
+/// @access private
+
 @function math-factorial($value) {
   @if $value == 0 {
     @return 1;
@@ -134,6 +174,11 @@ $max-width          : 1000px !default;
   @return $result;
 }
 
+
+/// Helps with math-pow() function
+///
+/// @access private
+
 @function math-summation($iteratee, $input, $initial: 0, $limit: 100) {
   $sum: 0;
 
@@ -144,19 +189,41 @@ $max-width          : 1000px !default;
   @return $sum;
 }
 
+
+/// Helps with math-pow() function
+///
+/// @access private
+
 @function math-exp-maclaurin($x, $n) {
   $result: math-pow($x, $n) / math-factorial($n);
   @return $result;
 }
+
+
+/// Helps with math-pow() function
+///
+/// @access private
+
 @function math-exp($value) {
   $result: math-summation(math-exp-maclaurin, $value, 0, 100);
   @return $result;
 }
 
+
+/// Helps with math-pow() function
+///
+/// @access private
+
 @function math-ln-maclaurin($x, $n) {
   $result: (math-pow(-1, $n + 1) / $n) * (math-pow($x - 1, $n));
   @return $result;
 }
+
+
+/// Helps with math-pow() function
+///
+/// @access private
+
 @function math-ln($value) {
   $ten-exp: 1;
   $ln-ten: 2.30258509;
@@ -196,9 +263,6 @@ $max-width          : 1000px !default;
 
   }
 
-
-  // Reset
-
   h1, h2, h3, h4, h5, h6, p, blockquote, pre,
   a, abbr, acronym, address, big, cite, code,
   del, dfn, em, img, ins, kbd, q, s, samp,
@@ -213,7 +277,6 @@ $max-width          : 1000px !default;
 
   p, blockquote, pre,
   address,
-  a, code,
   dl, ol, ul,
   form,
   table {
