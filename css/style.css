@@ -346,3 +346,31 @@ img {
   height: 9.1875em;
   margin-bottom: 0.4375em;
 }
+.launchbox-link {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  background: #333;
+  padding: 18px 35px 10px;
+  transition: all 0.25s ease;
+  border-radius: 10px 0 0 0;
+}
+.launchbox-link img {
+  display: block;
+  height: 40px;
+}
+.launchbox-link:hover {
+  background: #1e90ff;
+}
+.launchbox-link:active {
+  background: #0182ff;
+}
+@media (max-width: 600px) {
+  .launchbox-link {
+    border-radius: 6px 0 0 0;
+    padding: 13px 23px 6px;
+  }
+  .launchbox-link img {
+    height: 25px;
+  }
+}
