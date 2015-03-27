@@ -1,4 +1,4 @@
-// Typographic v2.7.1 - https://github.com/corysimmons/typographic
+// Typographic v2.7.2 - https://github.com/corysimmons/typographic
 
 
 // Ratios
@@ -418,8 +418,6 @@ $max-width          : 1000px !default;
 
   blockquote {
     font-style: italic;
-    padding-left: #{$line-height-ratio}em;
-    border-left: 5px solid currentColor;
     cite {
       display: block;
       font-style: normal;
@@ -468,11 +466,12 @@ $max-width          : 1000px !default;
 
   fieldset {
     padding: vr-block(.5) vr-block() vr-block();
-    border: 1px solid currentColor;
+    border-width: 1px;
+    border-style: solid;
     max-width: 100%;
-    margin-bottom: vr-block(1, 3);
+    margin-bottom: vr-block(1, 1);
     @media (min-width: $max-width) {
-      margin-bottom: vr-block(1.25, -.5);
+      margin-bottom: vr-block(1.25, -1);
     }
     button, input[type="submit"] {
       margin-bottom: 0;
@@ -491,7 +490,6 @@ $max-width          : 1000px !default;
     display: block;
     max-width: 100%;
     padding: vr-block(.25);
-    border: 1px solid currentColor;
 
     font-size: $local-min-font;
     margin-bottom: vr-block(.5, 7);
@@ -512,7 +510,6 @@ $max-width          : 1000px !default;
 
     display: block;
     cursor: pointer;
-    border: 1px solid currentColor;
 
     font-size: $local-min-font;
     padding: vr-block(.25) vr-block();
@@ -538,16 +535,15 @@ $max-width          : 1000px !default;
     width: 100%;
     border-spacing: 0;
     border-collapse: collapse;
-    margin-bottom: vr-block(1, .5);
+    margin-bottom: vr-block(1, 5);
     @media (min-width: $max-width) {
-      margin-bottom: vr-block(1, 1);
+      margin-bottom: vr-block(1, 3);
     }
   }
 
   th {
     text-align: left;
     color: $header-color;
-    border: 1px solid currentColor;
 
     padding: vr-block(.125) vr-block(.5);
 
@@ -558,7 +554,6 @@ $max-width          : 1000px !default;
 
   td {
     padding: ($line-height-ratio * .5) + em;
-    border: 1px solid currentColor;
     padding: vr-block(.125) vr-block(.5);
 
     @media (min-width: $max-width) {
