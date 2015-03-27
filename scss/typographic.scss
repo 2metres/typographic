@@ -1,4 +1,4 @@
-// Typographic v2.7.0 - https://github.com/corysimmons/typographic
+// Typographic v2.7.1 - https://github.com/corysimmons/typographic
 
 
 // Ratios
@@ -419,7 +419,7 @@ $max-width          : 1000px !default;
   blockquote {
     font-style: italic;
     padding-left: #{$line-height-ratio}em;
-    border-left: 5px solid darken(white, 7%);
+    border-left: 5px solid currentColor;
     cite {
       display: block;
       font-style: normal;
@@ -428,32 +428,16 @@ $max-width          : 1000px !default;
 
   pre {
     padding: ($line-height-ratio * .5) + em;
-    background: darken(white, 2%);
-    border: 1px solid darken(white, 7%);
-    margin-bottom: vr-block(1, -2);
-    @media (min-width: $max-width) {
-      margin-bottom: vr-block(1, -1);
-    }
+    margin-bottom: vr-block(1);
     code {
-      background: none;
       padding: 0;
-      border: 0;
-    }
-  }
-
-  a {
-    color: dodgerblue;
-    &:visited {
-      color: darken(dodgerblue, 10%);
     }
   }
 
   code {
     font-family: $courier;
     padding: ($line-height-ratio * .05) + em ($line-height-ratio * .15) + em;
-    background: darken(white, 2%);
     line-height: 0;
-    border: 1px solid darken(white, 7%);
   }
 
   big, small, sub, sup {
@@ -461,7 +445,7 @@ $max-width          : 1000px !default;
   }
 
   abbr, acronym {
-    border-bottom: 1px dotted #333;
+    border-bottom: 1px dotted currentColor;
     cursor: help;
   }
 
@@ -484,7 +468,7 @@ $max-width          : 1000px !default;
 
   fieldset {
     padding: vr-block(.5) vr-block() vr-block();
-    border: 1px solid darken(white, 7%);
+    border: 1px solid currentColor;
     max-width: 100%;
     margin-bottom: vr-block(1, 3);
     @media (min-width: $max-width) {
@@ -507,7 +491,7 @@ $max-width          : 1000px !default;
     display: block;
     max-width: 100%;
     padding: vr-block(.25);
-    border: 1px solid darken(white, 7%);
+    border: 1px solid currentColor;
 
     font-size: $local-min-font;
     margin-bottom: vr-block(.5, 7);
@@ -528,8 +512,7 @@ $max-width          : 1000px !default;
 
     display: block;
     cursor: pointer;
-    background: darken(white, 3%);
-    border: 1px solid darken(white, 7%);
+    border: 1px solid currentColor;
 
     font-size: $local-min-font;
     padding: vr-block(.25) vr-block();
@@ -564,7 +547,7 @@ $max-width          : 1000px !default;
   th {
     text-align: left;
     color: $header-color;
-    border: 1px solid darken(white, 7%);
+    border: 1px solid currentColor;
 
     padding: vr-block(.125) vr-block(.5);
 
@@ -573,17 +556,9 @@ $max-width          : 1000px !default;
     }
   }
 
-  tr {
-    &:nth-child(odd) {
-      td {
-        background: darken(white, 3%);
-      }
-    }
-  }
-
   td {
     padding: ($line-height-ratio * .5) + em;
-    border: 1px solid darken(white, 7%);
+    border: 1px solid currentColor;
     padding: vr-block(.125) vr-block(.5);
 
     @media (min-width: $max-width) {
