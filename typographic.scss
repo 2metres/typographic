@@ -1,4 +1,4 @@
-// Typographic v2.4.0 - https://github.com/corysimmons/typographic
+// Typographic v2.5.0 - https://github.com/corysimmons/typographic
 
 
 // Ratios
@@ -24,52 +24,52 @@ $double-octave  : 4;
 
 // Sans-serif
 
-$calibri       : Calibri, Candara, Segoe, "Segoe UI", Optima, Arial, sans-serif;
-$candara       : Candara, Calibri, Segoe, "Segoe UI", Optima, Arial, sans-serif;
-$courier       : 'Courier New', Courier, 'Lucida Sans Typewriter', 'Lucida Typewriter', monospace;
-$franklin      : 'Franklin Gothic Medium', Arial, sans-serif;
-$futura        : Futura, 'Trebuchet MS', Arial, sans-serif;
-$geneva        : Geneva, Tahoma, Verdana, sans-serif;
-$gill-sans     : 'Gill Sans', 'Gill Sans MT', Calibri, sans-serif;
-$helvetica     : 'Helvetica Neue', Helvetica, Arial, sans-serif;
-$lucida-grande : 'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', Geneva, Verdana, sans-serif;
-$optima        : Optima, Segoe, 'Segoe UI', Candara, Calibri, Arial, sans-serif;
-$segoe         : Segoe, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
-$tahoma        : Tahoma, Geneva, Verdana, sans-serif;
-$trebuchet     : 'Trebuchet MS', 'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', Tahoma, sans-serif;
-$verdana       : Verdana, Geneva, sans-serif;
+$calibri       : 'Calibri', 'Candara', 'Segoe', 'Segoe UI', 'Optima', 'Arial', 'sans-serif';
+$candara       : 'Candara', 'Calibri', 'Segoe', 'Segoe UI', 'Optima', 'Arial', 'sans-serif';
+$courier       : 'Courier New', 'Courier', 'Lucida Sans Typewriter', 'Lucida Typewriter', 'monospace';
+$franklin      : 'Franklin Gothic Medium', 'Arial', 'sans-serif';
+$futura        : 'Futura', 'Trebuchet MS', 'Arial', 'sans-serif';
+$geneva        : 'Geneva', 'Tahoma', 'Verdana', 'sans-serif';
+$gill-sans     : 'Gill Sans', 'Gill Sans MT', 'Calibri', 'sans-serif';
+$helvetica     : 'Helvetica Neue', 'Helvetica', 'Arial', 'sans-serif';
+$lucida-grande : 'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', 'Geneva', 'Verdana', 'sans-serif';
+$optima        : 'Optima', 'Segoe', 'Segoe UI', 'Candara', 'Calibri', 'Arial', 'sans-serif';
+$segoe         : 'Segoe', 'Segoe UI', 'Helvetica Neue', 'Arial', 'sans-serif';
+$tahoma        : 'Tahoma', 'Geneva', 'Verdana', 'sans-serif';
+$trebuchet     : 'Trebuchet MS', 'Lucida Grande', 'Lucida Sans Unicode', 'Lucida Sans', 'Tahoma', 'sans-serif';
+$verdana       : 'Verdana', 'Geneva', 'sans-serif';
 
 
 // Serif
 
-$antiqua       : 'Book Antiqua', Palatino, 'Palatino Linotype', 'Palatino LT STD', Georgia, serif;
-$baskerville   : Baskerville, 'Baskerville old face', 'Hoefler Text', Garamond, 'Times New Roman', serif;
-$bodoni        : 'Bodoni MT', Didot, 'Didot LT STD', 'Hoefler Text', Garamond, 'Times New Roman', serif;
-$cambria       : Cambria, Georgia, serif;
-$caslon        : 'Big Caslon', 'Book Antiqua', 'Palatino Linotype', Georgia, serif;
-$constantia    : Constantia, Palatino, 'Palatino Linotype', 'Palatino LT STD', Georgia, serif;
-$didot         : Didot, 'Didot LT STD', 'Hoefler Text', Garamond, 'Times New Roman', serif;
-$garamond      : Garamond, Baskerville, 'Baskerville Old Face', 'Hoefler Text', 'Times New Roman', serif;
-$goudy         : 'Goudy Old Style', Garamond, 'Big Caslon', 'Times New Roman', serif;
-$hoefler       : 'Hoefler Text', 'Baskerville old face', Garamond, 'Times New Roman', serif;
-$lucida-bright : 'Lucida Bright', Georgia, serif;
-$palatino      : Palatino, 'Palatino Linotype', 'Palatino LT STD', "Book Antiqua", Georgia, serif;
+$antiqua       : 'Book Antiqua', 'Palatino', 'Palatino Linotype', 'Palatino LT STD', 'Georgia', 'serif';
+$baskerville   : 'Baskerville', 'Baskerville old face', 'Hoefler Text', 'Garamond', 'Times New Roman', 'serif';
+$bodoni        : 'Bodoni MT', 'Didot', 'Didot LT STD', 'Hoefler Text', 'Garamond', 'Times New Roman', 'serif';
+$cambria       : 'Cambria', 'Georgia', 'serif';
+$caslon        : 'Big Caslon', 'Book Antiqua', 'Palatino Linotype', 'Georgia', 'serif';
+$constantia    : 'Constantia', 'Palatino', 'Palatino Linotype', 'Palatino LT STD', 'Georgia', 'serif';
+$didot         : 'Didot', 'Didot LT STD', 'Hoefler Text', 'Garamond', 'Times New Roman', 'serif';
+$garamond      : 'Garamond', 'Baskerville', 'Baskerville Old Face', 'Hoefler Text', 'Times New Roman', 'serif';
+$goudy         : 'Goudy Old Style', 'Garamond', 'Big Caslon', 'Times New Roman', 'serif';
+$hoefler       : 'Hoefler Text', 'Baskerville old face', 'Garamond', 'Times New Roman', 'serif';
+$lucida-bright : 'Lucida Bright', 'Georgia', 'serif';
+$palatino      : 'Palatino', 'Palatino Linotype', 'Palatino LT STD', "Book Antiqua", 'Georgia', 'serif';
 
 
 // Settings
 
-$line-height-ratio  : 1.75;
-$header-ratio       : $golden;
-$body-font          : $helvetica;
-$body-font-weight   : 300;
-$body-color         : #666;
-$header-font        : $helvetica;
-$header-font-weight : 500;
-$header-color       : #111;
-$min-font           : 12px;
-$max-font           : 20px;
-$min-width          : 600px;
-$max-width          : 1000px;
+$line-height-ratio  : 1.75 !default;
+$header-ratio       : $golden !default;
+$body-font          : $helvetica !default;
+$body-font-weight   : 300 !default;
+$body-color         : #666 !default;
+$header-font        : $helvetica !default;
+$header-font-weight : 500 !default;
+$header-color       : #111 !default;
+$min-font           : 12px !default;
+$max-font           : 20px !default;
+$min-width          : 600px !default;
+$max-width          : 1000px !default;
 
 
 // Helpers
@@ -233,7 +233,9 @@ $max-width          : 1000px;
     $local-max-font: $max-font * (math-pow($header-ratio, 1.75));
 
     font-size: $local-min-font;
-    line-height: (($line-height-ratio * $min-font) / ($local-min-font / 2)) + em;
+    margin-top: (($line-height-ratio * $min-font) / ($local-min-font / 1.25)) + em;
+    line-height: (($line-height-ratio * $min-font) / ($local-min-font / 1.5)) + em;
+    margin-bottom: (($line-height-ratio * $min-font) / ($local-min-font / .25)) + em;
 
     @media (min-width: $min-width) {
       font-size: calc( #{$local-min-font} + (#{_strip-units($local-max-font)} - #{_strip-units($local-min-font)}) * ((100vw - #{$min-width}) / (#{_strip-units($max-width)} - #{_strip-units($min-width)})) );
@@ -241,7 +243,9 @@ $max-width          : 1000px;
 
     @media (min-width: $max-width) {
       font-size: $local-max-font;
-      line-height: (($line-height-ratio * $max-font) / ($local-max-font / 2)) + em;
+      margin-top: (($line-height-ratio * $max-font) / ($local-max-font / 1.25)) + em;
+      line-height: (($line-height-ratio * $max-font) / ($local-max-font / 1.5)) + em;
+      margin-bottom: (($line-height-ratio * $max-font) / ($local-max-font / .25)) + em;
     }
   }
 
@@ -250,7 +254,9 @@ $max-width          : 1000px;
     $local-max-font: $max-font * (math-pow($header-ratio, 1.4));
 
     font-size: $local-min-font;
-    line-height: (($line-height-ratio * $min-font) / ($local-min-font / 2)) + em;
+    margin-top: (($line-height-ratio * $min-font) / ($local-min-font / 1.25)) + em;
+    line-height: (($line-height-ratio * $min-font) / ($local-min-font / 1.5)) + em;
+    margin-bottom: (($line-height-ratio * _strip-units($min-font)) / (_strip-units($local-min-font) / .25) * (1 + (3 / _strip-units($local-min-font)))) + em;
 
     @media (min-width: $min-width) {
       font-size: calc( #{$local-min-font} + (#{_strip-units($local-max-font)} - #{_strip-units($local-min-font)}) * ((100vw - #{$min-width}) / (#{_strip-units($max-width)} - #{_strip-units($min-width)})) );
@@ -258,7 +264,9 @@ $max-width          : 1000px;
 
     @media (min-width: $max-width) {
       font-size: $local-max-font;
-      line-height: (($line-height-ratio * $max-font) / ($local-max-font / 2)) + em;
+      margin-top: (($line-height-ratio * $max-font) / ($local-max-font / 1.25)) + em;
+      line-height: (($line-height-ratio * $max-font) / ($local-max-font / 1.5)) + em;
+      margin-bottom: (($line-height-ratio * _strip-units($max-font)) / (_strip-units($local-max-font) / .25) * (1 + (3 / _strip-units($local-max-font)))) + em;
     }
   }
 
@@ -267,7 +275,9 @@ $max-width          : 1000px;
     $local-max-font: $max-font * (math-pow($header-ratio, 1.05));
 
     font-size: $local-min-font;
-    line-height: (($line-height-ratio * $min-font) / ($local-min-font / 2)) + em;
+    margin-top: (($line-height-ratio * $min-font) / ($local-min-font / 1.25)) + em;
+    line-height: (($line-height-ratio * $min-font) / ($local-min-font / 1.5)) + em;
+    margin-bottom: (($line-height-ratio * _strip-units($min-font)) / (_strip-units($local-min-font) / .25) * (1 + (3 / _strip-units($local-min-font)))) + em;
 
     @media (min-width: $min-width) {
       font-size: calc( #{$local-min-font} + (#{_strip-units($local-max-font)} - #{_strip-units($local-min-font)}) * ((100vw - #{$min-width}) / (#{_strip-units($max-width)} - #{_strip-units($min-width)})) );
@@ -275,7 +285,9 @@ $max-width          : 1000px;
 
     @media (min-width: $max-width) {
       font-size: $local-max-font;
-      line-height: (($line-height-ratio * $max-font) / ($local-max-font / 2)) + em;
+      margin-top: (($line-height-ratio * $max-font) / ($local-max-font / 1.25)) + em;
+      line-height: (($line-height-ratio * $max-font) / ($local-max-font / 1.5)) + em;
+      margin-bottom: (($line-height-ratio * _strip-units($max-font)) / (_strip-units($local-max-font) / .25) * (1 + (3 / _strip-units($local-max-font)))) + em;
     }
   }
 
@@ -284,7 +296,9 @@ $max-width          : 1000px;
     $local-max-font: $max-font * (math-pow($header-ratio, .7));
 
     font-size: $local-min-font;
-    line-height: (($line-height-ratio * $min-font) / ($local-min-font / 2)) + em;
+    margin-top: (($line-height-ratio * $min-font) / ($local-min-font / 1.25)) + em;
+    line-height: (($line-height-ratio * $min-font) / ($local-min-font / 1.5)) + em;
+    margin-bottom: (($line-height-ratio * _strip-units($min-font)) / (_strip-units($local-min-font) / .25) * (1 + (3 / _strip-units($local-min-font)))) + em;
 
     @media (min-width: $min-width) {
       font-size: calc( #{$local-min-font} + (#{_strip-units($local-max-font)} - #{_strip-units($local-min-font)}) * ((100vw - #{$min-width}) / (#{_strip-units($max-width)} - #{_strip-units($min-width)})) );
@@ -292,7 +306,9 @@ $max-width          : 1000px;
 
     @media (min-width: $max-width) {
       font-size: $local-max-font;
-      line-height: (($line-height-ratio * $max-font) / ($local-max-font / 2)) + em;
+      margin-top: (($line-height-ratio * $max-font) / ($local-max-font / 1.25)) + em;
+      line-height: (($line-height-ratio * $max-font) / ($local-max-font / 1.5)) + em;
+      margin-bottom: (($line-height-ratio * _strip-units($max-font)) / (_strip-units($local-max-font) / .25) * (1 + (3 / _strip-units($local-max-font)))) + em;
     }
   }
 
@@ -301,7 +317,9 @@ $max-width          : 1000px;
     $local-max-font: $max-font * (math-pow($header-ratio, .35));
 
     font-size: $local-min-font;
-    line-height: (($line-height-ratio * $min-font) / ($local-min-font / 2)) + em;
+    margin-top: (($line-height-ratio * $min-font) / ($local-min-font / 1.25)) + em;
+    line-height: (($line-height-ratio * $min-font) / ($local-min-font / 1.5)) + em;
+    margin-bottom: (($line-height-ratio * $min-font) / ($local-min-font / .25)) + em;
 
     @media (min-width: $min-width) {
       font-size: calc( #{$local-min-font} + (#{_strip-units($local-max-font)} - #{_strip-units($local-min-font)}) * ((100vw - #{$min-width}) / (#{_strip-units($max-width)} - #{_strip-units($min-width)})) );
@@ -309,7 +327,9 @@ $max-width          : 1000px;
 
     @media (min-width: $max-width) {
       font-size: $local-max-font;
-      line-height: (($line-height-ratio * $max-font) / ($local-max-font / 2)) + em;
+      margin-top: (($line-height-ratio * $max-font) / ($local-max-font / 1.25)) + em;
+      line-height: (($line-height-ratio * $max-font) / ($local-max-font / 1.5)) + em;
+      margin-bottom: (($line-height-ratio * $max-font) / ($local-max-font / .25)) + em;
     }
   }
 
@@ -318,7 +338,9 @@ $max-width          : 1000px;
     $local-max-font: $max-font;
 
     font-size: $local-min-font;
-    line-height: (($line-height-ratio * $min-font) / ($local-min-font / 2)) + em;
+    margin-top: (($line-height-ratio * $min-font) / ($local-min-font / 1.25)) + em;
+    line-height: (($line-height-ratio * $min-font) / ($local-min-font / 1.5)) + em;
+    margin-bottom: (($line-height-ratio * _strip-units($min-font)) / (_strip-units($local-min-font) / .25) * (1 + (2 / _strip-units($local-min-font)))) + em;
 
     @media (min-width: $min-width) {
       font-size: calc( #{$local-min-font} + (#{_strip-units($local-max-font)} - #{_strip-units($local-min-font)}) * ((100vw - #{$min-width}) / (#{_strip-units($max-width)} - #{_strip-units($min-width)})) );
@@ -326,7 +348,9 @@ $max-width          : 1000px;
 
     @media (min-width: $max-width) {
       font-size: $local-max-font;
-      line-height: (($line-height-ratio * $max-font) / ($local-max-font / 2)) + em;
+      margin-top: (($line-height-ratio * $max-font) / ($local-max-font / 1.25)) + em;
+      line-height: (($line-height-ratio * $max-font) / ($local-max-font / 1.5)) + em;
+      margin-bottom: (($line-height-ratio * _strip-units($max-font)) / (_strip-units($local-max-font) / .25) * (1 + (2 / _strip-units($local-max-font)))) + em;
     }
   }
 
@@ -344,11 +368,18 @@ $max-width          : 1000px;
     padding: ($line-height-ratio * .5) + em;
     background: darken(white, 2%);
     border: 1px solid darken(white, 7%);
-    margin-bottom: vr-block(1, -1);
+    margin-bottom: vr-block(1, -2.5);
     code {
       background: none;
       padding: 0;
       border: 0;
+    }
+  }
+
+  a {
+    color: dodgerblue;
+    &:visited {
+      color: darken(dodgerblue, 10%);
     }
   }
 

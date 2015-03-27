@@ -7,7 +7,7 @@
 }
 
 html {
-  padding: ($line-height-ratio * 3) + em;
+  padding: vr-block(3);
   text-align: center;
   @media (max-width: 800px) {
     text-align: left;
@@ -16,10 +16,12 @@ html {
 
 .logo {
   height: vr-block(2);
-  margin-bottom: ($line-height-ratio * 3) + em;
+  margin-bottom: vr-block(2);
   display: inline-block;
   box-shadow: 0 0 30px 20px white;
   background: white;
+  border-radius: 999em;
+  padding: 0 30px;
   img {
     height: vr-block(2);
   }
@@ -46,7 +48,7 @@ img {
   margin-right: vr-block();
   border-radius: 999em;
   &.vr-block {
-    height: vr-block(6);
-    margin-bottom: vr-block();
+    height: vr-block(5.25);
+    margin-bottom: vr-block(.25);
   }
 }
