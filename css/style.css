@@ -210,8 +210,6 @@ h6 {
 }
 blockquote {
   font-style: italic;
-  padding-left: 1.75em;
-  border-left: 5px solid currentColor;
 }
 blockquote cite {
   display: block;
@@ -255,13 +253,14 @@ ol {
 }
 fieldset {
   padding: 0.875em 1.75em 1.75em;
-  border: 1px solid currentColor;
+  border-width: 1px;
+  border-style: solid;
   max-width: 100%;
-  margin-bottom: 2.0125em;
+  margin-bottom: 1.8375em;
 }
 @media (min-width: 1000px) {
   fieldset {
-    margin-bottom: 2.1875em;
+    margin-bottom: 2.078125em;
   }
 }
 fieldset button,
@@ -284,7 +283,6 @@ textarea {
   display: block;
   max-width: 100%;
   padding: 0.4375em;
-  border: 1px solid currentColor;
   font-size: 12px;
   margin-bottom: 1.18125em;
 }
@@ -309,7 +307,6 @@ input[type="submit"],
 button {
   display: block;
   cursor: pointer;
-  border: 1px solid currentColor;
   font-size: 12px;
   padding: 0.4375em 1.75em;
   margin-bottom: 1.18125em;
@@ -331,12 +328,16 @@ table {
   width: 100%;
   border-spacing: 0;
   border-collapse: collapse;
-  margin-bottom: 1.79375em;
+  margin-bottom: 2.1875em;
+}
+@media (min-width: 1000px) {
+  table {
+    margin-bottom: 2.05625em;
+  }
 }
 th {
   text-align: left;
   color: #111;
-  border: 1px solid currentColor;
   padding: 0.21875em 0.875em;
 }
 @media (min-width: 1000px) {
@@ -345,7 +346,6 @@ th {
   }
 }
 td {
-  border: 1px solid currentColor;
   padding: 0.21875em 0.875em;
 }
 @media (min-width: 1000px) {

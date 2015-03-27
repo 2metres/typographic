@@ -1,4 +1,4 @@
-// Typographic v2.7.1 - https://github.com/corysimmons/typographic
+// Typographic v2.7.2 - https://github.com/corysimmons/typographic
 
 
 // Settings
@@ -270,8 +270,6 @@ typographic()
 
   blockquote
     font-style: italic
-    padding-left: ($line-height-ratio)em
-    border-left: 5px solid currentColor
     cite
       display: block
       font-style: normal
@@ -309,12 +307,13 @@ typographic()
 
   fieldset
     padding: vr-block(.5) vr-block() vr-block()
-    border: 1px solid currentColor
+    border-width: 1px
+    border-style: solid
     max-width: 100%
-    margin-bottom: vr-block(1, 3)
+    margin-bottom: vr-block(1, 1)
 
     @media (min-width: $max-width)
-      margin-bottom: vr-block(1.25)
+      margin-bottom: vr-block(1.25, -1)
 
     button, input[type="submit"]
       margin-bottom: 0
@@ -335,7 +334,6 @@ typographic()
     display: block
     max-width: 100%
     padding: vr-block(.25)
-    border: 1px solid currentColor
 
     font-size: $local-min-font
     margin-bottom: vr-block(.5, 7)
@@ -353,7 +351,6 @@ typographic()
 
     display: block
     cursor: pointer
-    border: 1px solid currentColor
 
     font-size: $local-min-font
     padding: vr-block(.25) vr-block()
@@ -370,12 +367,15 @@ typographic()
     width: 100%
     border-spacing: 0
     border-collapse: collapse
-    margin-bottom: vr-block(1, .5)
+    margin-bottom: vr-block(1, 5)
+
+    @media (min-width: $max-width)
+      margin-bottom: vr-block(1, 3.5)
+
 
   th
     text-align: left
     color: $header-color
-    border: 1px solid currentColor
 
     padding: vr-block(.125) vr-block(.5)
 
@@ -383,8 +383,6 @@ typographic()
       padding: vr-block(.25) vr-block(.5)
 
   td
-    border: 1px solid currentColor
-
     padding: vr-block(.125) vr-block(.5)
 
     @media (min-width: $max-width)
