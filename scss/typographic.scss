@@ -375,6 +375,13 @@ $max-width          : 1000px !default;
     }
   }
 
+  a {
+    color: dodgerblue;
+    &:visited {
+      color: darken(dodgerblue, 10%);
+    }
+  }
+
   code {
     font-family: $courier;
     padding: ($line-height-ratio * .05) + em ($line-height-ratio * .15) + em;
