@@ -34,6 +34,7 @@ $min-font           = 13px
 $max-font           = 20px
 $min-width          = 600px
 $max-width          = 1000px
+$vertical-rhythm    = true
 ```
 
 
@@ -155,6 +156,7 @@ typographic()
 
 ### Caveats
 - Slow in Sass because Sass doesn't support calculating decimals in exponents by default. Luckily you only have to change a few variables to get your compiled typography stylesheet then you can un-import Typographic. If lack of solid math in native Sass bothers you, please chime in on this [issue](https://github.com/sass/sass/issues/684).
+- Vertical rhythm doesn't really work with headers. It looks fine on `h1`, `h2`, and `h3`, but the `line-height` gets out of control on smaller headers. I've added a `$vertical-rhythm` setting to fall back to decent looking typography that isn't focused on vertical rhythm for just this case.
 
 
 ### Credits
