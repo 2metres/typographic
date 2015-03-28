@@ -4,7 +4,7 @@
     "name": "Cory Simmons"
   },
   "main": "stylus/typographic.js",
-  "version": "2.7.2",
+  "version": "2.8.0",
   "description": "Responsive typography with modular scale, font stacks, and more.",
   "keywords": [
     "stylus",
