@@ -91,7 +91,6 @@ h6 {
   font-family: 'Helvetica Neue', 'Helvetica', 'Arial', 'sans-serif';
   font-weight: 500;
   color: #111;
-  margin-bottom: 0;
   clear: both;
 }
 h1 {
@@ -193,7 +192,7 @@ h6 {
   font-size: 12px;
   margin-top: 2.1875em;
   line-height: 2.625em;
-  margin-bottom: 0.510416666666667em;
+  margin-bottom: 0.619791666666667em;
 }
 @media (min-width: 600px) {
   h6 {
@@ -203,9 +202,9 @@ h6 {
 @media (min-width: 1000px) {
   h6 {
     font-size: 20px;
-    margin-top: 3.5em;
-    line-height: 0.4375em;
-    margin-bottom: 1.334375em;
+    margin-top: 2.1875em;
+    line-height: 2.625em;
+    margin-bottom: 0.473958333333333em;
   }
 }
 blockquote {
