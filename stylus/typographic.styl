@@ -1,4 +1,4 @@
-// Typographic v2.7.2 - https://github.com/corysimmons/typographic
+// Typographic v2.8.0 - https://github.com/corysimmons/typographic
 
 
 // Settings
@@ -15,6 +15,7 @@ $min-font           = 12px
 $max-font           = 20px
 $min-width          = 600px
 $max-width          = 1000px
+$vertical-rhythm    = true
 
 
 // Ratios
@@ -154,10 +155,12 @@ typographic()
     margin-bottom: ($line-height-ratio)em
 
   h1, h2, h3, h4, h5, h6
+    margin-top: 0
+    line-height: 1.1em
+    margin-bottom: .15em
     font-family: $header-font
     font-weight: $header-font-weight
     color: $header-color
-    margin-bottom: 0
     clear: both
 
   h1
@@ -165,108 +168,120 @@ typographic()
     $local-max-font = $max-font * ($header-ratio ** 1.75)
 
     font-size: $local-min-font
-    margin-top: (($line-height-ratio * $min-font) / ($local-min-font / 1.25))em
-    line-height: (($line-height-ratio * $min-font) / ($local-min-font / 1.5))em
-    margin-bottom: (($line-height-ratio * $min-font) / ($local-min-font / .25))em
+    if $vertical-rhythm is true
+      margin-top: (($line-height-ratio * $min-font) / ($local-min-font / 1.25))em
+      line-height: (($line-height-ratio * $min-font) / ($local-min-font / 1.5))em
+      margin-bottom: (($line-height-ratio * $min-font) / ($local-min-font / .25))em
 
     @media (min-width: $min-width)
       font-size: s('calc( %s + (%s - %s) * ((100vw - %s) / (%s - %s)) )', $local-min-font, remove-unit($local-max-font), remove-unit($local-min-font), $min-width, remove-unit($max-width), remove-unit($min-width))
 
     @media (min-width: $max-width)
       font-size: $local-max-font
-      margin-top: (($line-height-ratio * $max-font) / ($local-max-font / 1.25))em
-      line-height: (($line-height-ratio * $max-font) / ($local-max-font / 1.5))em
-      margin-bottom: (($line-height-ratio * $max-font) / ($local-max-font / .25))em
+      if $vertical-rhythm is true
+        margin-top: (($line-height-ratio * $max-font) / ($local-max-font / 1.25))em
+        line-height: (($line-height-ratio * $max-font) / ($local-max-font / 1.5))em
+        margin-bottom: (($line-height-ratio * $max-font) / ($local-max-font / .25))em
 
   h2
     $local-min-font = $min-font * ($header-ratio ** 1.4)
     $local-max-font = $max-font * ($header-ratio ** 1.4)
 
     font-size: $local-min-font
-    margin-top: (($line-height-ratio * $min-font) / ($local-min-font / 1.25))em
-    line-height: (($line-height-ratio * $min-font) / ($local-min-font / 1.5))em
-    margin-bottom: (($line-height-ratio * $min-font) / ($local-min-font / .25) * (1 + (3 / $local-min-font)))em
+    if $vertical-rhythm is true
+      margin-top: (($line-height-ratio * $min-font) / ($local-min-font / 1.25))em
+      line-height: (($line-height-ratio * $min-font) / ($local-min-font / 1.5))em
+      margin-bottom: (($line-height-ratio * $min-font) / ($local-min-font / .25) * (1 + (3 / $local-min-font)))em
 
     @media (min-width: $min-width)
       font-size: s('calc( %s + (%s - %s) * ((100vw - %s) / (%s - %s)) )', $local-min-font, remove-unit($local-max-font), remove-unit($local-min-font), $min-width, remove-unit($max-width), remove-unit($min-width))
 
     @media (min-width: $max-width)
       font-size: $local-max-font
-      margin-top: (($line-height-ratio * $max-font) / ($local-max-font / 1.25))em
-      line-height: (($line-height-ratio * $max-font) / ($local-max-font / 1.5))em
-      margin-bottom: (($line-height-ratio * $max-font) / ($local-max-font / .25) * (1 + (3 / $local-max-font)))em
+      if $vertical-rhythm is true
+        margin-top: (($line-height-ratio * $max-font) / ($local-max-font / 1.25))em
+        line-height: (($line-height-ratio * $max-font) / ($local-max-font / 1.5))em
+        margin-bottom: (($line-height-ratio * $max-font) / ($local-max-font / .25) * (1 + (3 / $local-max-font)))em
 
   h3
     $local-min-font = $min-font * ($header-ratio ** 1.05)
     $local-max-font = $max-font * ($header-ratio ** 1.05)
 
     font-size: $local-min-font
-    margin-top: (($line-height-ratio * $min-font) / ($local-min-font / 1.25))em
-    line-height: (($line-height-ratio * $min-font) / ($local-min-font / 1.5))em
-    margin-bottom: (($line-height-ratio * $min-font) / ($local-min-font / .25) * (1 + (3 / $local-min-font)))em
+    if $vertical-rhythm is true
+      margin-top: (($line-height-ratio * $min-font) / ($local-min-font / 1.25))em
+      line-height: (($line-height-ratio * $min-font) / ($local-min-font / 1.5))em
+      margin-bottom: (($line-height-ratio * $min-font) / ($local-min-font / .25) * (1 + (3 / $local-min-font)))em
 
     @media (min-width: $min-width)
       font-size: s('calc( %s + (%s - %s) * ((100vw - %s) / (%s - %s)) )', $local-min-font, remove-unit($local-max-font), remove-unit($local-min-font), $min-width, remove-unit($max-width), remove-unit($min-width))
 
     @media (min-width: $max-width)
       font-size: $local-max-font
-      margin-top: (($line-height-ratio * $max-font) / ($local-max-font / 1.25))em
-      line-height: (($line-height-ratio * $max-font) / ($local-max-font / 1.5))em
-      margin-bottom: (($line-height-ratio * $max-font) / ($local-max-font / .25) * (1 + (3 / $local-max-font)))em
+      if $vertical-rhythm is true
+        margin-top: (($line-height-ratio * $max-font) / ($local-max-font / 1.25))em
+        line-height: (($line-height-ratio * $max-font) / ($local-max-font / 1.5))em
+        margin-bottom: (($line-height-ratio * $max-font) / ($local-max-font / .25) * (1 + (3 / $local-max-font)))em
 
   h4
     $local-min-font = $min-font * ($header-ratio ** .7)
     $local-max-font = $max-font * ($header-ratio ** .7)
 
     font-size: $local-min-font
-    margin-top: (($line-height-ratio * $min-font) / ($local-min-font / 1.25))em
-    line-height: (($line-height-ratio * $min-font) / ($local-min-font / 1.5))em
-    margin-bottom: (($line-height-ratio * $min-font) / ($local-min-font / .25) * (1 + (3 / $local-min-font)))em
+    if $vertical-rhythm is true
+      margin-top: (($line-height-ratio * $min-font) / ($local-min-font / 1.25))em
+      line-height: (($line-height-ratio * $min-font) / ($local-min-font / 1.5))em
+      margin-bottom: (($line-height-ratio * $min-font) / ($local-min-font / .25) * (1 + (3 / $local-min-font)))em
 
     @media (min-width: $min-width)
       font-size: s('calc( %s + (%s - %s) * ((100vw - %s) / (%s - %s)) )', $local-min-font, remove-unit($local-max-font), remove-unit($local-min-font), $min-width, remove-unit($max-width), remove-unit($min-width))
 
     @media (min-width: $max-width)
       font-size: $local-max-font
-      margin-top: (($line-height-ratio * $max-font) / ($local-max-font / 1.25))em
-      line-height: (($line-height-ratio * $max-font) / ($local-max-font / 1.5))em
-      margin-bottom: (($line-height-ratio * $max-font) / ($local-max-font / .25) * (1 + (3 / $local-max-font)))em
+      if $vertical-rhythm is true
+        margin-top: (($line-height-ratio * $max-font) / ($local-max-font / 1.25))em
+        line-height: (($line-height-ratio * $max-font) / ($local-max-font / 1.5))em
+        margin-bottom: (($line-height-ratio * $max-font) / ($local-max-font / .25) * (1 + (3 / $local-max-font)))em
 
   h5
     $local-min-font = $min-font * ($header-ratio ** .35)
     $local-max-font = $max-font * ($header-ratio ** .35)
 
     font-size: $local-min-font
-    margin-top: (($line-height-ratio * $min-font) / ($local-min-font / 1.25))em
-    line-height: (($line-height-ratio * $min-font) / ($local-min-font / 1.5))em
-    margin-bottom: (($line-height-ratio * $min-font) / ($local-min-font / .25))em
+    if $vertical-rhythm is true
+      margin-top: (($line-height-ratio * $min-font) / ($local-min-font / 1.25))em
+      line-height: (($line-height-ratio * $min-font) / ($local-min-font / 1.5))em
+      margin-bottom: (($line-height-ratio * $min-font) / ($local-min-font / .25))em
 
     @media (min-width: $min-width)
       font-size: s('calc( %s + (%s - %s) * ((100vw - %s) / (%s - %s)) )', $local-min-font, remove-unit($local-max-font), remove-unit($local-min-font), $min-width, remove-unit($max-width), remove-unit($min-width))
 
     @media (min-width: $max-width)
       font-size: $local-max-font
-      margin-top: (($line-height-ratio * $max-font) / ($local-max-font / 1.25))em
-      line-height: (($line-height-ratio * $max-font) / ($local-max-font / 1.5))em
-      margin-bottom: (($line-height-ratio * $max-font) / ($local-max-font / .25))em
+      if $vertical-rhythm is true
+        margin-top: (($line-height-ratio * $max-font) / ($local-max-font / 1.25))em
+        line-height: (($line-height-ratio * $max-font) / ($local-max-font / 1.5))em
+        margin-bottom: (($line-height-ratio * $max-font) / ($local-max-font / .25))em
 
   h6
     $local-min-font = $min-font
     $local-max-font = $max-font
 
     font-size: $local-min-font
-    margin-top: (($line-height-ratio * $min-font) / ($local-min-font / 1.25))em
-    line-height: (($line-height-ratio * $min-font) / ($local-min-font / 1.5))em
-    margin-bottom: (($line-height-ratio * $min-font) / ($local-min-font / .25) * (1 + (2 / $local-min-font)))em
+    if $vertical-rhythm is true
+      margin-top: (($line-height-ratio * $min-font) / ($local-min-font / 1.25))em
+      line-height: (($line-height-ratio * $min-font) / ($local-min-font / 1.5))em
+      margin-bottom: (($line-height-ratio * $min-font) / ($local-min-font / .25) * (1 + (5 / $local-min-font)))em
 
     @media (min-width: $min-width)
       font-size: s('calc( %s + (%s - %s) * ((100vw - %s) / (%s - %s)) )', $local-min-font, remove-unit($local-max-font), remove-unit($local-min-font), $min-width, remove-unit($max-width), remove-unit($min-width))
 
     @media (min-width: $max-width)
       font-size: $local-max-font
-      margin-top: (($line-height-ratio * $max-font) / ($local-max-font / 2))em
-      line-height: (($line-height-ratio * $max-font) / ($local-max-font / .25))em
-      margin-bottom: (($line-height-ratio * $max-font) / ($local-max-font / .25) * (1 + (41 / $local-max-font)))em
+      if $vertical-rhythm is true
+        margin-top: (($line-height-ratio * $min-font) / ($local-min-font / 1.25))em
+        line-height: (($line-height-ratio * $min-font) / ($local-min-font / 1.5))em
+        margin-bottom: (($line-height-ratio * $min-font) / ($local-min-font / .25) * (1 + (1 / $local-min-font)))em
 
   blockquote
     font-style: italic

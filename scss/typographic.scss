@@ -1,4 +1,4 @@
-// Typographic v2.7.2 - https://github.com/corysimmons/typographic
+// Typographic v2.8.0 - https://github.com/corysimmons/typographic
 
 
 // Ratios
@@ -70,6 +70,7 @@ $min-font           : 12px !default;
 $max-font           : 20px !default;
 $min-width          : 600px !default;
 $max-width          : 1000px !default;
+$vertical-rhythm    : true !default;
 
 
 // Helpers
@@ -283,10 +284,12 @@ $max-width          : 1000px !default;
   }
 
   h1, h2, h3, h4, h5, h6 {
+    margin-top: 0;
+    line-height: 1.1em;
+    margin-bottom: .15em;
     font-family: $header-font;
     font-weight: $header-font-weight;
     color: $header-color;
-    margin-bottom: 0;
     clear: both;
   }
 
@@ -295,9 +298,11 @@ $max-width          : 1000px !default;
     $local-max-font: $max-font * (math-pow($header-ratio, 1.75));
 
     font-size: $local-min-font;
-    margin-top: (($line-height-ratio * $min-font) / ($local-min-font / 1.25)) + em;
-    line-height: (($line-height-ratio * $min-font) / ($local-min-font / 1.5)) + em;
-    margin-bottom: (($line-height-ratio * $min-font) / ($local-min-font / .25)) + em;
+    @if ($vertical-rhythm) {
+      margin-top: (($line-height-ratio * $min-font) / ($local-min-font / 1.25)) + em;
+      line-height: (($line-height-ratio * $min-font) / ($local-min-font / 1.5)) + em;
+      margin-bottom: (($line-height-ratio * $min-font) / ($local-min-font / .25)) + em;
+    }
 
     @media (min-width: $min-width) {
       font-size: calc( #{$local-min-font} + (#{_strip-units($local-max-font)} - #{_strip-units($local-min-font)}) * ((100vw - #{$min-width}) / (#{_strip-units($max-width)} - #{_strip-units($min-width)})) );
@@ -305,9 +310,11 @@ $max-width          : 1000px !default;
 
     @media (min-width: $max-width) {
       font-size: $local-max-font;
-      margin-top: (($line-height-ratio * $max-font) / ($local-max-font / 1.25)) + em;
-      line-height: (($line-height-ratio * $max-font) / ($local-max-font / 1.5)) + em;
-      margin-bottom: (($line-height-ratio * $max-font) / ($local-max-font / .25)) + em;
+      @if ($vertical-rhythm) {
+        margin-top: (($line-height-ratio * $max-font) / ($local-max-font / 1.25)) + em;
+        line-height: (($line-height-ratio * $max-font) / ($local-max-font / 1.5)) + em;
+        margin-bottom: (($line-height-ratio * $max-font) / ($local-max-font / .25)) + em;
+      }
     }
   }
 
@@ -316,9 +323,11 @@ $max-width          : 1000px !default;
     $local-max-font: $max-font * (math-pow($header-ratio, 1.4));
 
     font-size: $local-min-font;
-    margin-top: (($line-height-ratio * $min-font) / ($local-min-font / 1.25)) + em;
-    line-height: (($line-height-ratio * $min-font) / ($local-min-font / 1.5)) + em;
-    margin-bottom: (($line-height-ratio * _strip-units($min-font)) / (_strip-units($local-min-font) / .25) * (1 + (3 / _strip-units($local-min-font)))) + em;
+    @if ($vertical-rhythm) {
+      margin-top: (($line-height-ratio * $min-font) / ($local-min-font / 1.25)) + em;
+      line-height: (($line-height-ratio * $min-font) / ($local-min-font / 1.5)) + em;
+      margin-bottom: (($line-height-ratio * _strip-units($min-font)) / (_strip-units($local-min-font) / .25) * (1 + (3 / _strip-units($local-min-font)))) + em;
+    }
 
     @media (min-width: $min-width) {
       font-size: calc( #{$local-min-font} + (#{_strip-units($local-max-font)} - #{_strip-units($local-min-font)}) * ((100vw - #{$min-width}) / (#{_strip-units($max-width)} - #{_strip-units($min-width)})) );
@@ -326,9 +335,11 @@ $max-width          : 1000px !default;
 
     @media (min-width: $max-width) {
       font-size: $local-max-font;
-      margin-top: (($line-height-ratio * $max-font) / ($local-max-font / 1.25)) + em;
-      line-height: (($line-height-ratio * $max-font) / ($local-max-font / 1.5)) + em;
-      margin-bottom: (($line-height-ratio * _strip-units($max-font)) / (_strip-units($local-max-font) / .25) * (1 + (3 / _strip-units($local-max-font)))) + em;
+      @if ($vertical-rhythm) {
+        margin-top: (($line-height-ratio * $max-font) / ($local-max-font / 1.25)) + em;
+        line-height: (($line-height-ratio * $max-font) / ($local-max-font / 1.5)) + em;
+        margin-bottom: (($line-height-ratio * _strip-units($max-font)) / (_strip-units($local-max-font) / .25) * (1 + (3 / _strip-units($local-max-font)))) + em;
+      }
     }
   }
 
@@ -337,9 +348,11 @@ $max-width          : 1000px !default;
     $local-max-font: $max-font * (math-pow($header-ratio, 1.05));
 
     font-size: $local-min-font;
-    margin-top: (($line-height-ratio * $min-font) / ($local-min-font / 1.25)) + em;
-    line-height: (($line-height-ratio * $min-font) / ($local-min-font / 1.5)) + em;
-    margin-bottom: (($line-height-ratio * _strip-units($min-font)) / (_strip-units($local-min-font) / .25) * (1 + (3 / _strip-units($local-min-font)))) + em;
+    @if ($vertical-rhythm) {
+      margin-top: (($line-height-ratio * $min-font) / ($local-min-font / 1.25)) + em;
+      line-height: (($line-height-ratio * $min-font) / ($local-min-font / 1.5)) + em;
+      margin-bottom: (($line-height-ratio * _strip-units($min-font)) / (_strip-units($local-min-font) / .25) * (1 + (3 / _strip-units($local-min-font)))) + em;
+    }
 
     @media (min-width: $min-width) {
       font-size: calc( #{$local-min-font} + (#{_strip-units($local-max-font)} - #{_strip-units($local-min-font)}) * ((100vw - #{$min-width}) / (#{_strip-units($max-width)} - #{_strip-units($min-width)})) );
@@ -347,9 +360,11 @@ $max-width          : 1000px !default;
 
     @media (min-width: $max-width) {
       font-size: $local-max-font;
-      margin-top: (($line-height-ratio * $max-font) / ($local-max-font / 1.25)) + em;
-      line-height: (($line-height-ratio * $max-font) / ($local-max-font / 1.5)) + em;
-      margin-bottom: (($line-height-ratio * _strip-units($max-font)) / (_strip-units($local-max-font) / .25) * (1 + (3 / _strip-units($local-max-font)))) + em;
+      @if ($vertical-rhythm) {
+        margin-top: (($line-height-ratio * $max-font) / ($local-max-font / 1.25)) + em;
+        line-height: (($line-height-ratio * $max-font) / ($local-max-font / 1.5)) + em;
+        margin-bottom: (($line-height-ratio * _strip-units($max-font)) / (_strip-units($local-max-font) / .25) * (1 + (3 / _strip-units($local-max-font)))) + em;
+      }
     }
   }
 
@@ -358,9 +373,11 @@ $max-width          : 1000px !default;
     $local-max-font: $max-font * (math-pow($header-ratio, .7));
 
     font-size: $local-min-font;
-    margin-top: (($line-height-ratio * $min-font) / ($local-min-font / 1.25)) + em;
-    line-height: (($line-height-ratio * $min-font) / ($local-min-font / 1.5)) + em;
-    margin-bottom: (($line-height-ratio * _strip-units($min-font)) / (_strip-units($local-min-font) / .25) * (1 + (3 / _strip-units($local-min-font)))) + em;
+    @if ($vertical-rhythm) {
+      margin-top: (($line-height-ratio * $min-font) / ($local-min-font / 1.25)) + em;
+      line-height: (($line-height-ratio * $min-font) / ($local-min-font / 1.5)) + em;
+      margin-bottom: (($line-height-ratio * _strip-units($min-font)) / (_strip-units($local-min-font) / .25) * (1 + (3 / _strip-units($local-min-font)))) + em;
+    }
 
     @media (min-width: $min-width) {
       font-size: calc( #{$local-min-font} + (#{_strip-units($local-max-font)} - #{_strip-units($local-min-font)}) * ((100vw - #{$min-width}) / (#{_strip-units($max-width)} - #{_strip-units($min-width)})) );
@@ -368,9 +385,11 @@ $max-width          : 1000px !default;
 
     @media (min-width: $max-width) {
       font-size: $local-max-font;
-      margin-top: (($line-height-ratio * $max-font) / ($local-max-font / 1.25)) + em;
-      line-height: (($line-height-ratio * $max-font) / ($local-max-font / 1.5)) + em;
-      margin-bottom: (($line-height-ratio * _strip-units($max-font)) / (_strip-units($local-max-font) / .25) * (1 + (3 / _strip-units($local-max-font)))) + em;
+      @if ($vertical-rhythm) {
+        margin-top: (($line-height-ratio * $max-font) / ($local-max-font / 1.25)) + em;
+        line-height: (($line-height-ratio * $max-font) / ($local-max-font / 1.5)) + em;
+        margin-bottom: (($line-height-ratio * _strip-units($max-font)) / (_strip-units($local-max-font) / .25) * (1 + (3 / _strip-units($local-max-font)))) + em;
+      }
     }
   }
 
@@ -379,9 +398,11 @@ $max-width          : 1000px !default;
     $local-max-font: $max-font * (math-pow($header-ratio, .35));
 
     font-size: $local-min-font;
-    margin-top: (($line-height-ratio * $min-font) / ($local-min-font / 1.25)) + em;
-    line-height: (($line-height-ratio * $min-font) / ($local-min-font / 1.5)) + em;
-    margin-bottom: (($line-height-ratio * $min-font) / ($local-min-font / .25)) + em;
+    @if ($vertical-rhythm) {
+      margin-top: (($line-height-ratio * $min-font) / ($local-min-font / 1.25)) + em;
+      line-height: (($line-height-ratio * $min-font) / ($local-min-font / 1.5)) + em;
+      margin-bottom: (($line-height-ratio * $min-font) / ($local-min-font / .25)) + em;
+    }
 
     @media (min-width: $min-width) {
       font-size: calc( #{$local-min-font} + (#{_strip-units($local-max-font)} - #{_strip-units($local-min-font)}) * ((100vw - #{$min-width}) / (#{_strip-units($max-width)} - #{_strip-units($min-width)})) );
@@ -389,9 +410,11 @@ $max-width          : 1000px !default;
 
     @media (min-width: $max-width) {
       font-size: $local-max-font;
-      margin-top: (($line-height-ratio * $max-font) / ($local-max-font / 1.25)) + em;
-      line-height: (($line-height-ratio * $max-font) / ($local-max-font / 1.5)) + em;
-      margin-bottom: (($line-height-ratio * $max-font) / ($local-max-font / .25)) + em;
+      @if ($vertical-rhythm) {
+        margin-top: (($line-height-ratio * $max-font) / ($local-max-font / 1.25)) + em;
+        line-height: (($line-height-ratio * $max-font) / ($local-max-font / 1.5)) + em;
+        margin-bottom: (($line-height-ratio * $max-font) / ($local-max-font / .25)) + em;
+      }
     }
   }
 
@@ -400,9 +423,11 @@ $max-width          : 1000px !default;
     $local-max-font: $max-font;
 
     font-size: $local-min-font;
-    margin-top: (($line-height-ratio * $min-font) / ($local-min-font / 1.25)) + em;
-    line-height: (($line-height-ratio * $min-font) / ($local-min-font / 1.5)) + em;
-    margin-bottom: (($line-height-ratio * _strip-units($min-font)) / (_strip-units($local-min-font) / .25) * (1 + (2 / _strip-units($local-min-font)))) + em;
+    @if ($vertical-rhythm) {
+      margin-top: (($line-height-ratio * $min-font) / ($local-min-font / 1.25)) + em;
+      line-height: (($line-height-ratio * $min-font) / ($local-min-font / 1.5)) + em;
+      margin-bottom: (($line-height-ratio * _strip-units($min-font)) / (_strip-units($local-min-font) / .25) * (1 + (2 / _strip-units($local-min-font)))) + em;
+    }
 
     @media (min-width: $min-width) {
       font-size: calc( #{$local-min-font} + (#{_strip-units($local-max-font)} - #{_strip-units($local-min-font)}) * ((100vw - #{$min-width}) / (#{_strip-units($max-width)} - #{_strip-units($min-width)})) );
@@ -410,9 +435,11 @@ $max-width          : 1000px !default;
 
     @media (min-width: $max-width) {
       font-size: $local-max-font;
-      margin-top: (($line-height-ratio * $max-font) / ($local-max-font / 1.25)) + em;
-      line-height: (($line-height-ratio * $max-font) / ($local-max-font / 1.5)) + em;
-      margin-bottom: (($line-height-ratio * _strip-units($max-font)) / (_strip-units($local-max-font) / .25) * (1 + (2 / _strip-units($local-max-font)))) + em;
+      @if ($vertical-rhythm) {
+        margin-top: (($line-height-ratio * $min-font) / ($local-min-font / 1.25)) + em;
+        line-height: (($line-height-ratio * $min-font) / ($local-min-font / 1.5)) + em;
+        margin-bottom: (($line-height-ratio * _strip-units($min-font)) / (_strip-units($local-min-font) / .25) * (1 + (1 / _strip-units($local-min-font)))) + em;
+      }
     }
   }
 
