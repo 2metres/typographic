@@ -1,4 +1,4 @@
-// Typographic v2.8.0 - https://github.com/corysimmons/typographic
+// Typographic v2.8.1 - https://github.com/corysimmons/typographic
 
 
 // Settings
@@ -155,9 +155,6 @@ typographic()
     margin-bottom: ($line-height-ratio)em
 
   h1, h2, h3, h4, h5, h6
-    margin-top: 0
-    line-height: 1.1em
-    margin-bottom: .15em
     font-family: $header-font
     font-weight: $header-font-weight
     color: $header-color
@@ -172,6 +169,10 @@ typographic()
       margin-top: (($line-height-ratio * $min-font) / ($local-min-font / 1.25))em
       line-height: (($line-height-ratio * $min-font) / ($local-min-font / 1.5))em
       margin-bottom: (($line-height-ratio * $min-font) / ($local-min-font / .25))em
+    else
+      margin-top: 0
+      line-height: 1.1em
+      margin-bottom: .25em
 
     @media (min-width: $min-width)
       font-size: s('calc( %s + (%s - %s) * ((100vw - %s) / (%s - %s)) )', $local-min-font, remove-unit($local-max-font), remove-unit($local-min-font), $min-width, remove-unit($max-width), remove-unit($min-width))
@@ -192,6 +193,10 @@ typographic()
       margin-top: (($line-height-ratio * $min-font) / ($local-min-font / 1.25))em
       line-height: (($line-height-ratio * $min-font) / ($local-min-font / 1.5))em
       margin-bottom: (($line-height-ratio * $min-font) / ($local-min-font / .25) * (1 + (3 / $local-min-font)))em
+    else
+      margin-top: 0
+      line-height: 1.2em
+      margin-bottom: .25em
 
     @media (min-width: $min-width)
       font-size: s('calc( %s + (%s - %s) * ((100vw - %s) / (%s - %s)) )', $local-min-font, remove-unit($local-max-font), remove-unit($local-min-font), $min-width, remove-unit($max-width), remove-unit($min-width))
@@ -212,6 +217,10 @@ typographic()
       margin-top: (($line-height-ratio * $min-font) / ($local-min-font / 1.25))em
       line-height: (($line-height-ratio * $min-font) / ($local-min-font / 1.5))em
       margin-bottom: (($line-height-ratio * $min-font) / ($local-min-font / .25) * (1 + (3 / $local-min-font)))em
+    else
+      margin-top: 0
+      line-height: 1.3em
+      margin-bottom: .25em
 
     @media (min-width: $min-width)
       font-size: s('calc( %s + (%s - %s) * ((100vw - %s) / (%s - %s)) )', $local-min-font, remove-unit($local-max-font), remove-unit($local-min-font), $min-width, remove-unit($max-width), remove-unit($min-width))
@@ -232,6 +241,10 @@ typographic()
       margin-top: (($line-height-ratio * $min-font) / ($local-min-font / 1.25))em
       line-height: (($line-height-ratio * $min-font) / ($local-min-font / 1.5))em
       margin-bottom: (($line-height-ratio * $min-font) / ($local-min-font / .25) * (1 + (3 / $local-min-font)))em
+    else
+      margin-top: 0
+      line-height: 1.4em
+      margin-bottom: .25em
 
     @media (min-width: $min-width)
       font-size: s('calc( %s + (%s - %s) * ((100vw - %s) / (%s - %s)) )', $local-min-font, remove-unit($local-max-font), remove-unit($local-min-font), $min-width, remove-unit($max-width), remove-unit($min-width))
@@ -252,6 +265,10 @@ typographic()
       margin-top: (($line-height-ratio * $min-font) / ($local-min-font / 1.25))em
       line-height: (($line-height-ratio * $min-font) / ($local-min-font / 1.5))em
       margin-bottom: (($line-height-ratio * $min-font) / ($local-min-font / .25))em
+    else
+      margin-top: 0
+      line-height: 1.5em
+      margin-bottom: .25em
 
     @media (min-width: $min-width)
       font-size: s('calc( %s + (%s - %s) * ((100vw - %s) / (%s - %s)) )', $local-min-font, remove-unit($local-max-font), remove-unit($local-min-font), $min-width, remove-unit($max-width), remove-unit($min-width))
@@ -272,6 +289,10 @@ typographic()
       margin-top: (($line-height-ratio * $min-font) / ($local-min-font / 1.25))em
       line-height: (($line-height-ratio * $min-font) / ($local-min-font / 1.5))em
       margin-bottom: (($line-height-ratio * $min-font) / ($local-min-font / .25) * (1 + (5 / $local-min-font)))em
+    else
+      margin-top: 0
+      line-height: 1.6em
+      margin-bottom: .25em
 
     @media (min-width: $min-width)
       font-size: s('calc( %s + (%s - %s) * ((100vw - %s) / (%s - %s)) )', $local-min-font, remove-unit($local-max-font), remove-unit($local-min-font), $min-width, remove-unit($max-width), remove-unit($min-width))

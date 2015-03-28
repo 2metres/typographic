@@ -1,4 +1,4 @@
-// Typographic v2.8.0 - https://github.com/corysimmons/typographic
+// Typographic v2.8.1 - https://github.com/corysimmons/typographic
 
 
 // Ratios
@@ -284,9 +284,6 @@ $vertical-rhythm    : true !default;
   }
 
   h1, h2, h3, h4, h5, h6 {
-    margin-top: 0;
-    line-height: 1.1em;
-    margin-bottom: .15em;
     font-family: $header-font;
     font-weight: $header-font-weight;
     color: $header-color;
@@ -302,6 +299,10 @@ $vertical-rhythm    : true !default;
       margin-top: (($line-height-ratio * $min-font) / ($local-min-font / 1.25)) + em;
       line-height: (($line-height-ratio * $min-font) / ($local-min-font / 1.5)) + em;
       margin-bottom: (($line-height-ratio * $min-font) / ($local-min-font / .25)) + em;
+    } @else {
+      margin-top: 0;
+      line-height: 1.1em;
+      margin-bottom: .25em;
     }
 
     @media (min-width: $min-width) {
@@ -327,6 +328,10 @@ $vertical-rhythm    : true !default;
       margin-top: (($line-height-ratio * $min-font) / ($local-min-font / 1.25)) + em;
       line-height: (($line-height-ratio * $min-font) / ($local-min-font / 1.5)) + em;
       margin-bottom: (($line-height-ratio * _strip-units($min-font)) / (_strip-units($local-min-font) / .25) * (1 + (3 / _strip-units($local-min-font)))) + em;
+    } @else {
+      margin-top: 0;
+      line-height: 1.2em;
+      margin-bottom: .25em;
     }
 
     @media (min-width: $min-width) {
@@ -352,6 +357,10 @@ $vertical-rhythm    : true !default;
       margin-top: (($line-height-ratio * $min-font) / ($local-min-font / 1.25)) + em;
       line-height: (($line-height-ratio * $min-font) / ($local-min-font / 1.5)) + em;
       margin-bottom: (($line-height-ratio * _strip-units($min-font)) / (_strip-units($local-min-font) / .25) * (1 + (3 / _strip-units($local-min-font)))) + em;
+    } @else {
+      margin-top: 0;
+      line-height: 1.3em;
+      margin-bottom: .25em;
     }
 
     @media (min-width: $min-width) {
@@ -377,6 +386,10 @@ $vertical-rhythm    : true !default;
       margin-top: (($line-height-ratio * $min-font) / ($local-min-font / 1.25)) + em;
       line-height: (($line-height-ratio * $min-font) / ($local-min-font / 1.5)) + em;
       margin-bottom: (($line-height-ratio * _strip-units($min-font)) / (_strip-units($local-min-font) / .25) * (1 + (3 / _strip-units($local-min-font)))) + em;
+    } @else {
+      margin-top: 0;
+      line-height: 1.4em;
+      margin-bottom: .25em;
     }
 
     @media (min-width: $min-width) {
@@ -402,6 +415,10 @@ $vertical-rhythm    : true !default;
       margin-top: (($line-height-ratio * $min-font) / ($local-min-font / 1.25)) + em;
       line-height: (($line-height-ratio * $min-font) / ($local-min-font / 1.5)) + em;
       margin-bottom: (($line-height-ratio * $min-font) / ($local-min-font / .25)) + em;
+    } @else {
+      margin-top: 0;
+      line-height: 1.5em;
+      margin-bottom: .25em;
     }
 
     @media (min-width: $min-width) {
@@ -427,6 +444,10 @@ $vertical-rhythm    : true !default;
       margin-top: (($line-height-ratio * $min-font) / ($local-min-font / 1.25)) + em;
       line-height: (($line-height-ratio * $min-font) / ($local-min-font / 1.5)) + em;
       margin-bottom: (($line-height-ratio * _strip-units($min-font)) / (_strip-units($local-min-font) / .25) * (1 + (2 / _strip-units($local-min-font)))) + em;
+    } @else {
+      margin-top: 0;
+      line-height: 1.6em;
+      margin-bottom: .25em;
     }
 
     @media (min-width: $min-width) {
