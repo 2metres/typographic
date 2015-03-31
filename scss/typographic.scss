@@ -1,4 +1,4 @@
-// Typographic v2.9.0 - https://github.com/corysimmons/typographic
+// Typographic v2.9.1 - https://github.com/corysimmons/typographic
 
 
 // Ratios
@@ -258,6 +258,10 @@ $vertical-rhythm    : true !default;
   @media (min-width: $max-width) {
     font-size: $max-font;
   }
+}
+
+@mixin t-p() {
+  @include t-html;
 }
 
 @mixin t-reset() {
