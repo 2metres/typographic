@@ -1,4 +1,4 @@
-// Typographic v2.8.2 - https://github.com/corysimmons/typographic
+// Typographic v2.9.0 - https://github.com/corysimmons/typographic
 
 
 // Ratios
@@ -241,27 +241,354 @@ $vertical-rhythm    : true !default;
 }
 
 
-// Typography Reset
+// Typography Mixins
+
+@mixin t-html() {
+  font-family: $body-font;
+  font-weight: $body-font-weight;
+  color: $body-color;
+
+  font-size: $min-font;
+  line-height: #{$line-height-ratio}em;
+
+  @media (min-width: $min-width) {
+    font-size: calc( #{$min-font} + (#{_strip-units($max-font)} - #{_strip-units($min-font)}) * ((100vw - #{$min-width}) / (#{_strip-units($max-width)} - #{_strip-units($min-width)})) );
+  }
+
+  @media (min-width: $max-width) {
+    font-size: $max-font;
+  }
+}
+
+@mixin t-reset() {
+  margin: 0;
+  padding: 0;
+}
+
+@mixin t-block() {
+  margin-bottom: #{$line-height-ratio}em;
+}
+
+@mixin t-header() {
+  font-family: $header-font;
+  font-weight: $header-font-weight;
+  color: $header-color;
+  clear: both;
+}
+
+@mixin t-h1() {
+  $local-min-font: $min-font * (math-pow($header-ratio, 1.75));
+  $local-max-font: $max-font * (math-pow($header-ratio, 1.75));
+
+  font-size: $local-min-font;
+  @if ($vertical-rhythm) {
+    margin-top: (($line-height-ratio * $min-font) / ($local-min-font / 1.25)) + em;
+    line-height: (($line-height-ratio * $min-font) / ($local-min-font / 1.5)) + em;
+    margin-bottom: (($line-height-ratio * $min-font) / ($local-min-font / .25)) + em;
+  } @else {
+    margin-top: 0;
+    line-height: 1.1em;
+    margin-bottom: .25em;
+  }
+
+  @media (min-width: $min-width) {
+    font-size: calc( #{$local-min-font} + (#{_strip-units($local-max-font)} - #{_strip-units($local-min-font)}) * ((100vw - #{$min-width}) / (#{_strip-units($max-width)} - #{_strip-units($min-width)})) );
+  }
+
+  @media (min-width: $max-width) {
+    font-size: $local-max-font;
+    @if ($vertical-rhythm) {
+      margin-top: (($line-height-ratio * $max-font) / ($local-max-font / 1.25)) + em;
+      line-height: (($line-height-ratio * $max-font) / ($local-max-font / 1.5)) + em;
+      margin-bottom: (($line-height-ratio * $max-font) / ($local-max-font / .25)) + em;
+    }
+  }
+}
+
+@mixin t-h2() {
+  $local-min-font: $min-font * (math-pow($header-ratio, 1.4));
+  $local-max-font: $max-font * (math-pow($header-ratio, 1.4));
+
+  font-size: $local-min-font;
+  @if ($vertical-rhythm) {
+    margin-top: (($line-height-ratio * $min-font) / ($local-min-font / 1.25)) + em;
+    line-height: (($line-height-ratio * $min-font) / ($local-min-font / 1.5)) + em;
+    margin-bottom: (($line-height-ratio * _strip-units($min-font)) / (_strip-units($local-min-font) / .25) * (1 + (3 / _strip-units($local-min-font)))) + em;
+  } @else {
+    margin-top: 0;
+    line-height: 1.2em;
+    margin-bottom: .25em;
+  }
+
+  @media (min-width: $min-width) {
+    font-size: calc( #{$local-min-font} + (#{_strip-units($local-max-font)} - #{_strip-units($local-min-font)}) * ((100vw - #{$min-width}) / (#{_strip-units($max-width)} - #{_strip-units($min-width)})) );
+  }
+
+  @media (min-width: $max-width) {
+    font-size: $local-max-font;
+    @if ($vertical-rhythm) {
+      margin-top: (($line-height-ratio * $max-font) / ($local-max-font / 1.25)) + em;
+      line-height: (($line-height-ratio * $max-font) / ($local-max-font / 1.5)) + em;
+      margin-bottom: (($line-height-ratio * _strip-units($max-font)) / (_strip-units($local-max-font) / .25) * (1 + (3 / _strip-units($local-max-font)))) + em;
+    }
+  }
+}
+
+@mixin t-h3() {
+  $local-min-font: $min-font * (math-pow($header-ratio, 1.05));
+  $local-max-font: $max-font * (math-pow($header-ratio, 1.05));
+
+  font-size: $local-min-font;
+  @if ($vertical-rhythm) {
+    margin-top: (($line-height-ratio * $min-font) / ($local-min-font / 1.25)) + em;
+    line-height: (($line-height-ratio * $min-font) / ($local-min-font / 1.5)) + em;
+    margin-bottom: (($line-height-ratio * _strip-units($min-font)) / (_strip-units($local-min-font) / .25) * (1 + (3 / _strip-units($local-min-font)))) + em;
+  } @else {
+    margin-top: 0;
+    line-height: 1.3em;
+    margin-bottom: .25em;
+  }
+
+  @media (min-width: $min-width) {
+    font-size: calc( #{$local-min-font} + (#{_strip-units($local-max-font)} - #{_strip-units($local-min-font)}) * ((100vw - #{$min-width}) / (#{_strip-units($max-width)} - #{_strip-units($min-width)})) );
+  }
+
+  @media (min-width: $max-width) {
+    font-size: $local-max-font;
+    @if ($vertical-rhythm) {
+      margin-top: (($line-height-ratio * $max-font) / ($local-max-font / 1.25)) + em;
+      line-height: (($line-height-ratio * $max-font) / ($local-max-font / 1.5)) + em;
+      margin-bottom: (($line-height-ratio * _strip-units($max-font)) / (_strip-units($local-max-font) / .25) * (1 + (3 / _strip-units($local-max-font)))) + em;
+    }
+  }
+}
+
+@mixin t-h4() {
+  $local-min-font: $min-font * (math-pow($header-ratio, .7));
+  $local-max-font: $max-font * (math-pow($header-ratio, .7));
+
+  font-size: $local-min-font;
+  @if ($vertical-rhythm) {
+    margin-top: (($line-height-ratio * $min-font) / ($local-min-font / 1.25)) + em;
+    line-height: (($line-height-ratio * $min-font) / ($local-min-font / 1.5)) + em;
+    margin-bottom: (($line-height-ratio * _strip-units($min-font)) / (_strip-units($local-min-font) / .25) * (1 + (3 / _strip-units($local-min-font)))) + em;
+  } @else {
+    margin-top: 0;
+    line-height: 1.4em;
+    margin-bottom: .25em;
+  }
+
+  @media (min-width: $min-width) {
+    font-size: calc( #{$local-min-font} + (#{_strip-units($local-max-font)} - #{_strip-units($local-min-font)}) * ((100vw - #{$min-width}) / (#{_strip-units($max-width)} - #{_strip-units($min-width)})) );
+  }
+
+  @media (min-width: $max-width) {
+    font-size: $local-max-font;
+    @if ($vertical-rhythm) {
+      margin-top: (($line-height-ratio * $max-font) / ($local-max-font / 1.25)) + em;
+      line-height: (($line-height-ratio * $max-font) / ($local-max-font / 1.5)) + em;
+      margin-bottom: (($line-height-ratio * _strip-units($max-font)) / (_strip-units($local-max-font) / .25) * (1 + (3 / _strip-units($local-max-font)))) + em;
+    }
+  }
+}
+
+@mixin t-h5() {
+  $local-min-font: $min-font * (math-pow($header-ratio, .35));
+  $local-max-font: $max-font * (math-pow($header-ratio, .35));
+
+  font-size: $local-min-font;
+  @if ($vertical-rhythm) {
+    margin-top: (($line-height-ratio * $min-font) / ($local-min-font / 1.25)) + em;
+    line-height: (($line-height-ratio * $min-font) / ($local-min-font / 1.5)) + em;
+    margin-bottom: (($line-height-ratio * $min-font) / ($local-min-font / .25)) + em;
+  } @else {
+    margin-top: 0;
+    line-height: 1.5em;
+    margin-bottom: .25em;
+  }
+
+  @media (min-width: $min-width) {
+    font-size: calc( #{$local-min-font} + (#{_strip-units($local-max-font)} - #{_strip-units($local-min-font)}) * ((100vw - #{$min-width}) / (#{_strip-units($max-width)} - #{_strip-units($min-width)})) );
+  }
+
+  @media (min-width: $max-width) {
+    font-size: $local-max-font;
+    @if ($vertical-rhythm) {
+      margin-top: (($line-height-ratio * $max-font) / ($local-max-font / 1.25)) + em;
+      line-height: (($line-height-ratio * $max-font) / ($local-max-font / 1.5)) + em;
+      margin-bottom: (($line-height-ratio * $max-font) / ($local-max-font / .25)) + em;
+    }
+  }
+}
+
+@mixin t-h6() {
+  $local-min-font: $min-font;
+  $local-max-font: $max-font;
+
+  font-size: $local-min-font;
+  @if ($vertical-rhythm) {
+    margin-top: (($line-height-ratio * $min-font) / ($local-min-font / 1.25)) + em;
+    line-height: (($line-height-ratio * $min-font) / ($local-min-font / 1.5)) + em;
+    margin-bottom: (($line-height-ratio * _strip-units($min-font)) / (_strip-units($local-min-font) / .25) * (1 + (2 / _strip-units($local-min-font)))) + em;
+  } @else {
+    margin-top: 0;
+    line-height: 1.6em;
+    margin-bottom: .25em;
+  }
+
+  @media (min-width: $min-width) {
+    font-size: calc( #{$local-min-font} + (#{_strip-units($local-max-font)} - #{_strip-units($local-min-font)}) * ((100vw - #{$min-width}) / (#{_strip-units($max-width)} - #{_strip-units($min-width)})) );
+  }
+
+  @media (min-width: $max-width) {
+    font-size: $local-max-font;
+    @if ($vertical-rhythm) {
+      margin-top: (($line-height-ratio * $min-font) / ($local-min-font / 1.25)) + em;
+      line-height: (($line-height-ratio * $min-font) / ($local-min-font / 1.5)) + em;
+      margin-bottom: (($line-height-ratio * _strip-units($min-font)) / (_strip-units($local-min-font) / .25) * (1 + (1 / _strip-units($local-min-font)))) + em;
+    }
+  }
+}
+
+@mixin t-blockquote() {
+  font-style: italic;
+  cite {
+    display: block;
+    font-style: normal;
+  }
+}
+
+@mixin t-pre() {
+  padding: ($line-height-ratio * .5) + em;
+  margin-bottom: vr-block(1);
+  code {
+    padding: 0;
+  }
+}
+
+@mixin t-code() {
+  font-family: $courier;
+  padding: ($line-height-ratio * .05) + em ($line-height-ratio * .15) + em;
+  line-height: 0;
+}
+
+@mixin t-abbr() {
+  border-bottom: 1px dotted currentColor;
+  cursor: help;
+}
+
+@mixin t-dt() {
+  color: $header-color;
+  font-weight: bold;
+}
+
+@mixin t-fieldset() {
+  padding: vr-block(.5) vr-block() vr-block();
+  border-width: 1px;
+  border-style: solid;
+  max-width: 100%;
+  margin-bottom: vr-block(1, 1);
+  @media (min-width: $max-width) {
+    margin-bottom: vr-block(1.25, -1);
+  }
+  button, input[type="submit"] {
+    margin-bottom: 0;
+  }
+}
+
+@mixin t-legend() {
+  color: $header-color;
+  font-weight: bold;
+}
+
+@mixin t-input() {
+  $local-min-font: $min-font;
+  $local-max-font: $max-font;
+
+  display: block;
+  max-width: 100%;
+  padding: vr-block(.25);
+
+  font-size: $local-min-font;
+  margin-bottom: vr-block(.5, 7);
+
+  @media (min-width: $min-width) {
+    font-size: calc( #{$local-min-font} + (#{_strip-units($local-max-font)} - #{_strip-units($local-min-font)}) * ((100vw - #{$min-width}) / (#{_strip-units($max-width)} - #{_strip-units($min-width)})) );
+  }
+
+  @media (min-width: $max-width) {
+    font-size: $local-max-font;
+    margin-bottom: vr-block(.25, 3.5);
+  }
+}
+
+@mixin t-button() {
+  $local-min-font: $min-font;
+  $local-max-font: $max-font;
+
+  display: block;
+  cursor: pointer;
+
+  font-size: $local-min-font;
+  padding: vr-block(.25) vr-block();
+  margin-bottom: vr-block(.75, -2);
+
+  @media (min-width: $min-width) {
+    font-size: calc( #{$local-min-font} + (#{_strip-units($local-max-font)} - #{_strip-units($local-min-font)}) * ((100vw - #{$min-width}) / (#{_strip-units($max-width)} - #{_strip-units($min-width)})) );
+  }
+
+  @media (min-width: $max-width) {
+    font-size: $local-max-font;
+    margin-bottom: vr-block(.75);
+  }
+}
+
+@mixin t-label() {
+  display: block;
+  padding-bottom: vr-block(.125);
+  margin-bottom: vr-block(-.25, -10);
+}
+
+@mixin t-table() {
+  width: 100%;
+  border-spacing: 0;
+  border-collapse: collapse;
+  margin-bottom: vr-block(1, 5);
+  @media (min-width: $max-width) {
+    margin-bottom: vr-block(1, 3);
+  }
+}
+
+@mixin t-th() {
+  text-align: left;
+  color: $header-color;
+
+  padding: vr-block(.125) vr-block(.5);
+
+  @media (min-width: $max-width) {
+    padding: vr-block(.25) vr-block(.5);
+  }
+}
+
+@mixin t-td() {
+  padding: ($line-height-ratio * .5) + em;
+  padding: vr-block(.125) vr-block(.5);
+
+  @media (min-width: $max-width) {
+    padding: vr-block(.25) vr-block(.5);
+  }
+}
+
+
+/// The Typographic Reset. This is where Typographic goes through every markup element and styles it to adhere to a vertical rhythm. After you set your variables in a settings file fire this mixin.
+///
+/// @example
+///   @include typographic;
 
 @mixin typographic() {
 
   html {
-
-    font-family: $body-font;
-    font-weight: $body-font-weight;
-    color: $body-color;
-
-    font-size: $min-font;
-    line-height: #{$line-height-ratio}em;
-
-    @media (min-width: $min-width) {
-      font-size: calc( #{$min-font} + (#{_strip-units($max-font)} - #{_strip-units($min-font)}) * ((100vw - #{$min-width}) / (#{_strip-units($max-width)} - #{_strip-units($min-width)})) );
-    }
-
-    @media (min-width: $max-width) {
-      font-size: $max-font;
-    }
-
+    @include t-html;
   }
 
   h1, h2, h3, h4, h5, h6, p, blockquote, pre,
@@ -272,221 +599,54 @@ $vertical-rhythm    : true !default;
   dl, dt, dd, ol, ul, li,
   fieldset, form, label, legend,
   table, caption, tbody, tfoot, thead, tr, th, td {
-    margin: 0;
-    padding: 0;
+    @include t-reset;
   }
 
   p, blockquote, pre,
   address,
   dl, ol, ul,
   table {
-    margin-bottom: #{$line-height-ratio}em;
-    &:last-of-type {
-      margin-bottom: 0;
-    }
+    @include t-block;
   }
 
   h1, h2, h3, h4, h5, h6 {
-    font-family: $header-font;
-    font-weight: $header-font-weight;
-    color: $header-color;
-    clear: both;
+    @include t-header;
   }
 
   h1 {
-    $local-min-font: $min-font * (math-pow($header-ratio, 1.75));
-    $local-max-font: $max-font * (math-pow($header-ratio, 1.75));
-
-    font-size: $local-min-font;
-    @if ($vertical-rhythm) {
-      margin-top: (($line-height-ratio * $min-font) / ($local-min-font / 1.25)) + em;
-      line-height: (($line-height-ratio * $min-font) / ($local-min-font / 1.5)) + em;
-      margin-bottom: (($line-height-ratio * $min-font) / ($local-min-font / .25)) + em;
-    } @else {
-      margin-top: 0;
-      line-height: 1.1em;
-      margin-bottom: .25em;
-    }
-
-    @media (min-width: $min-width) {
-      font-size: calc( #{$local-min-font} + (#{_strip-units($local-max-font)} - #{_strip-units($local-min-font)}) * ((100vw - #{$min-width}) / (#{_strip-units($max-width)} - #{_strip-units($min-width)})) );
-    }
-
-    @media (min-width: $max-width) {
-      font-size: $local-max-font;
-      @if ($vertical-rhythm) {
-        margin-top: (($line-height-ratio * $max-font) / ($local-max-font / 1.25)) + em;
-        line-height: (($line-height-ratio * $max-font) / ($local-max-font / 1.5)) + em;
-        margin-bottom: (($line-height-ratio * $max-font) / ($local-max-font / .25)) + em;
-      }
-    }
+    @include t-h1;
   }
 
   h2 {
-    $local-min-font: $min-font * (math-pow($header-ratio, 1.4));
-    $local-max-font: $max-font * (math-pow($header-ratio, 1.4));
-
-    font-size: $local-min-font;
-    @if ($vertical-rhythm) {
-      margin-top: (($line-height-ratio * $min-font) / ($local-min-font / 1.25)) + em;
-      line-height: (($line-height-ratio * $min-font) / ($local-min-font / 1.5)) + em;
-      margin-bottom: (($line-height-ratio * _strip-units($min-font)) / (_strip-units($local-min-font) / .25) * (1 + (3 / _strip-units($local-min-font)))) + em;
-    } @else {
-      margin-top: 0;
-      line-height: 1.2em;
-      margin-bottom: .25em;
-    }
-
-    @media (min-width: $min-width) {
-      font-size: calc( #{$local-min-font} + (#{_strip-units($local-max-font)} - #{_strip-units($local-min-font)}) * ((100vw - #{$min-width}) / (#{_strip-units($max-width)} - #{_strip-units($min-width)})) );
-    }
-
-    @media (min-width: $max-width) {
-      font-size: $local-max-font;
-      @if ($vertical-rhythm) {
-        margin-top: (($line-height-ratio * $max-font) / ($local-max-font / 1.25)) + em;
-        line-height: (($line-height-ratio * $max-font) / ($local-max-font / 1.5)) + em;
-        margin-bottom: (($line-height-ratio * _strip-units($max-font)) / (_strip-units($local-max-font) / .25) * (1 + (3 / _strip-units($local-max-font)))) + em;
-      }
-    }
+    @include t-h2;
   }
 
   h3 {
-    $local-min-font: $min-font * (math-pow($header-ratio, 1.05));
-    $local-max-font: $max-font * (math-pow($header-ratio, 1.05));
-
-    font-size: $local-min-font;
-    @if ($vertical-rhythm) {
-      margin-top: (($line-height-ratio * $min-font) / ($local-min-font / 1.25)) + em;
-      line-height: (($line-height-ratio * $min-font) / ($local-min-font / 1.5)) + em;
-      margin-bottom: (($line-height-ratio * _strip-units($min-font)) / (_strip-units($local-min-font) / .25) * (1 + (3 / _strip-units($local-min-font)))) + em;
-    } @else {
-      margin-top: 0;
-      line-height: 1.3em;
-      margin-bottom: .25em;
-    }
-
-    @media (min-width: $min-width) {
-      font-size: calc( #{$local-min-font} + (#{_strip-units($local-max-font)} - #{_strip-units($local-min-font)}) * ((100vw - #{$min-width}) / (#{_strip-units($max-width)} - #{_strip-units($min-width)})) );
-    }
-
-    @media (min-width: $max-width) {
-      font-size: $local-max-font;
-      @if ($vertical-rhythm) {
-        margin-top: (($line-height-ratio * $max-font) / ($local-max-font / 1.25)) + em;
-        line-height: (($line-height-ratio * $max-font) / ($local-max-font / 1.5)) + em;
-        margin-bottom: (($line-height-ratio * _strip-units($max-font)) / (_strip-units($local-max-font) / .25) * (1 + (3 / _strip-units($local-max-font)))) + em;
-      }
-    }
+    @include t-h3;
   }
 
   h4 {
-    $local-min-font: $min-font * (math-pow($header-ratio, .7));
-    $local-max-font: $max-font * (math-pow($header-ratio, .7));
-
-    font-size: $local-min-font;
-    @if ($vertical-rhythm) {
-      margin-top: (($line-height-ratio * $min-font) / ($local-min-font / 1.25)) + em;
-      line-height: (($line-height-ratio * $min-font) / ($local-min-font / 1.5)) + em;
-      margin-bottom: (($line-height-ratio * _strip-units($min-font)) / (_strip-units($local-min-font) / .25) * (1 + (3 / _strip-units($local-min-font)))) + em;
-    } @else {
-      margin-top: 0;
-      line-height: 1.4em;
-      margin-bottom: .25em;
-    }
-
-    @media (min-width: $min-width) {
-      font-size: calc( #{$local-min-font} + (#{_strip-units($local-max-font)} - #{_strip-units($local-min-font)}) * ((100vw - #{$min-width}) / (#{_strip-units($max-width)} - #{_strip-units($min-width)})) );
-    }
-
-    @media (min-width: $max-width) {
-      font-size: $local-max-font;
-      @if ($vertical-rhythm) {
-        margin-top: (($line-height-ratio * $max-font) / ($local-max-font / 1.25)) + em;
-        line-height: (($line-height-ratio * $max-font) / ($local-max-font / 1.5)) + em;
-        margin-bottom: (($line-height-ratio * _strip-units($max-font)) / (_strip-units($local-max-font) / .25) * (1 + (3 / _strip-units($local-max-font)))) + em;
-      }
-    }
+    @include t-h4;
   }
 
   h5 {
-    $local-min-font: $min-font * (math-pow($header-ratio, .35));
-    $local-max-font: $max-font * (math-pow($header-ratio, .35));
-
-    font-size: $local-min-font;
-    @if ($vertical-rhythm) {
-      margin-top: (($line-height-ratio * $min-font) / ($local-min-font / 1.25)) + em;
-      line-height: (($line-height-ratio * $min-font) / ($local-min-font / 1.5)) + em;
-      margin-bottom: (($line-height-ratio * $min-font) / ($local-min-font / .25)) + em;
-    } @else {
-      margin-top: 0;
-      line-height: 1.5em;
-      margin-bottom: .25em;
-    }
-
-    @media (min-width: $min-width) {
-      font-size: calc( #{$local-min-font} + (#{_strip-units($local-max-font)} - #{_strip-units($local-min-font)}) * ((100vw - #{$min-width}) / (#{_strip-units($max-width)} - #{_strip-units($min-width)})) );
-    }
-
-    @media (min-width: $max-width) {
-      font-size: $local-max-font;
-      @if ($vertical-rhythm) {
-        margin-top: (($line-height-ratio * $max-font) / ($local-max-font / 1.25)) + em;
-        line-height: (($line-height-ratio * $max-font) / ($local-max-font / 1.5)) + em;
-        margin-bottom: (($line-height-ratio * $max-font) / ($local-max-font / .25)) + em;
-      }
-    }
+    @include t-h5;
   }
 
   h6 {
-    $local-min-font: $min-font;
-    $local-max-font: $max-font;
-
-    font-size: $local-min-font;
-    @if ($vertical-rhythm) {
-      margin-top: (($line-height-ratio * $min-font) / ($local-min-font / 1.25)) + em;
-      line-height: (($line-height-ratio * $min-font) / ($local-min-font / 1.5)) + em;
-      margin-bottom: (($line-height-ratio * _strip-units($min-font)) / (_strip-units($local-min-font) / .25) * (1 + (2 / _strip-units($local-min-font)))) + em;
-    } @else {
-      margin-top: 0;
-      line-height: 1.6em;
-      margin-bottom: .25em;
-    }
-
-    @media (min-width: $min-width) {
-      font-size: calc( #{$local-min-font} + (#{_strip-units($local-max-font)} - #{_strip-units($local-min-font)}) * ((100vw - #{$min-width}) / (#{_strip-units($max-width)} - #{_strip-units($min-width)})) );
-    }
-
-    @media (min-width: $max-width) {
-      font-size: $local-max-font;
-      @if ($vertical-rhythm) {
-        margin-top: (($line-height-ratio * $min-font) / ($local-min-font / 1.25)) + em;
-        line-height: (($line-height-ratio * $min-font) / ($local-min-font / 1.5)) + em;
-        margin-bottom: (($line-height-ratio * _strip-units($min-font)) / (_strip-units($local-min-font) / .25) * (1 + (1 / _strip-units($local-min-font)))) + em;
-      }
-    }
+    @include t-h6;
   }
 
   blockquote {
-    font-style: italic;
-    cite {
-      display: block;
-      font-style: normal;
-    }
+    @include t-blockquote;
   }
 
   pre {
-    padding: ($line-height-ratio * .5) + em;
-    margin-bottom: vr-block(1);
-    code {
-      padding: 0;
-    }
+    @include t-pre;
   }
 
   code {
-    font-family: $courier;
-    padding: ($line-height-ratio * .05) + em ($line-height-ratio * .15) + em;
-    line-height: 0;
+    @include t-code;
   }
 
   big, small, sub, sup {
@@ -494,8 +654,7 @@ $vertical-rhythm    : true !default;
   }
 
   abbr, acronym {
-    border-bottom: 1px dotted currentColor;
-    cursor: help;
+    @include t-abbr;
   }
 
   address {
@@ -503,8 +662,7 @@ $vertical-rhythm    : true !default;
   }
 
   dt {
-    color: $header-color;
-    font-weight: bold;
+    @include t-dt;
   }
 
   ul {
@@ -516,101 +674,35 @@ $vertical-rhythm    : true !default;
   }
 
   fieldset {
-    padding: vr-block(.5) vr-block() vr-block();
-    border-width: 1px;
-    border-style: solid;
-    max-width: 100%;
-    margin-bottom: vr-block(1, 1);
-    @media (min-width: $max-width) {
-      margin-bottom: vr-block(1.25, -1);
-    }
-    button, input[type="submit"] {
-      margin-bottom: 0;
-    }
+    @include t-fieldset;
   }
 
   legend {
-    color: $header-color;
-    font-weight: bold;
+    @include t-legend;
   }
 
   input[type="text"], input[type="email"], input[type="password"], textarea {
-    $local-min-font: $min-font;
-    $local-max-font: $max-font;
-
-    display: block;
-    max-width: 100%;
-    padding: vr-block(.25);
-
-    font-size: $local-min-font;
-    margin-bottom: vr-block(.5, 7);
-
-    @media (min-width: $min-width) {
-      font-size: calc( #{$local-min-font} + (#{_strip-units($local-max-font)} - #{_strip-units($local-min-font)}) * ((100vw - #{$min-width}) / (#{_strip-units($max-width)} - #{_strip-units($min-width)})) );
-    }
-
-    @media (min-width: $max-width) {
-      font-size: $local-max-font;
-      margin-bottom: vr-block(.25, 3.5);
-    }
+    @include t-input;
   }
 
   input[type="submit"], button {
-    $local-min-font: $min-font;
-    $local-max-font: $max-font;
-
-    display: block;
-    cursor: pointer;
-
-    font-size: $local-min-font;
-    padding: vr-block(.25) vr-block();
-    margin-bottom: vr-block(.75, -2);
-
-    @media (min-width: $min-width) {
-      font-size: calc( #{$local-min-font} + (#{_strip-units($local-max-font)} - #{_strip-units($local-min-font)}) * ((100vw - #{$min-width}) / (#{_strip-units($max-width)} - #{_strip-units($min-width)})) );
-    }
-
-    @media (min-width: $max-width) {
-      font-size: $local-max-font;
-      margin-bottom: vr-block(.75);
-    }
+    @include t-button;
   }
 
   label {
-    display: block;
-    padding-bottom: vr-block(.125);
-    margin-bottom: vr-block(-.25, -10);
+    @include t-label;
   }
 
   table {
-    width: 100%;
-    border-spacing: 0;
-    border-collapse: collapse;
-    margin-bottom: vr-block(1, 5);
-    @media (min-width: $max-width) {
-      margin-bottom: vr-block(1, 3);
-    }
+    @include t-table;
   }
 
   th {
-    text-align: left;
-    color: $header-color;
-
-    padding: vr-block(.125) vr-block(.5);
-
-    @media (min-width: $max-width) {
-      padding: vr-block(.25) vr-block(.5);
-    }
+    @include t-th;
   }
 
   td {
-    padding: ($line-height-ratio * .5) + em;
-    padding: vr-block(.125) vr-block(.5);
-
-    @media (min-width: $max-width) {
-      padding: vr-block(.25) vr-block(.5);
-    }
-
+    @include t-td;
   }
 
 }
