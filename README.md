@@ -3,9 +3,9 @@
 </p>
 
 <p align="center">
-  <img src="https://img.shields.io/npm/v/typographic.svg">
-  <img src="https://img.shields.io/bower/v/typographic.svg">
-  <img src="http://img.shields.io/npm/dm/typographic.svg">
+  <img src="https://img.shields.io/npm/v/typographic.svg?style=flat-square">
+  <img src="https://img.shields.io/bower/v/typographic.svg?style=flat-square">
+  <img src="http://img.shields.io/npm/dm/typographic.svg?style=flat-square">
 </p>
 
 Typographic is responsive typography made easy. Pick a few font stacks, set a few settings, and you've got **beautiful** responsive typography - it's that easy.
