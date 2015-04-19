@@ -1,12 +1,15 @@
 {
   "name": "typographic",
-  "version": "2.9.2",
+  "version": "2.9.3",
   "homepage": "https://github.com/corysimmons/typographic",
   "authors": [
     "Cory Simmons <cory@launchboxhq.com>"
   ],
   "description": "Responsive typography with modular scale, font stacks, and more.",
-  "main": "typographic.js",
+  "main": [
+    "scss/typographic.scss",
+    "stylus/typographic.styl"
+  ],
   "moduleType": [
     "node"
   ],
