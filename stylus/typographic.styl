@@ -3,19 +3,19 @@
 
 // Settings
 
-$line-height-ratio  = 1.75
-$header-ratio       = $golden
-$body-font          = $helvetica
-$body-font-weight   = 300
-$body-color         = #666
-$header-font        = $helvetica
-$header-font-weight = 500
-$header-color       = #111
-$min-font           = 12px
-$max-font           = 20px
-$min-width          = 600px
-$max-width          = 1140px
-$vertical-rhythm    = true
+$line-height-ratio   = 1.75
+$heading-ratio       = $golden
+$body-font           = $helvetica
+$body-font-weight    = 300
+$body-color          = #666
+$heading-font        = $helvetica
+$heading-font-weight = 500
+$heading-color       = #111
+$min-font            = 12px
+$max-font            = 20px
+$min-width           = 600px
+$max-width           = 1140px
+$vertical-rhythm     = true
 
 
 // Ratios
@@ -136,15 +136,15 @@ t-reset()
 t-block()
   margin-bottom: ($line-height-ratio)em
 
-t-header()
-  font-family: $header-font
-  font-weight: $header-font-weight
-  color: $header-color
+t-heading()
+  font-family: $heading-font
+  font-weight: $heading-font-weight
+  color: $heading-color
   clear: both
 
 t-h1()
-  $local-min-font = $min-font * ($header-ratio ** 1.75)
-  $local-max-font = $max-font * ($header-ratio ** 1.75)
+  $local-min-font = $min-font * ($heading-ratio ** 1.75)
+  $local-max-font = $max-font * ($heading-ratio ** 1.75)
 
   font-size: $local-min-font
   if $vertical-rhythm is true
@@ -167,8 +167,8 @@ t-h1()
       margin-bottom: (($line-height-ratio * $max-font) / ($local-max-font / .25))em
 
 t-h2()
-  $local-min-font = $min-font * ($header-ratio ** 1.4)
-  $local-max-font = $max-font * ($header-ratio ** 1.4)
+  $local-min-font = $min-font * ($heading-ratio ** 1.4)
+  $local-max-font = $max-font * ($heading-ratio ** 1.4)
 
   font-size: $local-min-font
   if $vertical-rhythm is true
@@ -191,8 +191,8 @@ t-h2()
       margin-bottom: (($line-height-ratio * $max-font) / ($local-max-font / .25) * (1 + (3 / $local-max-font)))em
 
 t-h3()
-  $local-min-font = $min-font * ($header-ratio ** 1.05)
-  $local-max-font = $max-font * ($header-ratio ** 1.05)
+  $local-min-font = $min-font * ($heading-ratio ** 1.05)
+  $local-max-font = $max-font * ($heading-ratio ** 1.05)
 
   font-size: $local-min-font
   if $vertical-rhythm is true
@@ -215,8 +215,8 @@ t-h3()
       margin-bottom: (($line-height-ratio * $max-font) / ($local-max-font / .25) * (1 + (3 / $local-max-font)))em
 
 t-h4()
-  $local-min-font = $min-font * ($header-ratio ** .7)
-  $local-max-font = $max-font * ($header-ratio ** .7)
+  $local-min-font = $min-font * ($heading-ratio ** .7)
+  $local-max-font = $max-font * ($heading-ratio ** .7)
 
   font-size: $local-min-font
   if $vertical-rhythm is true
@@ -239,8 +239,8 @@ t-h4()
       margin-bottom: (($line-height-ratio * $max-font) / ($local-max-font / .25) * (1 + (3 / $local-max-font)))em
 
 t-h5()
-  $local-min-font = $min-font * ($header-ratio ** .35)
-  $local-max-font = $max-font * ($header-ratio ** .35)
+  $local-min-font = $min-font * ($heading-ratio ** .35)
+  $local-max-font = $max-font * ($heading-ratio ** .35)
 
   font-size: $local-min-font
   if $vertical-rhythm is true
@@ -308,7 +308,7 @@ t-abbr()
   cursor: help
 
 t-dt()
-  color: $header-color
+  color: $heading-color
   font-weight: bold
 
 t-fieldset()
@@ -325,7 +325,7 @@ t-fieldset()
     margin-bottom: 0
 
 t-legend()
-  color: $header-color
+  color: $heading-color
   font-weight: bold
 
 t-label()
@@ -380,7 +380,7 @@ t-table()
 
 t-th()
   text-align: left
-  color: $header-color
+  color: $heading-color
 
   padding: vr-block(.125) vr-block(.5)
 
@@ -422,7 +422,7 @@ typographic()
     t-block()
 
   h1, h2, h3, h4, h5, h6
-    t-header()
+    t-heading()
 
   h1
     t-h1()

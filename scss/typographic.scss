@@ -58,19 +58,19 @@ $palatino      : 'Palatino', 'Palatino Linotype', 'Palatino LT STD', "Book Antiq
 
 // Settings
 
-$line-height-ratio  : 1.75 !default;
-$header-ratio       : $golden !default;
-$body-font          : $helvetica !default;
-$body-font-weight   : 300 !default;
-$body-color         : #666 !default;
-$header-font        : $helvetica !default;
-$header-font-weight : 500 !default;
-$header-color       : #111 !default;
-$min-font           : 12px !default;
-$max-font           : 20px !default;
-$min-width          : 600px !default;
-$max-width          : 1140px !default;
-$vertical-rhythm    : true !default;
+$line-height-ratio   : 1.75 !default;
+$heading-ratio       : $golden !default;
+$body-font           : $helvetica !default;
+$body-font-weight    : 300 !default;
+$body-color          : #666 !default;
+$heading-font        : $helvetica !default;
+$heading-font-weight : 500 !default;
+$heading-color       : #111 !default;
+$min-font            : 12px !default;
+$max-font            : 20px !default;
+$min-width           : 600px !default;
+$max-width           : 1140px !default;
+$vertical-rhythm     : true !default;
 
 
 // Helpers
@@ -273,16 +273,16 @@ $vertical-rhythm    : true !default;
   margin-bottom: #{$line-height-ratio}em;
 }
 
-@mixin t-header() {
-  font-family: $header-font;
-  font-weight: $header-font-weight;
-  color: $header-color;
+@mixin t-heading() {
+  font-family: $heading-font;
+  font-weight: $heading-font-weight;
+  color: $heading-color;
   clear: both;
 }
 
 @mixin t-h1() {
-  $local-min-font: $min-font * (math-pow($header-ratio, 1.75));
-  $local-max-font: $max-font * (math-pow($header-ratio, 1.75));
+  $local-min-font: $min-font * (math-pow($heading-ratio, 1.75));
+  $local-max-font: $max-font * (math-pow($heading-ratio, 1.75));
 
   font-size: $local-min-font;
   @if ($vertical-rhythm) {
@@ -310,8 +310,8 @@ $vertical-rhythm    : true !default;
 }
 
 @mixin t-h2() {
-  $local-min-font: $min-font * (math-pow($header-ratio, 1.4));
-  $local-max-font: $max-font * (math-pow($header-ratio, 1.4));
+  $local-min-font: $min-font * (math-pow($heading-ratio, 1.4));
+  $local-max-font: $max-font * (math-pow($heading-ratio, 1.4));
 
   font-size: $local-min-font;
   @if ($vertical-rhythm) {
@@ -339,8 +339,8 @@ $vertical-rhythm    : true !default;
 }
 
 @mixin t-h3() {
-  $local-min-font: $min-font * (math-pow($header-ratio, 1.05));
-  $local-max-font: $max-font * (math-pow($header-ratio, 1.05));
+  $local-min-font: $min-font * (math-pow($heading-ratio, 1.05));
+  $local-max-font: $max-font * (math-pow($heading-ratio, 1.05));
 
   font-size: $local-min-font;
   @if ($vertical-rhythm) {
@@ -368,8 +368,8 @@ $vertical-rhythm    : true !default;
 }
 
 @mixin t-h4() {
-  $local-min-font: $min-font * (math-pow($header-ratio, .7));
-  $local-max-font: $max-font * (math-pow($header-ratio, .7));
+  $local-min-font: $min-font * (math-pow($heading-ratio, .7));
+  $local-max-font: $max-font * (math-pow($heading-ratio, .7));
 
   font-size: $local-min-font;
   @if ($vertical-rhythm) {
@@ -397,8 +397,8 @@ $vertical-rhythm    : true !default;
 }
 
 @mixin t-h5() {
-  $local-min-font: $min-font * (math-pow($header-ratio, .35));
-  $local-max-font: $max-font * (math-pow($header-ratio, .35));
+  $local-min-font: $min-font * (math-pow($heading-ratio, .35));
+  $local-max-font: $max-font * (math-pow($heading-ratio, .35));
 
   font-size: $local-min-font;
   @if ($vertical-rhythm) {
@@ -482,7 +482,7 @@ $vertical-rhythm    : true !default;
 }
 
 @mixin t-dt() {
-  color: $header-color;
+  color: $heading-color;
   font-weight: bold;
 }
 
@@ -501,7 +501,7 @@ $vertical-rhythm    : true !default;
 }
 
 @mixin t-legend() {
-  color: $header-color;
+  color: $heading-color;
   font-weight: bold;
 }
 
@@ -565,7 +565,7 @@ $vertical-rhythm    : true !default;
 
 @mixin t-th() {
   text-align: left;
-  color: $header-color;
+  color: $heading-color;
 
   padding: vr-block(.125) vr-block(.5);
 
@@ -614,7 +614,7 @@ $vertical-rhythm    : true !default;
   }
 
   h1, h2, h3, h4, h5, h6 {
-    @include t-header;
+    @include t-heading;
   }
 
   h1 {
