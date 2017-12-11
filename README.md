@@ -12,6 +12,8 @@ Typographic is responsive typography made easy. Pick a few font stacks, set a fe
 
 
 ## Installation
+
+[![Greenkeeper badge](https://badges.greenkeeper.io/corysimmons/typographic.svg)](https://greenkeeper.io/)
 - `bower install typographic`
 - `@import` Typographic somewhere in your stylesheet
 
