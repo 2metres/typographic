@@ -184,7 +184,7 @@ $vertical-rhythm     : true !default;
   $sum: 0;
 
   @for $index from $initial to $limit {
-    $sum: $sum + call($iteratee, $input, $index);
+    $sum: $sum + call(get-function($iteratee), $input, $index);
   }
 
   @return $sum;
